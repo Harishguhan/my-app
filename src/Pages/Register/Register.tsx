@@ -3,8 +3,10 @@ import React from "react";
 import TextField from "../../components/TextField";
 import * as Yup from "yup";
 import "./Register.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import swal from 'sweetalert';
 const RegisterForm = () => {
+
 
   let navigate = useNavigate();
   const RegisterValidate = Yup.object().shape({
@@ -31,6 +33,12 @@ const RegisterForm = () => {
     validationSchema: RegisterValidate,
     onSubmit: (values) => {
      localStorage.setItem('staff',JSON.stringify([values]));
+     swal({
+      title: "User Registerd successfuly",
+      text: "",
+      icon: "success",
+      // button: "Ok",
+    });
      navigate('/login')
     },
   });
@@ -63,6 +71,8 @@ const RegisterForm = () => {
                   Register
                 </button>
               </div>
+              <p className='mt-3 text-center'>Admin Register<Link to='/admin_register'>SignIn here..</Link></p>
+              <p className='mt-3 text-center'>Already Have a Account..<Link to='/login'> SignIn here..</Link></p>
             </Form>
           </FormikProvider>
         </div>
