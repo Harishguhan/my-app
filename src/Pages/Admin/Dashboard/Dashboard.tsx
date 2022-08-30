@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Data } from "./SidebarData";
 import Menu from "./Menu";
+
 const Nav = styled.div`
   background: #085f73;
   height: 80px;
@@ -25,7 +26,12 @@ const NavIcon = styled(Link)`
     color: white;
   }
 `;
-const SideView = styled.nav`
+
+export interface navProps {
+  left: string;
+}
+
+const SideView = styled.nav<navProps>`
   background: #085f73;
   min-height: 100vh;
   width: 250px;
@@ -34,14 +40,14 @@ const SideView = styled.nav`
   position: fixed;
   transition: 350ms;
   top: 0;
-  left: ${({ sidebar }: any) => (sidebar ? "0" : "-100%")};
+  left: ${(props) => (props.left ? `0` : `-100%`)};
   z-index: 10;
 `;
 const SideViewWrap = styled.div`
   width: 100%;
 `;
 const Dashboard = () => {
-  const [sidebar, setsidebar] = useState<boolean>(false);
+  const [sidebar, setsidebar] = useState<any>(false);
   const showSidebar = () => setsidebar(!sidebar);
   return (
     <>
@@ -50,7 +56,7 @@ const Dashboard = () => {
           <FaIcons.FaBars onClick={showSidebar} />
         </NavIcon>
       </Nav>
-      <SideView sidebar={sidebar}>
+      <SideView left={sidebar}>
         <SideViewWrap>
           <NavIcon to="#">
             <AiIcons.AiOutlineClose onClick={showSidebar} />
