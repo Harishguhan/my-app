@@ -1,0 +1,19 @@
+{
+  "posts":[
+    {
+      "name":"dolo-650",
+      "quantity":"20",
+      "price":"10",
+      "stock":"sold",
+      "img":"https://images.unsplash.com/photo-1587370560942-ad2a04eabb6d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8bWVkaWNpbmV8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
+      "id":1
+    },
+    {
+      "name":"parsitamal",
+      "quantity":"100",
+      "price":"25",
+      "stock":"un-sold",
+      "id":2
+    }
+  ]
+}

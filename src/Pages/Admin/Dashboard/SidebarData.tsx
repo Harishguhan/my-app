@@ -43,7 +43,7 @@ export const Data= [
     },
     {
         title:'Logout',
-        path:'#',
+        path:'/',
         icon:<FiIcons.FiLogOut />
     }
 ]

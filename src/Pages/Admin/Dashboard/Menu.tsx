@@ -23,7 +23,25 @@ const SidebarLink = styled(Link)`
 `
 const Label = styled.span`
     margin-left:16px;
+`
+const DropDownLink = styled(Link)`
+    display:flex;
+    color:white;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+    list-style:none;
+    height:60px;
+    text-decoration:none;
+    font-size:18px;
+    background-color:#59b4c9;
 
+    &:hover{
+        color:white;
+        background:#037994;
+        border-left:4px solid  #1aa4c4 ;
+        cursor:pointer;
+    }
 `
 const Menu = ({item}:any) =>{
 
@@ -42,12 +60,12 @@ const Menu = ({item}:any) =>{
            </SidebarLink>
            {DropDown && item.DropDown.map((item: { path: To; icon: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined; title: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined; },index: number) =>{
             return(
-                <SidebarLink to={item.path}>
+                <DropDownLink to={item.path}>
                     <div>
                         {item.icon}
                         <Label>{item.title}</Label>
                     </div>
-                </SidebarLink>
+                </DropDownLink>
             )
            })}
         </>
