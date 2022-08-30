@@ -12,7 +12,7 @@ import RegisterForm from './Pages/Register/Register';
 function App() {
 
   return (
-    <div className="container">
+    <div className="container-fluid">
       <Routes>
         <Route path='/' element={<RegisterForm />} />
         <Route path='/login' element={<Login />} />

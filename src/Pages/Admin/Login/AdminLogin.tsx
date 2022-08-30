@@ -60,6 +60,7 @@ const AdminLogin = () => {
         <div className="col-lg-4 forms">
           <FormikProvider value={Formik}>
             <Form autoComplete="off" noValidate onSubmit={handleSubmit}>
+              <h1 className="text-center">Admin Login</h1>
             <p className="Invalid">{error}</p>
               <TextField label="Email Address" name="email" type="email" placeholder="Enter your email.."  />
               <TextField

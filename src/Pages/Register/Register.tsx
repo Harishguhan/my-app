@@ -1,13 +1,11 @@
 import { Form, Formik, FormikProvider, useFormik } from "formik";
-import React from "react";
+import React, { useState } from "react";
 import TextField from "../../components/TextField";
 import * as Yup from "yup";
 import "./Register.css";
 import { Link, useNavigate } from "react-router-dom";
 import swal from 'sweetalert';
 const RegisterForm = () => {
-
-
   let navigate = useNavigate();
   const RegisterValidate = Yup.object().shape({
     userName: Yup.string()
