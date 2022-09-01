@@ -35,6 +35,7 @@ const AddCatogory = () => {
     },
     validationSchema: AddValidate,
     onSubmit: (values) => {
+      console.log(values)
       // const { catogary,quantity,price,stock,image } = values;
     dispatch(AddData(values))
     navigate('/admin_dashboard')
@@ -51,7 +52,7 @@ const AddCatogory = () => {
         <div className="col-lg-6">
           <FormikProvider value={Formik}>
             <Form autoComplete="off" noValidate onSubmit={handleSubmit}>
-              <TextField label="Catogory Name" name="catogary" type="text" />
+              <TextField label="Catogory Name" name="category" type="text" />
               <TextField label="Quantity" name="quantity" type="text" />
               <TextField label="Price" name="price" type="text" />
               <TextField label="Stock" name="stock" type="text" />

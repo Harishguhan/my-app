@@ -1,7 +1,7 @@
 {
   "posts": [
     {
-      "category": "dolo-650",
+      "catogary": "dolo-650",
       "quantity": "20",
       "price": "10",
       "stock": "sold",
@@ -9,7 +9,7 @@
       "id": 1
     },
     {
-      "category": "parsitamal",
+      "catogary": "parsitamal",
       "quantity": "100",
       "price": "25",
       "stock": "un-sold",
@@ -17,28 +17,36 @@
       "id": 2
     },
     {
-      "category": "harishguhan",
+      "catogary": "harishguhan",
       "quantity": "1235",
       "price": "65432",
       "stock": "234",
-      "image": "C:\\fakepath\\Screenshot from 2022-08-30 16-05-00.png",
+      "image": "http://localhost:3000/images/tablets.avif",
       "id": 3
     },
     {
-      "category": "edvad",
-      "quantity": "34",
-      "price": "3",
-      "stock": "3",
+      "quantity": "20",
+      "price": "12",
+      "stock": "122",
       "image": "C:\\fakepath\\colorlib-registration-form-30.avif",
+      "catogary": "harishguhan",
       "id": 4
     },
     {
-      "category": "newone ",
-      "quantity": "20",
-      "price": "122",
-      "stock": "sold",
-      "image": "C:\\fakepath\\Screenshot from 2022-08-30 16-05-52.png",
+      "quantity": "23",
+      "price": "23",
+      "stock": "123",
+      "image": "C:\\fakepath\\tablets1.avif",
+      "catogary": "123",
       "id": 5
+    },
+    {
+      "quantity": "654321",
+      "price": "12345",
+      "stock": "sfdg",
+      "image": "C:\\fakepath\\tablets1.avif",
+      "catogary": "134",
+      "id": 6
     }
   ]
 }

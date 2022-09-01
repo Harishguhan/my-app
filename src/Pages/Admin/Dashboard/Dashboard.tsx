@@ -60,10 +60,13 @@ const Dashboard = () => {
     dispatch(loadData());
   }, []);
 
-  const handleedit = (id: any) => {
+  const handledelete = (id: any) => {
     console.log(id);
     dispatch(deletData(id));
   };
+  const handleedit = (id:any) =>{
+    console.log(id)
+  }
   return (
     <>
       <Nav>
@@ -101,7 +104,7 @@ const Dashboard = () => {
               return (
                 <tr className="">
                   <th scope="row">{data.id}</th>
-                  <td>{data.category}</td>
+                  <td>{data.catogary}</td>
                   <td>{data.quantity}</td>
                   <td>{data.price}</td>
                   <td>{data.stock}</td>
@@ -109,10 +112,10 @@ const Dashboard = () => {
                     <img src={data.image} style={{ width: "100px" }} />
                   </td>
                   <td>
-                    <button className="btn btn-success">Edit</button>
+                    <button className="btn btn-success" onClick={() => handleedit(data.id)}>Edit</button>
                     <button
                       className="btn btn-danger mx-2"
-                      onClick={() => handleedit(data.id)}
+                      onClick={() => handledelete(data.id)}
                     >
                       Delete
                     </button>
