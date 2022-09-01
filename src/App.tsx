@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import AddCatogory from './Pages/Admin/Dashboard/Add_medichine/AddCatogory';
 import Dashboard from './Pages/Admin/Dashboard/Dashboard';
 import AdminLogin from './Pages/Admin/Login/AdminLogin';
 import Register from './Pages/Admin/Register/Register';
@@ -20,6 +21,7 @@ function App() {
         <Route path='/admin_register' element={<Register />} />
         <Route path='/admin_login' element={<AdminLogin />} />
         <Route path='/admin_dashboard' element={<Dashboard />} />
+        <Route path="/add_catogary" element={<AddCatogory />} />
       </Routes>
     </div>
   );

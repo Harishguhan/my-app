@@ -31,7 +31,7 @@ export const Data= [
         DropDown:[
             {
                 title:'New',
-                path:'#',
+                path:'/add_catogary',
                 icon:<AiIcons.AiOutlinePlus />
             },
             {
