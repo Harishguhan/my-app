@@ -2,7 +2,7 @@ import * as types from './ActionType';
 
 const initialState = {
     data:[],
-    singledata:{},
+    dat:{},
     loading:false
 }
 
@@ -15,17 +15,14 @@ const dataReducers = (state = initialState,action:any) =>{
                 loading:false
             }
         case types.DELETE_DATA:
+
+        case types.ADD_CATOGARY: 
             return{
                 ...state,
                 data:action.payload,
                 loading:false,
             }
-        case types.ADD_CATOGARY:
-            return{
-                ...state,
-                data:action.payload,
-                loading:false,
-            }
+        
         default:
             return state
     }

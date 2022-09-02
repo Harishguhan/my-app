@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { Data } from "./SidebarData";
 import Menu from "./Menu";
@@ -51,21 +51,23 @@ const SideViewWrap = styled.div`
   width: 100%;
 `;
 const Dashboard = () => {
+
   const [sidebar, setsidebar] = useState<any>(false);
   const showSidebar = () => setsidebar(!sidebar);
   const dispatch = useDispatch<AppDispatch>();
+  const navigate = useNavigate();
   const { data } = useSelector((state: RootState) => state.data);
 
   useEffect(() => {
     dispatch(loadData());
   }, []);
 
-  const handledelete = (id: any) => {
+  const handledelete = (id:number) => {
     console.log(id);
     dispatch(deletData(id));
   };
-  const handleedit = (id:any) =>{
-    console.log(id)
+  const handleedit = (id:number) =>{
+    navigate(`/edit_category/${id}`)
   }
   return (
     <>
@@ -90,12 +92,11 @@ const Dashboard = () => {
         <table className="table table-hover text-center">
           <thead>
             <tr className="">
-              <th scope="col">S.NO</th>
+              <th scope="col">S.No</th>
               <th scope="col">Name</th>
               <th scope="col">Quantity</th>
               <th scope="col">Price</th>
               <th scope="col">Stock</th>
-              <th scope="col">Product Image</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
@@ -108,9 +109,6 @@ const Dashboard = () => {
                   <td>{data.quantity}</td>
                   <td>{data.price}</td>
                   <td>{data.stock}</td>
-                  <td>
-                    <img src={data.image} style={{ width: "100px" }} />
-                  </td>
                   <td>
                     <button className="btn btn-success" onClick={() => handleedit(data.id)}>Edit</button>
                     <button

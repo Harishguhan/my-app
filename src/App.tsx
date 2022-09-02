@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import AddCatogory from './Pages/Admin/Dashboard/Add_medichine/AddCatogory';
 import Dashboard from './Pages/Admin/Dashboard/Dashboard';
+import EditData from './Pages/Admin/Dashboard/Edit_medichine/Edit';
 import AdminLogin from './Pages/Admin/Login/AdminLogin';
 import Register from './Pages/Admin/Register/Register';
 import Home from './Pages/dashboard/Home';
@@ -22,6 +23,7 @@ function App() {
         <Route path='/admin_login' element={<AdminLogin />} />
         <Route path='/admin_dashboard' element={<Dashboard />} />
         <Route path="/add_catogary" element={<AddCatogory />} />
+        <Route path='/edit_category/:id' element={<EditData />} />
       </Routes>
     </div>
   );
