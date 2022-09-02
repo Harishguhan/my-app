@@ -1,15 +1,20 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { loadData } from "../../Redux/Action";
 import { AppDispatch, RootState } from "../../Redux/Store";
 
 const Home = () => {
-  
+  const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
   const { data } = useSelector((state: RootState) => state.data);
   useEffect(() => {
     dispatch(loadData());
   }, []);
+
+  const handleedit = (id:any) =>{
+    navigate(`/edit_category/${id}`)
+  } 
 
   return (
     <div className="container">
@@ -25,7 +30,7 @@ const Home = () => {
               <th scope="col">Action</th>
             </tr>
           </thead>
-          {/* <tbody>
+          <tbody>
             { data && data.map((data: any) => {
               return (
                 <tr className="">
@@ -36,17 +41,11 @@ const Home = () => {
                   <td>{data.stock}</td>
                   <td>
                     <button className="btn btn-success" onClick={() => handleedit(data.id)}>Edit</button>
-                    <button
-                      className="btn btn-danger mx-2"
-                      onClick={() => handledelete(data.id)}
-                    >
-                      Delete
-                    </button>
                   </td>
                 </tr>
               );
             })}
-          </tbody> */}
+          </tbody>
         </table>
       </div>
     </div>

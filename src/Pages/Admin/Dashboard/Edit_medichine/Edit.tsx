@@ -118,7 +118,7 @@ const EditData = () => {
               />
               <span style={{ color: "red" }}>{error.price}</span>
             </div>
-            <div className="form-group mt-4">
+            <div className="form-group mt-3">
               <label>Stock</label>
               <input
                 type="text"
@@ -129,10 +129,7 @@ const EditData = () => {
               />
               <span style={{ color: "red" }}>{error.stock}</span>
             </div>
-            <div className="d-flex justify-content-between mt-3">
-              <button type="submit" className="btn btn-warning">
-                Cancel
-              </button>
+            <div className="d-grid gap-2 mt-3">
               <button type="submit" className="btn btn-success">
                 Update
               </button>
