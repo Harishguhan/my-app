@@ -4,8 +4,8 @@
       "id": 1,
       "catogary": "dolo-650",
       "quantity": "1002",
-      "price": "12",
-      "stock": "sold-out"
+      "price": "122",
+      "stock": "sold"
     },
     {
       "catogary": "parasitamel",
@@ -43,11 +43,11 @@
       "id": 6
     },
     {
+      "id": 7,
       "catogary": "Synthroid",
       "quantity": "200",
       "price": "20",
-      "stock": "un-sold",
-      "id": 7
+      "stock": "sold-out"
     },
     {
       "catogary": "Norvasc",
@@ -71,11 +71,11 @@
       "id": 10
     },
     {
-      "id": 11,
-      "catogary": "zendr",
+      "catogary": "ubber",
       "quantity": "12",
-      "price": "10",
-      "stock": "sold"
+      "price": "1",
+      "stock": "sold",
+      "id": 11
     }
   ]
 }

@@ -32,7 +32,7 @@ const Register = () => {
         },
         validationSchema:validate,
         onSubmit:(values) =>{
-            localStorage.setItem("admin",JSON.stringify([values]));
+            localStorage.setItem("admin",JSON.stringify({values}));
             swal({
                 title: "Admin Registerd successfuly",
                 text: "",

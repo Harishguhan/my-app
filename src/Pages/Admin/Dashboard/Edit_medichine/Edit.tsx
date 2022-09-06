@@ -46,27 +46,20 @@ const EditData = () => {
 
   const handlesubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    dispatch(getSingleUser(updatevalue));
-    navigate("/admin_dashboard");
-    // const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g;
-    // var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-    // e.preventDefault();
-    // if (!edit.username) {
-    //   setError({ ...error, username: "Name cannot be Blank" });
-    // } else if (!edit.email) {
-    //   setError({ ...error, email: "Email cannot be Blank" });
-    // } else if (!edit.email.match(regEx)) {
-    //   setError({ ...error, email: "Enter Valid Email Address" });
-    // } else if (!edit.mobilenumber) {
-    //   setError({ ...error, mobilenumber: "Mobile Number Cannot be blank" });
-    // } else if (!edit.mobilenumber.match(phoneno)) {
-    //   setError({ ...error, mobilenumber: "Enter Valid Mobile number" });
-    // } else if (!edit.city) {
-    //   setError({ ...error, city: "CityName cannot be Blank" });
-    // } else {
-    //   dispatch(editUsers(updatevalue));
-    //   navigate("/view");
-    // }  
+    if (!edit.catogary) {
+      setError({ ...error, catogary: "catagory cannot be Blank" });
+    } else if (!edit.quantity) {
+      setError({ ...error, quantity: "Quantity cannot be Blank" });
+    } 
+      else if (!edit.price) {
+      setError({ ...error, price: "Price Number Cannot be blank" });
+    }
+     else if (!edit.stock) {
+      setError({ ...error, stock: "stock cannot be Blank" });
+    } else {
+      dispatch(getSingleUser(updatevalue));
+      navigate("/admin_dashboard");
+    }  
   };
 
   const updatevalue = {

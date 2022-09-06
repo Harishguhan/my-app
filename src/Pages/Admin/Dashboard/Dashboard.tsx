@@ -58,7 +58,7 @@ const Dashboard = () => {
   const showSidebar = () => setsidebar(!sidebar);
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
-  const inputEl = useRef("");
+  const inputEl = useRef<any>("");
   const { data } = useSelector((state: RootState) => state.data);
 
   useEffect(() => {
