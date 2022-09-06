@@ -6,6 +6,76 @@
       "quantity": "1002",
       "price": "12",
       "stock": "sold-out"
+    },
+    {
+      "catogary": "parasitamel",
+      "quantity": "10",
+      "price": "13",
+      "stock": "sold",
+      "id": 2
+    },
+    {
+      "catogary": "Adderall",
+      "quantity": "100",
+      "price": "12",
+      "stock": "sold",
+      "id": 3
+    },
+    {
+      "catogary": "Amlodipine",
+      "quantity": "145",
+      "price": "34",
+      "stock": "un-sold",
+      "id": 4
+    },
+    {
+      "catogary": "Amoxicillin",
+      "quantity": "900",
+      "price": "132",
+      "stock": "sold",
+      "id": 5
+    },
+    {
+      "catogary": "Drisdol",
+      "quantity": "100",
+      "price": "10",
+      "stock": "sold",
+      "id": 6
+    },
+    {
+      "catogary": "Synthroid",
+      "quantity": "200",
+      "price": "20",
+      "stock": "un-sold",
+      "id": 7
+    },
+    {
+      "catogary": "Norvasc",
+      "quantity": "150",
+      "price": "10",
+      "stock": "sold",
+      "id": 8
+    },
+    {
+      "catogary": "Motrin",
+      "quantity": "350",
+      "price": "10",
+      "stock": "sold",
+      "id": 9
+    },
+    {
+      "catogary": "Keflex",
+      "quantity": "300",
+      "price": "19",
+      "stock": "un-sold",
+      "id": 10
+    },
+    {
+      "id": 11,
+      "catogary": "zendr",
+      "quantity": "12",
+      "price": "10",
+      "stock": "sold"
     }
   ]
 }

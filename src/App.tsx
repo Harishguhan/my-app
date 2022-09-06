@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import AddCatogory from './Pages/Admin/Dashboard/Add_medichine/AddCatogory';
@@ -9,6 +10,7 @@ import Register from './Pages/Admin/Register/Register';
 import Home from './Pages/dashboard/Home';
 import Login from './Pages/Login/Login';
 import RegisterForm from './Pages/Register/Register';
+import { RootState } from './Redux/Store';
 
 
 function App() {

@@ -66,7 +66,7 @@ const EditData = () => {
     // } else {
     //   dispatch(editUsers(updatevalue));
     //   navigate("/view");
-    // }
+    // }  
   };
 
   const updatevalue = {
