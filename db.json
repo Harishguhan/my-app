@@ -3,9 +3,9 @@
     {
       "id": 1,
       "catogary": "dolo-650",
-      "quantity": "1002",
+      "quantity": "10021",
       "price": "122788",
-      "stock": "sold"
+      "stock": "solddd"
     },
     {
       "catogary": "parasitamel",
@@ -39,7 +39,7 @@
       "id": 7,
       "catogary": "Synthroid",
       "quantity": "200",
-      "price": "20",
+      "price": "22",
       "stock": "sold-out"
     },
     {

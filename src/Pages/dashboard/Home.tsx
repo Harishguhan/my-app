@@ -37,7 +37,7 @@ const Home = () => {
     }
   };
   const handleedit = (id: any) => {
-    navigate(`/edit_category/${id}`);
+    navigate(`/edit/${id}`);
   };
 
   const getSearchTerm = () => {
@@ -53,7 +53,7 @@ const Home = () => {
         <input
           className="form-control mr-sm-2 shadow-none"
           type="search"
-          placeholder="Search"
+          placeholder="Search here.."
           aria-label="Search"
           value={searchItem}
           ref={inputEl}
@@ -123,11 +123,8 @@ const Home = () => {
                   })}
               </tbody>
             )}
-          </table>
-
-         
+          </table>     
         </div>
-        {/* <button className="btn btn-info" onClick={fetch}>Load More data</button> */}
       </div>
     </>
   );

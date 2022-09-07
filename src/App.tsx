@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 
 import LazyLoad from "./components/LazyLoad";
+import EditPage from "./Pages/dashboard/Editpage";
 const Dashboard = React.lazy(() => import("./Pages/Admin/Dashboard/Dashboard"));
 const RegisterForm = React.lazy(() => import("./Pages/Register/Register"));
 const Login = React.lazy(() => import("./Pages/Login/Login"));
@@ -82,6 +83,14 @@ function App() {
           element={
             <Suspense fallback={<LazyLoad />}>
               <EditData />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/edit/:id"
+          element={
+            <Suspense fallback={<LazyLoad />}>
+              <EditPage />
             </Suspense>
           }
         />
