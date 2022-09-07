@@ -1,18 +1,25 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import customAxios from "../../Axios";
 import { loadData } from "../../Redux/Action";
 import { AppDispatch, RootState } from "../../Redux/Store";
 
 const Home = () => {
   const navigate = useNavigate();
+  const [dat,setdata] = useState([]);
   const [results, setsearchResults] = useState([]);
   const [searchItem, setSearchItem] = useState("");
   const inputEl = useRef<any>("");
   const dispatch = useDispatch<AppDispatch>();
   const { data } = useSelector((state: RootState) => state.data);
   useEffect(() => {
-    dispatch(loadData());
+    customAxios
+    .get('/auth/employees')
+    .then((responce) =>{
+      setdata(responce?.data?.data?.employees)
+    })
+    .catch((err) => console.error(err.message)) 
   }, []);
 
   const searchHandler = (searchItem: string) => {
@@ -36,6 +43,9 @@ const Home = () => {
   const getSearchTerm = () => {
     searchHandler(inputEl.current.value);
   };
+  useEffect(() => {
+    dispatch(loadData());
+  },[])
   return (
     <>
       <h1 className="text-center mt-3 mb-3">Pharmacy Management System</h1>
@@ -114,7 +124,10 @@ const Home = () => {
               </tbody>
             )}
           </table>
+
+         
         </div>
+        {/* <button className="btn btn-info" onClick={fetch}>Load More data</button> */}
       </div>
     </>
   );

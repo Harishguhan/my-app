@@ -4,7 +4,7 @@
       "id": 1,
       "catogary": "dolo-650",
       "quantity": "1002",
-      "price": "122",
+      "price": "122788",
       "stock": "sold"
     },
     {
@@ -22,11 +22,11 @@
       "id": 3
     },
     {
+      "id": 5,
       "catogary": "Amoxicillin",
       "quantity": "900",
       "price": "132",
-      "stock": "sold",
-      "id": 5
+      "stock": "sold"
     },
     {
       "catogary": "Drisdol",

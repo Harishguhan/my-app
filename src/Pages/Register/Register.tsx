@@ -5,6 +5,7 @@ import * as Yup from "yup";
 import "./Register.css";
 import { Link, useNavigate } from "react-router-dom";
 import swal from 'sweetalert';
+import customAxios from "../../Axios";
 const RegisterForm = () => {
   let navigate = useNavigate();
   const RegisterValidate = Yup.object().shape({
@@ -30,7 +31,21 @@ const RegisterForm = () => {
    
     validationSchema: RegisterValidate,
     onSubmit: (values) => {
+     const staff  = localStorage.getItem('staff');
+     console.log('existing value',staff);
      localStorage.setItem('staff',JSON.stringify([values]));
+     let { userName,email,password,confirmpassword } = values;
+     customAxios
+      .post("/auth/signup", { email, password })
+      .then((responce) => {
+        if (responce.status === 201) {
+          alert("User Registered Succesfully");
+          navigate('/login')
+        } else {
+          alert("Failed To register User");
+        }
+      })
+      .catch((error) => console.error(error.message));
      swal({
       title: "User Registerd successfuly",
       text: "",

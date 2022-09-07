@@ -24,7 +24,7 @@ const getProduct = (dat: any) =>({
 
 export const loadData = () => {
     return function (dispatch: any){
-        axios.get('http://localhost:5000/posts')
+        axios.get('http://localhost:7000/posts')
         .then((responce) => {
             dispatch(getData(responce.data))
         })
@@ -34,7 +34,7 @@ export const loadData = () => {
 export const deletData = (id:number) => {
 
     return function (dispatch: any){
-        axios.delete(`http://localhost:5000/posts/${id}`)
+        axios.delete(`http://localhost:7000/posts/${id}`)
         .then((responce) => {
             dispatch(deleteData());
             dispatch(loadData());
@@ -44,7 +44,7 @@ export const deletData = (id:number) => {
 } 
 export const AddData = (values:any) => {
     return function (dispatch: any){
-        axios.post('http://localhost:5000/posts',values)
+        axios.post('http://localhost:7000/posts',values)
         .then((responce) => {
             dispatch(Add_New());
         })
@@ -53,10 +53,8 @@ export const AddData = (values:any) => {
 } 
 
 export const Update = (details:any,id:any) => {
- console.log("welcome Update")
-    console.log(details)
     return function (dispatch: any){
-        axios.put(`http://localhost:5000/posts/${id}`,details)
+        axios.put(`http://localhost:7000/posts/${id}`,details)
         .then((responce) => {
             dispatch(Update_data());
         })
@@ -68,7 +66,7 @@ export const Update = (details:any,id:any) => {
 export const getSingleUser = (updatevalue:any) => {
     console.log(updatevalue)
     return function (dispatch: any){
-        axios.put(`http://localhost:5000/posts/${updatevalue.id}`,updatevalue)
+        axios.put(`http://localhost:7000/posts/${updatevalue.id}`,updatevalue)
         .then((responce) => {
             dispatch(getProduct(responce.data));
         })

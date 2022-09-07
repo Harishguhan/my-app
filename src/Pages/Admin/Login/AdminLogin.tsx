@@ -35,7 +35,8 @@ const AdminLogin = () => {
     validationSchema: adminschema,
     onSubmit: (values) => {
       if(getAdmin && getAdmin.length){
-        const AdminLogin = JSON.parse(getAdmin)
+        const AdminLogin = JSON.parse(getAdmin);
+    
         const Admin = AdminLogin.filter((val:any)=>{
           if(val.email === values.email && val.password === values.password){
             navigate('/admin_dashboard')
