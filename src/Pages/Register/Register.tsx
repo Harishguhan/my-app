@@ -39,7 +39,6 @@ const RegisterForm = () => {
       .post("/auth/signup", { email, password })
       .then((responce) => {
         if (responce.status === 201) {
-          alert("User Registered Succesfully");
           navigate('/login')
         } else {
           alert("Failed To register User");

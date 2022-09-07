@@ -7,6 +7,15 @@ import './Add.css';
 import { AppDispatch } from "../../../../Redux/Store";
 import { AddData } from "../../../../Redux/Action";
 import TextField from "../../../../components/TextField";
+
+
+interface editvalue {
+  id:number | undefined,
+  catogary:string | undefined,
+  quantity:string |undefined,
+  price:string | undefined,
+  stock:string |undefined
+}
 const AddCatogory = () => {
 
   const dispatch = useDispatch<AppDispatch>();
@@ -31,7 +40,7 @@ const AddCatogory = () => {
       stock: "",
     },
     validationSchema: AddValidate,
-    onSubmit: (values) => {
+    onSubmit: (values:any) => {
       console.log(values)
       // const { catogary,quantity,price,stock,image } = values;
     dispatch(AddData(values))

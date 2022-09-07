@@ -36,7 +36,7 @@ const Home = () => {
       setsearchResults(data);
     }
   };
-  const handleedit = (id: any) => {
+  const handleedit = (id: number | string) => {
     navigate(`/edit/${id}`);
   };
 

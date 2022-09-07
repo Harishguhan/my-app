@@ -1,6 +1,15 @@
 import * as types from './ActionType';
 import axios from 'axios';
 
+
+interface editvalue {
+    id:number | undefined,
+    catogary:string | undefined,
+    quantity:string |undefined,
+    price:string | undefined,
+    stock:string |undefined
+}
+
 const getData = (data:any) =>({
     type:types.GET_DATA,
     payload:data,
@@ -42,7 +51,7 @@ export const deletData = (id:number) => {
         .catch((error) => console.log(error))
     }
 } 
-export const AddData = (values:any) => {
+export const AddData = (values:editvalue) => {
     return function (dispatch: any){
         axios.post('http://localhost:7000/posts',values)
         .then((responce) => {
@@ -63,7 +72,7 @@ export const Update = (details:any,id:any) => {
 } 
 
 
-export const getSingleUser = (updatevalue:any) => {
+export const getSingleUser = (updatevalue:editvalue) => {
     console.log(updatevalue)
     return function (dispatch: any){
         axios.put(`http://localhost:7000/posts/${updatevalue.id}`,updatevalue)

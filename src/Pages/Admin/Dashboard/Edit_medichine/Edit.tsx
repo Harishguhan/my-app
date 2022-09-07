@@ -11,7 +11,13 @@ type AuthUser = {
   price?: string;
   stock?: string;
 };
-
+interface editvalue {
+  id:number | undefined,
+  catogary:string | undefined,
+  quantity:string | undefined,
+  price:string | undefined,
+  stock:string | undefined
+}
 const EditData = () => {
   const [edit, setEdit] = useState<AuthUser>({});
   const [error, setError] = useState<AuthUser>({});
@@ -62,7 +68,7 @@ const EditData = () => {
     }  
   };
 
-  const updatevalue = {
+  const updatevalue:editvalue = {
     id: edit.id,
     catogary: edit.catogary,
     quantity: edit.quantity,
