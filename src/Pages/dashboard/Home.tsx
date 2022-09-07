@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import customAxios from "../../Axios";
 import { loadData } from "../../Redux/Action";
 import { AppDispatch, RootState } from "../../Redux/Store";
-
+import './Home.css';
 const Home = () => {
   const navigate = useNavigate();
   const [dat,setdata] = useState([]);
@@ -49,9 +49,9 @@ const Home = () => {
   return (
     <>
       <h1 className="text-center mt-3 mb-3">Pharmacy Management System</h1>
-      <form className="form-inline d-flex mb-5">
+      <form className="form-inline col-lg-3 col-sm-12 d-flex justify-content-end mx-auto">
         <input
-          className="form-control mr-sm-2 d-flex justify-content-end shadow-none"
+          className="form-control mr-sm-2 shadow-none"
           type="search"
           placeholder="Search"
           aria-label="Search"
@@ -65,7 +65,7 @@ const Home = () => {
       </form>
       <div className="container">
         <div className="d-flex align-items-center">
-          <table className="table table-hover text-center">
+          <table className="table table-hover text-center mt-5">
             <thead>
               <tr className="">
                 <th scope="col">S.No</th>
