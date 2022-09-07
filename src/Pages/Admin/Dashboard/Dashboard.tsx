@@ -116,7 +116,7 @@ const Dashboard = () => {
           Add catagory
         </button>
       </Link>
-      <form className="form-inline d-flex mb-5">
+      <form className="form-inline d-flex mb-4 col-lg-3 col-sm-12 d-flex justify-content-end mx-auto">
         <input
           className="form-control mr-sm-2 d-flex justify-content-end shadow-none"
           type="search"
