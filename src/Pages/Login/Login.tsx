@@ -70,8 +70,20 @@ const Login = () => {
           <FormikProvider value={Formik}>
             <Form autoComplete="off" noValidate onSubmit={handleSubmit}>
               <p className="err">{error}</p>
-              <TextField label="Email" name="email" type="email" />
-              <TextField label="password" name="password" type="password" />
+              <TextField
+                label="Email"
+                name="email"
+                type="email"
+                placeholder='Enter your email address'
+                data-testid="email"
+              />
+              <TextField
+                label="password"
+                name="password"
+                type="password"
+                placeholder="Enter your password"
+                data-testid="password"
+              />
               <div className="d-grid gap-2">
                 <button className="btn btn-block btn-success shadow-none block mt-3">
                   Login

@@ -2,7 +2,6 @@ import React, { Suspense } from "react";
 import { useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-
 import LazyLoad from "./components/LazyLoad";
 import EditPage from "./Pages/dashboard/Editpage";
 import Pharmacy from "./Pages/Home/Pharmacy";
