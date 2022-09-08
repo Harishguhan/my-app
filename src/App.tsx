@@ -5,6 +5,7 @@ import "./App.css";
 
 import LazyLoad from "./components/LazyLoad";
 import EditPage from "./Pages/dashboard/Editpage";
+import Pharmacy from "./Pages/Home/Pharmacy";
 const Dashboard = React.lazy(() => import("./Pages/Admin/Dashboard/Dashboard"));
 const RegisterForm = React.lazy(() => import("./Pages/Register/Register"));
 const Login = React.lazy(() => import("./Pages/Login/Login"));
@@ -21,9 +22,17 @@ const AddCatogory = React.lazy(
 function App() {
   return (
     <div className="container-fluid">
-      <Routes>
+       <Routes>
         <Route
           path="/"
+          element={
+            <Suspense fallback={<LazyLoad />}>
+              <Pharmacy />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/register"
           element={
             <Suspense fallback={<LazyLoad />}>
               <RegisterForm />

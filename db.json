@@ -3,8 +3,8 @@
     {
       "id": 1,
       "catogary": "dolo-650",
-      "quantity": "10021",
-      "price": "122788",
+      "quantity": "1",
+      "price": "122",
       "stock": "solddd"
     },
     {
@@ -29,46 +29,11 @@
       "stock": "sold"
     },
     {
+      "id": 6,
       "catogary": "Drisdol",
       "quantity": "100",
       "price": "10",
-      "stock": "sold",
-      "id": 6
-    },
-    {
-      "id": 7,
-      "catogary": "Synthroid",
-      "quantity": "200",
-      "price": "22",
-      "stock": "sold-out"
-    },
-    {
-      "catogary": "Norvasc",
-      "quantity": "150",
-      "price": "10",
-      "stock": "sold",
-      "id": 8
-    },
-    {
-      "catogary": "Motrin",
-      "quantity": "350",
-      "price": "10",
-      "stock": "sold",
-      "id": 9
-    },
-    {
-      "catogary": "Keflex",
-      "quantity": "300",
-      "price": "19",
-      "stock": "un-sold",
-      "id": 10
-    },
-    {
-      "catogary": "ubber",
-      "quantity": "12",
-      "price": "1",
-      "stock": "sold",
-      "id": 11
+      "stock": "sold"
     }
   ]
 }

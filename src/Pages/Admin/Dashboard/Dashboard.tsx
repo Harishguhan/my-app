@@ -8,7 +8,7 @@ import Menu from "./Menu";
 import { useSelector, useDispatch } from "react-redux";
 import { deletData, loadData } from "../../../Redux/Action";
 import { AppDispatch, RootState } from "../../../Redux/Store";
-
+import swal from "sweetalert";
 const Nav = styled.div`
   background: #085f73;
   height: 80px;
@@ -80,8 +80,21 @@ const Dashboard = () => {
     }
   };
   const handledelete = (id: number) => {
-    console.log(id);
-    dispatch(deletData(id));
+    swal({
+      title: "Are you sure?",
+      text: "You Want to Delete this..?",
+      icon: "warning",
+      // buttons: "true",
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        dispatch(deletData(id));
+        swal("Product has been deleted!", {
+          icon: "success",
+        });
+      }
+    });
   };
   const handleedit = (id: number) => {
     navigate(`/edit_category/${id}`);
@@ -155,16 +168,16 @@ const Dashboard = () => {
                       <td>{data.stock}</td>
                       <td>
                         <button
-                          className="btn btn-success"
+                          className="btn border border-3 mx-3"
                           onClick={() => handleedit(data.id)}
                         >
-                          Edit
+                        <i className="fa-solid fa-pen-to-square"></i>
                         </button>
                         <button
-                          className="btn btn-danger mx-2"
+                          className="btn border border-3 mx-2"
                           onClick={() => handledelete(data.id)}
                         >
-                          Delete
+                        <i className="fa-solid fa-trash"></i>
                         </button>
                       </td>
                     </tr>
@@ -199,7 +212,7 @@ const Dashboard = () => {
                       </tr>
                     );
                   })
-                : "qwpposadgjkjhgfdsasgjkfgjahqsjdkjdskjgfywj"}
+                  :"No Products Available"}
             </tbody>
           )}
         </table>

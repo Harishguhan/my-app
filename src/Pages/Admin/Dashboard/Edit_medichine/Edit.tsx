@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import swal from "sweetalert";
 import { getSingleUser, loadData } from "../../../../Redux/Action";
 import { AppDispatch, RootState } from "../../../../Redux/Store";
 import './EditData.css';
@@ -63,7 +64,9 @@ const EditData = () => {
      else if (!edit.stock) {
       setError({ ...error, stock: "stock cannot be Blank" });
     } else {
+
       dispatch(getSingleUser(updatevalue));
+      swal("Product", "Update successfully", "success");
       navigate("/admin_dashboard");
     }  
   };
@@ -128,7 +131,10 @@ const EditData = () => {
               />
               <span style={{ color: "red" }}>{error.stock}</span>
             </div>
-            <div className="d-grid gap-2 mt-3">
+            <div className=" d-flex justify-content-between mt-3">
+            <Link to="/admin_dashboard"><button className="btn btn-secondary">
+                Cancel
+              </button></Link>
               <button type="submit" className="btn btn-success">
                 Update
               </button>

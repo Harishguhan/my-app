@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+.navbar-brand{
+    font-size: 30px !important;
+}
+
+.nav-link{
+    color: black !important;
+}
+.nav-link:hover{
+    background-color: #898c88;
+    border-radius: 4px;
+    transition: ease 0.5s;
+    color: white !important;
+}
+
+.button{
+    padding: 10px 25px;
+    border: none;
+    background:transparent;
+    
+    margin-right: 5px;
+    font-weight: bold;
+    color: #898c88;
+    border: 2px solid #898c88;
+    
+    
+}
+.button1{
+    padding: 10px 25px;
+    border: none;
+    background:transparent;
+    font-weight: bold;
+    color: white;
+    border: 2px solid white;
+    border-radius: 4px;
+}
+.button1:hover{
+    background-color: white;
+    color: #898c88;
+}
+.button:hover{
+    color: white;
+    background-color: #898c88;
+}
+
+.macy{
+    color: #898c88;
+    font-weight: bold;
+    letter-spacing: 3px;
+    transition: ease 2s;
+}
+.macy:hover{
+    color: blue;
+    transition: ease 1s;
+    margin-left: 10px !important;
+    font-size: 35px;
+}
+
+#home{
+    background-image: url('https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjV8fGhvc3BpdGFsJTIwd2Vic2l0ZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60');
+    background-repeat: no-repeat;
+    min-height: 90vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#home h1{
+    font-size: 70px;
+    text-transform: uppercase;
+    font-weight: bold;
+    
+}
+#home p{
+    font-weight: 600;
+    word-spacing: 5px;
+}
+
+.box{
+    background-color: #898c88;
+    padding: 40px 0px;
+    color: white;
+}
+.box:hover{
+    opacity: 0.5;
+}
+.box h3{
+    font-weight:bold !important;
+    margin-top: 15px;
+    
+}

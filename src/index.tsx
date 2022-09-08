@@ -5,6 +5,7 @@ import App from "./App";
 import { Provider } from "react-redux";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle"
 import { BrowserRouter } from "react-router-dom";
 import store from "./Redux/Store";
 const root = ReactDOM.createRoot(
