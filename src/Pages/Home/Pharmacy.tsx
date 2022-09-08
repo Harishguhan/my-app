@@ -76,25 +76,25 @@ const Pharmacy = () => {
       <section id="services" className="mt-3">
         <div className="container-fluid">
           <div className="row">
-            <div className="col-lg-4 box text-center mt-2" >
+            <div className="col-lg-4 box text-center mt-2">
               <img src={brainImg} className="img-fluid" width="40px" />
-              <h3 >NEUROLOGY CARE</h3>
+              <h3>NEUROLOGY CARE</h3>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
                 dolorem ipsam, earum doloribus.
               </p>
               <button className="button1">View</button>
             </div>
-            <div className="col-lg-4 box text-center mt-2" >
+            <div className="col-lg-4 box text-center mt-2">
               <img src={Kidney} className="img-fluid" width="40px" />
-              <h3 >CARDIOLOGY CARE</h3>
+              <h3>CARDIOLOGY CARE</h3>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
                 dolorem ipsam, earum doloribus.
               </p>
               <button className="button1">View</button>
             </div>
-            <div className="col-lg-4 box text-center mt-2" >
+            <div className="col-lg-4 box text-center mt-2">
               <img src={heart} className="img-fluid" width="40px" />
               <h3>UROLOGY CARE</h3>
               <p>
@@ -107,7 +107,11 @@ const Pharmacy = () => {
         </div>
       </section>
       <section id="pharm" className="mt-4">
-        <h1> ckjdsbfkjsbdkjv</h1>
+        <h1>a modern,full service pharmacy</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam
+          tempora veniam odit quam aliquam esse id ut.
+        </p>
       </section>
     </>
   );
