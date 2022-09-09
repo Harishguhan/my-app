@@ -123,6 +123,13 @@
 }
 .cc{
     cursor: pointer;
+    transition: ease 1s;
+    
+    
+}
+.cc:hover{
+    transform:scale(1.2,1.2);
+
 }
 #department p{
     color: white;
