@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import swal from "sweetalert";
 import { getSingleUser, loadData } from "../../Redux/Action";
 import { AppDispatch, RootState } from "../../Redux/Store";
 import '../Admin/Dashboard/Edit_medichine/EditData.css';
+
+
 type AuthUser = {
   id?: number;
   catogary?: string;
@@ -28,7 +31,7 @@ const EditPage = () => {
         [e.target.name]: `${e.target.name} cannot be blank`,
       });
     }
-  };
+  }; 
 
   useEffect(() => {
     dispatch(loadData());
@@ -55,6 +58,7 @@ const EditPage = () => {
       setError({ ...error, stock: "stock cannot be Blank" });
     } else {
       dispatch(getSingleUser(updatevalue));
+      swal("Product", "Update successfully", "success");
       navigate("/home");
     }  
   };

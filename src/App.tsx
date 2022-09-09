@@ -1,7 +1,8 @@
 import React, { Suspense } from "react";
-import { useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import { data } from "./Context/data";
+import { ValueContext } from "./Context/Context";
 import LazyLoad from "./components/LazyLoad";
 import EditPage from "./Pages/dashboard/Editpage";
 import Pharmacy from "./Pages/Home/Pharmacy";
@@ -11,22 +12,33 @@ const Login = React.lazy(() => import("./Pages/Login/Login"));
 const Home = React.lazy(() => import("./Pages/dashboard/Home"));
 const Register = React.lazy(() => import("./Pages/Admin/Register/Register"));
 const AdminLogin = React.lazy(() => import("./Pages/Admin/Login/AdminLogin"));
+const Profile = React.lazy(
+  () => import("./Pages/Admin/Dashboard/Profile/Profile")
+);
 const EditData = React.lazy(
   () => import("./Pages/Admin/Dashboard/Edit_medichine/Edit")
 );
 const AddCatogory = React.lazy(
   () => import("./Pages/Admin/Dashboard/Add_medichine/AddCatogory")
 );
-
 function App() {
   return (
     <div className="container-fluid">
-       <Routes>
+      <ValueContext.Provider value={data}>
+      <Routes>
         <Route
           path="/"
           element={
             <Suspense fallback={<LazyLoad />}>
               <Pharmacy />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <Suspense fallback={<LazyLoad />}>
+              <Profile />
             </Suspense>
           }
         />
@@ -70,14 +82,16 @@ function App() {
             </Suspense>
           }
         />
-        <Route
-          path="/admin_dashboard"
-          element={
-            <Suspense fallback={<LazyLoad />}>
-              <Dashboard />
-            </Suspense>
-          }
-        />
+        
+          <Route
+            path="/admin_dashboard"
+            element={
+              <Suspense fallback={<LazyLoad />}>
+                <Dashboard />
+              </Suspense>
+            }
+          />
+       
         <Route
           path="/add_catogary"
           element={
@@ -103,6 +117,7 @@ function App() {
           }
         />
       </Routes>
+      </ValueContext.Provider>
     </div>
   );
 }

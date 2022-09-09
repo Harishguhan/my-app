@@ -7,10 +7,15 @@ const Pharmacy = () => {
   const brainImg = `${imgPath}brain.png`;
   const Kidney = `${imgPath}kidney.png`;
   const heart = `${imgPath}heart.png`;
+  const eye = `${imgPath}eye.png`;
+  const aid = `${imgPath}first-aid-kit.png`;
+  const ear = `${imgPath}ear.png`;
+  const tooth = `${imgPath}tooth.png`;
+
   console.log(window.location);
   return (
     <>
-      <nav className="navbar navbar-expand-lg mt-2">
+      <nav className="navbar navbar-expand-lg fixed-top bg-white">
         <div className="container-fluid">
           <Link to="#" className="navbar-brand">
             Phar<span className="macy">Macy</span>
@@ -110,8 +115,107 @@ const Pharmacy = () => {
         <h1>a modern,full service pharmacy</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam
-          tempora veniam odit quam aliquam esse id ut.
+          tempora veniam odit quam aliquam esse id ut Lorem ipsum dolor sit amet
+          consectetur, adipisicing elit. Numquam tempora veniam odit quam
+          aliquam esse id ut.
         </p>
+        <div className="container">
+          <div className="row mt-5">
+            <div className="col-lg-6">
+              <div className="row">
+                <div className="col-lg-2">
+                <img
+                src={brainImg}
+                className="img-fluid float-start"
+                width="80px"
+              />
+                </div>
+                <div className="col-lg-8">
+                <h3 className="">NEUROLOGY</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
+                odio voluptas 
+              </p>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-lg-2">
+                <img
+                src={Kidney}
+                className="img-fluid float-start"
+                width="80px"
+              />
+                </div>
+                <div className="col-lg-8">
+                <h3 className="">CARDIOLOGY</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
+                odio voluptas 
+              </p>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-lg-2">
+                <img
+                src={heart}
+                className="img-fluid float-start"
+                width="80px"
+              />
+                </div>
+                <div className="col-lg-8">
+                <h3 className="">UROLOGY</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
+                odio voluptas 
+              </p>
+                </div>
+              </div>
+   
+             
+            </div>
+            <div className="col-lg-6">
+              <img
+                src="https://images.unsplash.com/photo-1547489432-cf93fa6c71ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGhhcm1hY2lzdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
+                className="img-fluid rounded"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="department" className="mt-5">
+        <h1>our department</h1>
+        <div className="container">
+          <div className="row mt-5">
+            <div className="col-lg-2 col-md-4 cc">
+              <img src={eye} className="img-fluid" width={"100px"} />
+              <p>laser eye care</p>
+            </div>
+            <div className="col-lg-2 col-md-4 cc">
+              <img src={ear} className="img-fluid" width={"100px"}  />
+              <p>Heart care</p>
+            </div>
+            <div className="col-lg-2 col-md-4 cc">
+              <img src={brainImg} className="img-fluid" width={"100px"}  />
+              <p>neurology</p>
+            </div>
+            <div className="col-lg-2 col-md-4 cc">
+              <img src={tooth} className="img-fluid" width={"100px"}  />
+              <p>dentel care</p>
+            </div>
+            <div className="col-lg-2 col-md-4 cc">
+              <img src={Kidney} className="img-fluid" width={"100px"}  />
+              <p>urology</p>
+            </div>
+            <div className="col-lg-2 col-md-4 cc">
+              <img src={aid} className="img-fluid" width={"100px"}  />
+              <p>emergency</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h1>ndskbk</h1>
       </section>
     </>
   );

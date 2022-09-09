@@ -61,7 +61,7 @@
 }
 
 #home{
-    background-image: url('https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjV8fGhvc3BpdGFsJTIwd2Vic2l0ZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60');
+    background-image: url('https://images.unsplash.com/photo-1576671081837-49000212a370?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fHBoYXJtYWNpc3R8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60');
     background-repeat: no-repeat;
     min-height: 90vh;
     background-size: cover;
@@ -73,11 +73,13 @@
     font-size: 70px;
     text-transform: uppercase;
     font-weight: bold;
+    color: white;
     
 }
 #home p{
     font-weight: 600;
     word-spacing: 5px;
+    color: white;
 }
 
 .box{
@@ -94,4 +96,54 @@
 }
 #pharm h1{
     text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+
 }
+#pharm p{
+    text-align: center;
+    margin-top: 30px;
+}
+#pharm h3{
+    text-align: center;
+    font-weight: bold;
+}
+
+#department{
+    min-height: 60vh;
+    background-color: #898c88;
+}
+#department h1{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    padding-top: 100px;
+    letter-spacing: 4px;
+}
+.cc{
+    cursor: pointer;
+}
+#department p{
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 10px;
+}
+/* meadia queries */
+
+@media screen and (max-width: 480px) {
+    #home h1{
+        font-size: 40px;
+    }
+
+    #home p{
+        font-size: 12px;
+    }
+    #department h1{
+        letter-spacing: 0;
+    }
+    .cc{
+        text-align: center;
+    }
+  }

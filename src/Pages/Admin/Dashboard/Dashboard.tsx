@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
@@ -9,6 +9,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { deletData, loadData } from "../../../Redux/Action";
 import { AppDispatch, RootState } from "../../../Redux/Store";
 import swal from "sweetalert";
+import { ValueContext } from "../../../Context/Context";
+
 const Nav = styled.div`
   background: #085f73;
   height: 80px;
@@ -53,7 +55,8 @@ const SideViewWrap = styled.div`
 const Dashboard = () => {
   const [searchItem, setSearchItem] = useState("");
   const [searchResults, setsearchResults] = useState([]);
-
+  const value = useContext(ValueContext);
+  console.log(value)
   const [sidebar, setsidebar] = useState<any>(false);
   const showSidebar = () => setsidebar(!sidebar);
   const dispatch = useDispatch<AppDispatch>();
@@ -99,7 +102,6 @@ const Dashboard = () => {
   const handleedit = (id: number) => {
     navigate(`/edit_category/${id}`);
   };
-
   const getSearchTerm = () => {
     searchHandler(inputEl.current.value);
   };
@@ -143,6 +145,8 @@ const Dashboard = () => {
           Search
         </button>
       </form>
+      <p>Hospital Name:{value && value.hospitalname}</p>
+      <p>Address:{value && value.Address}</p>
       <div className="d-flex align-items-center">
         <table className="table table-hover text-center">
           <thead>

@@ -17,8 +17,8 @@ export const Data= [
         icon:<AiIcons.AiOutlineInfoCircle />
     },
     {
-        title:'Contact',
-        path:'#',
+        title:'Profile',
+        path:'/profile',
         icon:<AiIcons.AiFillContacts />
     },
     {

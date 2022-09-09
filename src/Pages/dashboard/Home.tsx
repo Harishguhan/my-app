@@ -1,11 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import customAxios from "../../Axios";
 import { loadData } from "../../Redux/Action";
 import { AppDispatch, RootState } from "../../Redux/Store";
+import { ValueContext } from "../../Context/Context";
 import './Home.css';
 const Home = () => {
+  const value = useContext(ValueContext);
   const navigate = useNavigate();
   const [dat,setdata] = useState([]);
   const [results, setsearchResults] = useState([]);
@@ -63,6 +65,8 @@ const Home = () => {
           Search
         </button>
       </form>
+      <p>Hospital Name:{value && value.hospitalname}</p>
+      <p>Address:{value && value.Address}</p>
       <div className="container">
         <div className="d-flex align-items-center">
           <table className="table table-hover text-center mt-5">

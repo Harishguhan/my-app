@@ -1,12 +1,15 @@
 import { Form, FormikProvider, useFormik } from "formik";
-import React from "react";
+import React, { useState } from "react";
 import TextField from "../../../components/TextField";
 import * as Yup from "yup";
 import swal from "sweetalert";
 import { Link, useNavigate } from "react-router-dom";
 import './admin-register.css';
+  
 
 const Register = () => {
+
+    const [admin,setAdmin] = useState({});
     let navigate = useNavigate();
     const validate = Yup.object().shape({
         username:Yup.string()
@@ -32,7 +35,10 @@ const Register = () => {
         },
         validationSchema:validate,
         onSubmit:(values) =>{
+          console.log(values)
             localStorage.setItem("admin",JSON.stringify([values]));
+            setAdmin(values);
+            console.log("admindetail",admin)
             swal({
                 title: "Admin Registerd successfuly",
                 text: "",
@@ -72,7 +78,6 @@ const Register = () => {
                 name="confirmpassword"
                 type="password"
               />
-            
               <div className="d-grid gap-2">
                 <button className="btn btn-block bg-dark text-white shadow-none block mt-3">
                   Register
