@@ -137,6 +137,28 @@
     font-weight: bold;
     margin-top: 10px;
 }
+
+#care h1{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 30px;
+    letter-spacing: 5px;
+}
+#care p{
+    margin-top: 40px;
+    line-height: 30px;
+}
+
+
+#wecare h1{ 
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+#wecare p{
+    text-align: center;
+}
 /* meadia queries */
 
 @media screen and (max-width: 480px) {
