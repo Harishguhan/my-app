@@ -3,16 +3,16 @@
     {
       "id": 1,
       "catogary": "dolo-650",
-      "quantity": "12",
-      "price": "122",
+      "quantity": "200",
+      "price": "12.34",
       "stock": "sold"
     },
     {
+      "id": 2,
       "catogary": "parasitamel",
       "quantity": "10",
       "price": "13",
-      "stock": "sold",
-      "id": 2
+      "stock": "un-sold"
     },
     {
       "catogary": "Adderall",
@@ -20,6 +20,139 @@
       "price": "12",
       "stock": "sold",
       "id": 3
+    },
+    {
+      "id": 4,
+      "catogary": "Amoxicillin",
+      "quantity": "20",
+      "price": "12.59",
+      "stock": "un-sold"
+    },
+    {
+      "id": 5,
+      "catogary": "Vitamin D",
+      "quantity": "20",
+      "price": "11.09",
+      "stock": "un-sold"
+    },
+    {
+      "catogary": "Ibuprofen",
+      "quantity": "458",
+      "price": "20.41",
+      "stock": "un-sold",
+      "id": 6
+    },
+    {
+      "catogary": "Levothyroxine",
+      "quantity": "90",
+      "price": "71.2",
+      "stock": "sold-out",
+      "id": 7
+    },
+    {
+      "catogary": "Lisinopril",
+      "quantity": "455",
+      "price": "1.21",
+      "stock": "un-sold",
+      "id": 8
+    },
+    {
+      "catogary": "Amlodipine",
+      "quantity": "21",
+      "price": "0.70",
+      "stock": "sold",
+      "id": 9
+    },
+    {
+      "catogary": "Prednisone",
+      "quantity": "21",
+      "price": "1.07",
+      "stock": "sold",
+      "id": 10
+    },
+    {
+      "catogary": "Amphetamine",
+      "quantity": "130",
+      "price": "21.3",
+      "stock": "un-sold",
+      "id": 11
+    },
+    {
+      "catogary": "dextroamphetamine",
+      "quantity": "248",
+      "price": "89.13",
+      "stock": "sold",
+      "id": 12
+    },
+    {
+      "catogary": "Gabapentin",
+      "quantity": "789",
+      "price": "14.50",
+      "stock": "un-sold",
+      "id": 13
+    },
+    {
+      "catogary": "Cephalexin",
+      "quantity": "140",
+      "price": "31.43",
+      "stock": "sold",
+      "id": 14
+    },
+    {
+      "catogary": "Cetirizine",
+      "quantity": "130",
+      "price": "11.11",
+      "stock": "sold",
+      "id": 15
+    },
+    {
+      "catogary": "Folic acid ",
+      "quantity": "400",
+      "price": "12.56",
+      "stock": "sold",
+      "id": 16
+    },
+    {
+      "catogary": "Hydrochlorothiazide ",
+      "quantity": "340",
+      "price": "20.12",
+      "stock": "sold",
+      "id": 17
+    },
+    {
+      "catogary": "Metformin ",
+      "quantity": "150",
+      "price": "16.33",
+      "stock": "un-sold",
+      "id": 18
+    },
+    {
+      "catogary": "Atorvastatin",
+      "quantity": "178",
+      "price": "10.01",
+      "stock": "sold",
+      "id": 19
+    },
+    {
+      "catogary": "Vitamin D3 ",
+      "quantity": "490",
+      "price": "45.79",
+      "stock": "sold",
+      "id": 20
+    },
+    {
+      "id": 21,
+      "catogary": "Dolor voluptatem eum",
+      "quantity": "276",
+      "price": "2675",
+      "stock": "Enim ut eum unde ab "
+    },
+    {
+      "catogary": "Tempor adipisci volu",
+      "quantity": "225",
+      "price": "531",
+      "stock": "Eu elit velit Nam ",
+      "id": 22
     }
   ]
 }

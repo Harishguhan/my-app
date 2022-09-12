@@ -1,5 +1,4 @@
 import { Form, FormikProvider, useFormik } from "formik";
-import React, { useState } from "react";
 import TextField from "../../../components/TextField";
 import * as Yup from "yup";
 import swal from "sweetalert";
@@ -42,14 +41,14 @@ const Register = () => {
       navigate("/admin_login");
     },
   });
-  const { errors, touched, handleSubmit, isSubmitting, getFieldProps } = Formik;
+  const { handleSubmit } = Formik;
   return (
     <div className="container">
       <div className="row admin_register">
         <div className="col-lg-7">
           <img
             src="https://images.unsplash.com/photo-1474377207190-a7d8b3334068?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YWRtaW58ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
-            className="img-fluid rounded"
+            className="img-fluid rounded" alt="register"
           />
         </div>
         <div className="col-lg-5">

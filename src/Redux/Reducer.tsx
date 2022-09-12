@@ -1,3 +1,4 @@
+/* eslint-disable no-fallthrough */
 import * as types from './ActionType';
 
 const initialState = {

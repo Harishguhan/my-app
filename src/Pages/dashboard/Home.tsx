@@ -9,6 +9,7 @@ import './Home.css';
 const Home = () => {
   const value = useContext(ValueContext);
   const navigate = useNavigate();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [dat,setdata] = useState([]);
   const [results, setsearchResults] = useState([]);
   const [searchItem, setSearchItem] = useState("");
@@ -47,7 +48,7 @@ const Home = () => {
   };
   useEffect(() => {
     dispatch(loadData());
-  },[])
+  },[dispatch])
   return (
     <>
       <h1 className="text-center mt-3 mb-3">Pharmacy Management System</h1>

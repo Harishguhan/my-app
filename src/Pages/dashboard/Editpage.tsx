@@ -4,8 +4,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import swal from "sweetalert";
 import { getSingleUser, loadData } from "../../Redux/Action";
 import { AppDispatch, RootState } from "../../Redux/Store";
-import '../Admin/Dashboard/Edit_medichine/EditData.css';
-
+import "../Admin/Dashboard/Edit_medichine/EditData.css";
 
 type AuthUser = {
   id?: number;
@@ -31,11 +30,11 @@ const EditPage = () => {
         [e.target.name]: `${e.target.name} cannot be blank`,
       });
     }
-  }; 
+  };
 
   useEffect(() => {
     dispatch(loadData());
-  }, []);
+  }, [dispatch]);
   const filteredData =
     editData && editData.data.find((data: any) => data.id.toString() === id);
   useEffect(() => {
@@ -50,17 +49,15 @@ const EditPage = () => {
       setError({ ...error, catogary: "catagory cannot be Blank" });
     } else if (!edit.quantity) {
       setError({ ...error, quantity: "Quantity cannot be Blank" });
-    } 
-      else if (!edit.price) {
+    } else if (!edit.price) {
       setError({ ...error, price: "Price Number Cannot be blank" });
-    }
-     else if (!edit.stock) {
+    } else if (!edit.stock) {
       setError({ ...error, stock: "stock cannot be Blank" });
     } else {
       dispatch(getSingleUser(updatevalue));
       swal("Product", "Update successfully", "success");
       navigate("/home");
-    }  
+    }
   };
 
   const updatevalue = {
@@ -75,7 +72,10 @@ const EditPage = () => {
       <div className="row">
         <h1 className="text-center">Edit the Data</h1>
         <div className="col-lg-6">
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8ZWRpdCUyMGRhdGF8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"  className="img-fluid rounded"/>
+          <img
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8ZWRpdCUyMGRhdGF8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
+            className="img-fluid rounded" alt="ediit"
+          />
         </div>
         <div className="col-lg-6">
           <form className="" onSubmit={handlesubmit}>
@@ -124,9 +124,11 @@ const EditPage = () => {
               <span style={{ color: "red" }}>{error.stock}</span>
             </div>
             <div className="mt-3 d-flex justify-content-between">
-            <Link to="/home"><button type="submit" className="btn btn-secondary">
-                Cancel
-              </button></Link>
+              <Link to="/home">
+                <button type="submit" className="btn btn-secondary">
+                  Cancel
+                </button>
+              </Link>
               <button type="submit" className="btn btn-success">
                 Update
               </button>

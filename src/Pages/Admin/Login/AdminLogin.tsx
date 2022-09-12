@@ -3,16 +3,11 @@ import React, { useState } from "react";
 import TextField from "../../../components/TextField";
 import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
-import swal from "sweetalert";
 import "./Adminlogin.css";
 
 const AdminLogin = () => {
   const [error, seterror] = useState("");
 
-  interface login_data {
-    email: string;
-    password: number;
-  }
 
   const navigate = useNavigate();
   const getAdmin = localStorage.getItem("admin");
@@ -36,6 +31,7 @@ const AdminLogin = () => {
       if (getAdmin && getAdmin.length) {
         const AdminLogin = JSON.parse(getAdmin);
 
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars, array-callback-return
         const Admin = AdminLogin.filter((val: any) => {
           if (val.email === values.email && val.password === values.password) {
             navigate("/admin_dashboard");
@@ -46,7 +42,7 @@ const AdminLogin = () => {
       }
     },
   });
-  const { errors, touched, handleSubmit, isSubmitting, getFieldProps } = Formik;
+  const { handleSubmit } = Formik;
   return (
     <div className="container-fluid admin">
       <div className="row admin-login">

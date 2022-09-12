@@ -42,7 +42,7 @@ const EditData = () => {
 
   useEffect(() => {
     dispatch(loadData());
-  }, []);
+  }, [dispatch]);
   const filteredData =
     editData && editData.data.find((data: any) => data.id.toString() === id);
   useEffect(() => {
@@ -83,7 +83,7 @@ const EditData = () => {
       <div className="row">
         <h1 className="text-center">Edit the Data</h1>
         <div className="col-lg-6">
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8ZWRpdCUyMGRhdGF8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"  className="img-fluid rounded"/>
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8ZWRpdCUyMGRhdGF8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"  className="img-fluid rounded" alt="edit"/>
         </div>
         <div className="col-lg-6">
           <form className="" onSubmit={handlesubmit}>

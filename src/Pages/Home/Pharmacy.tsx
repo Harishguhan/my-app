@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import { Link } from "react-router-dom";
 import { imgPath } from "../../Global/images";
@@ -33,21 +34,21 @@ const Pharmacy = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav mx-auto">
-              <Link to="#" className="nav-link px-2">
+              <a href="#" className="nav-link px-2">
                 Home
-              </Link>
-              <Link to="#" className="nav-link px-3">
+              </a>
+              <a href="#services" className="nav-link px-3">
                 Services
-              </Link>
-              <Link to="#" className="nav-link px-3">
+              </a>
+              <a href="#pharm" className="nav-link px-3">
                 About us
-              </Link>
-              <Link to="#" className="nav-link px-3">
+              </a>
+              <a href="#department" className="nav-link px-3">
                 Department
-              </Link>
-              <Link to="#" className="nav-link px-3">
+              </a>
+              <a href="#wecare" className="nav-link px-3">
                 Specialists
-              </Link>
+              </a>
               <Link to="#" className="nav-link px-3">
                 contact us
               </Link>
@@ -82,7 +83,7 @@ const Pharmacy = () => {
         <div className="container-fluid">
           <div className="row">
             <div className="col-lg-4 box text-center mt-2">
-              <img src={brainImg} className="img-fluid" width="40px" />
+              <img src={brainImg} className="img-fluid" width="40px" alt="img"/>
               <h3>NEUROLOGY CARE</h3>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
@@ -91,7 +92,7 @@ const Pharmacy = () => {
               <button className="button1">View</button>
             </div>
             <div className="col-lg-4 box text-center mt-2">
-              <img src={Kidney} className="img-fluid" width="40px" />
+              <img src={Kidney} className="img-fluid" width="40px" alt="img"/>
               <h3>CARDIOLOGY CARE</h3>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
@@ -100,7 +101,7 @@ const Pharmacy = () => {
               <button className="button1">View</button>
             </div>
             <div className="col-lg-4 box text-center mt-2">
-              <img src={heart} className="img-fluid" width="40px" />
+              <img src={heart} className="img-fluid" width="40px" alt="img"/>
               <h3>UROLOGY CARE</h3>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
@@ -127,7 +128,7 @@ const Pharmacy = () => {
                   <img
                     src={brainImg}
                     className="img-fluid float-start"
-                    width="80px"
+                    width="80px" alt="img"
                   />
                 </div>
                 <div className="col-lg-8">
@@ -143,7 +144,7 @@ const Pharmacy = () => {
                   <img
                     src={Kidney}
                     className="img-fluid float-start"
-                    width="80px"
+                    width="80px" alt="img"
                   />
                 </div>
                 <div className="col-lg-8">
@@ -160,7 +161,7 @@ const Pharmacy = () => {
                     src={heart}
                     className="img-fluid float-start"
                     width="80px"
-                  />
+                    alt="img" />
                 </div>
                 <div className="col-lg-8">
                   <h3 className="">UROLOGY</h3>
@@ -175,7 +176,7 @@ const Pharmacy = () => {
               <img
                 src="https://images.unsplash.com/photo-1547489432-cf93fa6c71ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGhhcm1hY2lzdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
                 className="img-fluid rounded"
-              />
+                alt="img"/>
             </div>
           </div>
         </div>
@@ -186,27 +187,27 @@ const Pharmacy = () => {
         <div className="container">
           <div className="row mt-5">
             <div className="col-lg-2 col-md-4 cc">
-              <img src={eye} className="img-fluid" width={"100px"} />
+              <img src={eye} className="img-fluid" width={"100px"} alt="img"/>
               <p>laser eye care</p>
             </div>
             <div className="col-lg-2 col-md-4 cc">
-              <img src={ear} className="img-fluid" width={"100px"} />
+              <img src={ear} className="img-fluid" width={"100px"} alt="img"/>
               <p>Heart care</p>
             </div>
             <div className="col-lg-2 col-md-4 cc">
-              <img src={brainImg} className="img-fluid" width={"100px"} />
+              <img src={brainImg} className="img-fluid" width={"100px"} alt="img"/>
               <p>neurology</p>
             </div>
             <div className="col-lg-2 col-md-4 cc">
-              <img src={tooth} className="img-fluid" width={"100px"} />
+              <img src={tooth} className="img-fluid" width={"100px"} alt="img"/>
               <p>dentel care</p>
             </div>
             <div className="col-lg-2 col-md-4 cc">
-              <img src={Kidney} className="img-fluid" width={"100px"} />
+              <img src={Kidney} className="img-fluid" width={"100px"} alt="img"/>
               <p>urology</p>
             </div>
             <div className="col-lg-2 col-md-4 cc">
-              <img src={aid} className="img-fluid" width={"100px"} />
+              <img src={aid} className="img-fluid" width={"100px"} alt="img"/>
               <p>emergency</p>
             </div>
           </div>
@@ -219,7 +220,7 @@ const Pharmacy = () => {
               <img
                 src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDd8fGRvY3RvcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
                 className="img-fluid"
-              />
+                alt="img"/>
             </div>
             <div className="col-lg-6">
               <h1>care of heart</h1>
@@ -253,9 +254,15 @@ const Pharmacy = () => {
           <div className="row">
             <div className="col-lg-4">
               <div className="card" style={{ width: "18rem" }}>
-                <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTJ8fGRvY3RvcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" className="card-img-top" alt="..." />
+                <img
+                  src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTJ8fGRvY3RvcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
+                  className="card-img-top"
+                  alt="..."
+                />
                 <div className="card-body">
-                  <h5 className="card-title text-uppercase fw-bold text-center">child care</h5>
+                  <h5 className="card-title text-uppercase fw-bold text-center">
+                    child care
+                  </h5>
                   <p className="card-text">
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
@@ -266,9 +273,15 @@ const Pharmacy = () => {
             </div>
             <div className="col-lg-4 mt-2">
               <div className="card" style={{ width: "18rem" }}>
-                <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGRlbnRhbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" className="card-img-top" alt="..." />
+                <img
+                  src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGRlbnRhbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
+                  className="card-img-top"
+                  alt="..."
+                />
                 <div className="card-body">
-                  <h5 className="card-title text-uppercase fw-bold text-center">dental care</h5>
+                  <h5 className="card-title text-uppercase fw-bold text-center">
+                    dental care
+                  </h5>
                   <p className="card-text">
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
@@ -279,9 +292,15 @@ const Pharmacy = () => {
             </div>
             <div className="col-lg-4 mt-2">
               <div className="card" style={{ width: "18rem" }}>
-                <img src="https://images.unsplash.com/photo-1489710437720-ebb67ec84dd2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y2hpbGR8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60" className="card-img-top" alt="..." />
+                <img
+                  src="https://images.unsplash.com/photo-1489710437720-ebb67ec84dd2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y2hpbGR8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
+                  className="card-img-top"
+                  alt="..."
+                />
                 <div className="card-body">
-                  <h5 className="card-title text-uppercase fw-bold text-center">birth care</h5>
+                  <h5 className="card-title text-uppercase fw-bold text-center">
+                    birth care
+                  </h5>
                   <p className="card-text">
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
@@ -306,9 +325,15 @@ const Pharmacy = () => {
           <div className="row">
             <div className="col-lg-4">
               <div className="card" style={{ width: "18rem" }}>
-                <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZG9jdG9yfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" className="card-img-top" alt="..." />
+                <img
+                  src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZG9jdG9yfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+                  className="card-img-top"
+                  alt="..."
+                />
                 <div className="card-body">
-                  <h5 className="card-title text-uppercase fw-bold text-center">Dr.M.Harish</h5>
+                  <h5 className="card-title text-uppercase fw-bold text-center">
+                    Dr.M.Harish
+                  </h5>
                   <p className="card-text">
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
@@ -319,9 +344,15 @@ const Pharmacy = () => {
             </div>
             <div className="col-lg-4 mt-2">
               <div className="card" style={{ width: "18rem" }}>
-                <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8ZG9jdG9yfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" className="card-img-top" alt="..." />
+                <img
+                  src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8ZG9jdG9yfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+                  className="card-img-top"
+                  alt="..."
+                />
                 <div className="card-body">
-                  <h5 className="card-title text-uppercase fw-bold text-center">dr.kishore</h5>
+                  <h5 className="card-title text-uppercase fw-bold text-center">
+                    dr.kishore
+                  </h5>
                   <p className="card-text">
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
@@ -332,9 +363,15 @@ const Pharmacy = () => {
             </div>
             <div className="col-lg-4 mt-2">
               <div className="card" style={{ width: "18rem" }}>
-                <img src="https://images.unsplash.com/photo-1618498082410-b4aa22193b38?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTl8fGRvY3RvcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" className="card-img-top" alt="..." />
+                <img
+                  src="https://images.unsplash.com/photo-1618498082410-b4aa22193b38?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTl8fGRvY3RvcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
+                  className="card-img-top"
+                  alt="..."
+                />
                 <div className="card-body">
-                  <h5 className="card-title text-uppercase fw-bold text-center">dr.david prabhu</h5>
+                  <h5 className="card-title text-uppercase fw-bold text-center">
+                    dr.david prabhu
+                  </h5>
                   <p className="card-text">
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
@@ -346,16 +383,24 @@ const Pharmacy = () => {
           </div>
         </div>
       </section>
-      <section className="mt-5" id="footer">
+      <section id="footer" className="mt-5">
         <div className="container">
           <div className="row">
             <div className="col-lg-3">
               <h1 className="footer-text">DORUSTREE</h1>
               <div className="d-flex justify-content-around mt-5">
-              <p><i className="fa-brands fa-facebook"></i></p>
-              <p><i className="fa-brands fa-instagram"></i></p>
-              <p><i className="fa-brands fa-twitter"></i></p>
-              <p><i className="fa-brands fa-youtube"></i></p>
+                <p>
+                  <i className="fa-brands fa-facebook"></i>
+                </p>
+                <p>
+                  <i className="fa-brands fa-instagram"></i>
+                </p>
+                <p>
+                  <i className="fa-brands fa-twitter"></i>
+                </p>
+                <p>
+                  <i className="fa-brands fa-youtube"></i>
+                </p>
               </div>
             </div>
             <div className="col-lg-3 disk">
@@ -375,16 +420,24 @@ const Pharmacy = () => {
               <h5>Product Registration</h5>
             </div>
             <div className="col-lg-3">
-            <p><i className="fa-solid fa-envelope"></i> Email Address </p>
-            <input type="email" className="form-control" placeholder="Enter email Address.."/>
-            <button className="butto1">Send</button>
+              <p>
+                <i className="fa-solid fa-envelope"></i> Email Address{" "}
+              </p>
+              <input
+                type="email"
+                className="form-control"
+                placeholder="Enter email Address.."
+              />
+              <button className="butto1">Send</button>
             </div>
           </div>
         </div>
         <hr />
-        <p className="text-center mt-5">&copy;All Rights Reserved.Designed By<span style={{color: "#898c88"}}>Dorustree pvt.Ltd</span></p>
+        <p className="text-center mt-5">
+          &copy;All Rights Reserved.Designed By
+          <span style={{ color: "#898c88" }}> Dorustree pvt.Ltd</span>
+        </p>
       </section>
-
     </>
   );
 };

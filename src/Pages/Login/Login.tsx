@@ -1,4 +1,4 @@
-import { Form, Formik, FormikProvider, useFormik } from "formik";
+import { Form, FormikProvider, useFormik } from "formik";
 import React, { useState } from "react";
 import TextField from "../../components/TextField";
 import * as Yup from "yup";
@@ -28,6 +28,7 @@ const Login = () => {
     onSubmit: (data) => {
       if (getuser && getuser.length) {
         const staffdata = JSON.parse(getuser);
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars, array-callback-return
         const stafflogin = staffdata.filter((datas: any) => {
           if (datas.email === data.email && datas.password === data.password) {
             customAxios
@@ -54,7 +55,7 @@ const Login = () => {
     },
   });
 
-  const { errors, touched, handleSubmit, isSubmitting, getFieldProps } = Formik;
+  const {  handleSubmit } = Formik;
   return (
     <div className="container login-form">
       <div className="row">
@@ -62,7 +63,7 @@ const Login = () => {
           <img
             src="https://img.freepik.com/free-photo/log-secured-access-verify-identity-password-concept_53876-124066.jpg?w=1800&t=st=1661768747~exp=1661769347~hmac=bdc6d2988dac13e1b95497732340fd7506cd1cb12e2c845f344f79b7fabf908f"
             className="img-fluid rounded"
-          />
+            alt="img"/>
         </div>
         <div className="col-lg-4 mt-5">
           <p className="small-text">Nice to See you again</p>

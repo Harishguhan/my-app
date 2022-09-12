@@ -1,5 +1,5 @@
 import { Form, FormikProvider, useFormik } from "formik";
-import React from "react";
+import React, { useCallback } from "react";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -7,15 +7,9 @@ import './Add.css';
 import { AppDispatch } from "../../../../Redux/Store";
 import { AddData } from "../../../../Redux/Action";
 import TextField from "../../../../components/TextField";
+import swal from "sweetalert";
 
 
-interface editvalue {
-  id:number | undefined,
-  catogary:string | undefined,
-  quantity:string |undefined,
-  price:string | undefined,
-  stock:string |undefined
-}
 const AddCatogory = () => {
 
   const dispatch = useDispatch<AppDispatch>();
@@ -40,20 +34,20 @@ const AddCatogory = () => {
       stock: "",
     },
     validationSchema: AddValidate,
-    onSubmit: (values:any) => {
+    onSubmit: useCallback((values:any) => {
       console.log(values)
-      // const { catogary,quantity,price,stock,image } = values;
-    dispatch(AddData(values))
+    dispatch(AddData(values));
+    swal("Product", "New Product Added successfully", "success");
     navigate('/admin_dashboard')
-    },
+    },[dispatch, navigate])
   });
-  const { errors, touched, handleSubmit, isSubmitting, getFieldProps } = Formik;
+  const { handleSubmit } = Formik;
   return (
     <div className="container wel">
       <div className="row">
         <h1 className="mb-5 text-center">Add New category</h1>
         <div className="col-lg-6">
-          <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bWVkaWNpbmV8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"  className="img-fluid rounded"/>
+          <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bWVkaWNpbmV8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"  className="img-fluid rounded" alt="img"/>
         </div>
         <div className="col-lg-6">
           <FormikProvider value={Formik}>
@@ -64,7 +58,7 @@ const AddCatogory = () => {
               <TextField label="Stock" name="stock" type="text" placeholder="Enter the stock"/>
             <div className="d-grid gap-2">
               <button className="btn btn-block btn-info shadow-none block mt-3">
-                Register
+                Add tablet
               </button>
             </div>
             </Form>

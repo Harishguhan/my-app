@@ -1,5 +1,4 @@
-import { Form, Formik, FormikProvider, useFormik } from "formik";
-import React, { useState } from "react";
+import { Form, FormikProvider, useFormik } from "formik";
 import TextField from "../../components/TextField";
 import * as Yup from "yup";
 import "./Register.css";
@@ -34,6 +33,7 @@ const RegisterForm = () => {
       const staff = localStorage.getItem("staff");
       console.log("existing value", staff);
       localStorage.setItem("staff", JSON.stringify([values]));
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       let { userName, email, password, confirmpassword } = values;
       customAxios
         .post("/auth/signup", { email, password })
@@ -55,7 +55,7 @@ const RegisterForm = () => {
     },
   });
 
-  const { errors, touched, handleSubmit, isSubmitting, getFieldProps } = Formik;
+  const { handleSubmit } = Formik;
 
   return (
     <div className="container">
@@ -65,7 +65,7 @@ const RegisterForm = () => {
           <img
             src="https://img.freepik.com/free-vector/company-employees-planning-task-brainstorming_74855-6316.jpg?w=1800&t=st=1661748463~exp=1661749063~hmac=1f3b6cace62643ac41ac01268accd083f0e0e3f305106034ab81affe9ba5cfbc"
             className="img-fluid"
-          />
+            alt="img"/>
         </div>
         <div className="col-lg-5">
           <FormikProvider value={Formik}>

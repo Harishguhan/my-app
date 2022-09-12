@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useCallback, useContext, useEffect, useRef, useState } from "react";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
@@ -66,7 +66,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     dispatch(loadData());
-  }, []);
+  }, [dispatch]);
 
   const searchHandler = (searchItem: string) => {
     setSearchItem(searchItem);
@@ -82,7 +82,8 @@ const Dashboard = () => {
       setsearchResults(data);
     }
   };
-  const handledelete = (id: number) => {
+  const handledelete = useCallback((id: number) => {
+    console.log("delete function clicked")
     swal({
       title: "Are you sure?",
       text: "You Want to Delete this..?",
@@ -97,10 +98,10 @@ const Dashboard = () => {
         });
       }
     });
-  };
-  const handleedit = (id: number) => {
+  },[dispatch]);
+  const handleedit = useCallback((id: number) => {
     navigate(`/edit_category/${id}`);
-  };
+  },[navigate]);
   const getSearchTerm = () => {
     searchHandler(inputEl.current.value);
   };
@@ -215,7 +216,7 @@ const Dashboard = () => {
                       </tr>
                     );
                   })
-                : "No Products Available"}
+               :"No Products Available"}
             </tbody>
           )}
         </table>
