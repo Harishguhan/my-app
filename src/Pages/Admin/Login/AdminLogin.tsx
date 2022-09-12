@@ -75,6 +75,10 @@ const AdminLogin = () => {
                 Create a New Account..?
                 <Link to="/admin_register">Register here..</Link>
               </p>
+              <p className="mt-3 text-center">
+                Back To UserLogin
+                <Link to="/register">Register here..</Link>
+              </p>
             </Form>
           </FormikProvider>
         </div>

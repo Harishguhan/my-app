@@ -52,6 +52,7 @@ const EditData = () => {
   }, [filteredData]);
 
   const handlesubmit = (e: React.FormEvent) => {
+    
     e.preventDefault();
     if (!edit.catogary) {
       setError({ ...error, catogary: "catagory cannot be Blank" });

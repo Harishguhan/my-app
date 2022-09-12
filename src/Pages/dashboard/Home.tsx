@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useCallback, useContext, useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import customAxios from "../../Axios";
@@ -26,7 +26,9 @@ const Home = () => {
   }, []);
 
   const searchHandler = (searchItem: string) => {
+    console.log("run")
     setSearchItem(searchItem);
+    
     if (searchItem !== "") {
       const newResults = data.filter((data: any) => {
         return Object.values(data)
@@ -39,16 +41,18 @@ const Home = () => {
       setsearchResults(data);
     }
   };
-  const handleedit = (id: number | string) => {
+  const handleedit = useCallback((id: number | string) => {
     navigate(`/edit/${id}`);
-  };
+  },[navigate]);
 
   const getSearchTerm = () => {
     searchHandler(inputEl.current.value);
   };
+
   useEffect(() => {
     dispatch(loadData());
   },[dispatch])
+  
   return (
     <>
       <h1 className="text-center mt-3 mb-3">Pharmacy Management System</h1>
@@ -124,7 +128,7 @@ const Home = () => {
                           </button>
                         </td>
                       </tr>
-                    );
+                    )
                   })}
               </tbody>
             )}

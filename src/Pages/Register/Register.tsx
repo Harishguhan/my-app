@@ -30,8 +30,8 @@ const RegisterForm = () => {
 
     validationSchema: RegisterValidate,
     onSubmit: (values) => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const staff = localStorage.getItem("staff");
-      console.log("existing value", staff);
       localStorage.setItem("staff", JSON.stringify([values]));
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       let { userName, email, password, confirmpassword } = values;
