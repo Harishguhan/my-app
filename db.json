@@ -20,20 +20,6 @@
       "price": "12",
       "stock": "sold",
       "id": 3
-    },
-    {
-      "id": 5,
-      "catogary": "Amoxicillin",
-      "quantity": "900",
-      "price": "132",
-      "stock": "sold"
-    },
-    {
-      "id": 6,
-      "catogary": "Drisdol",
-      "quantity": "100",
-      "price": "10",
-      "stock": "sold"
     }
   ]
 }

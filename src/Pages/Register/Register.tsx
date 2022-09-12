@@ -104,7 +104,7 @@ const RegisterForm = () => {
                 </button>
               </div>
               <p className="mt-3 text-center">
-                Admin Register<Link to="/admin_register">SignIn here..</Link>
+                Admin SignIn <Link to="/admin_login">SignIn here..</Link>
               </p>
               <p className="mt-3 text-center">
                 Already Have a Account..<Link to="/login"> SignIn here..</Link>

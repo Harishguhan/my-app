@@ -56,7 +56,7 @@ const Dashboard = () => {
   const [searchItem, setSearchItem] = useState("");
   const [searchResults, setsearchResults] = useState([]);
   const value = useContext(ValueContext);
-  console.log(value)
+  console.log(value);
   const [sidebar, setsidebar] = useState<any>(false);
   const showSidebar = () => setsidebar(!sidebar);
   const dispatch = useDispatch<AppDispatch>();
@@ -89,8 +89,7 @@ const Dashboard = () => {
       icon: "warning",
       // buttons: "true",
       dangerMode: true,
-    })
-    .then((willDelete) => {
+    }).then((willDelete) => {
       if (willDelete) {
         dispatch(deletData(id));
         swal("Product has been deleted!", {
@@ -175,13 +174,13 @@ const Dashboard = () => {
                           className="btn border border-3 mx-3"
                           onClick={() => handleedit(data.id)}
                         >
-                        <i className="fa-solid fa-pen-to-square"></i>
+                          <i className="fa-solid fa-pen-to-square"></i>
                         </button>
                         <button
                           className="btn border border-3 mx-2"
                           onClick={() => handledelete(data.id)}
                         >
-                        <i className="fa-solid fa-trash"></i>
+                          <i className="fa-solid fa-trash"></i>
                         </button>
                       </td>
                     </tr>
@@ -201,22 +200,22 @@ const Dashboard = () => {
                         <td>{data.stock}</td>
                         <td>
                           <button
-                            className="btn btn-success"
+                            className="btn border border-3 mx-3"
                             onClick={() => handleedit(data.id)}
                           >
-                            Edit
+                            <i className="fa-solid fa-pen-to-square"></i>
                           </button>
                           <button
-                            className="btn btn-danger mx-2"
+                            className="btn border border-3 mx-2"
                             onClick={() => handledelete(data.id)}
                           >
-                            Delete
+                            <i className="fa-solid fa-trash"></i>
                           </button>
                         </td>
                       </tr>
                     );
                   })
-                  :"No Products Available"}
+                : "No Products Available"}
             </tbody>
           )}
         </table>

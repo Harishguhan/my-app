@@ -90,7 +90,7 @@ const Login = () => {
                 </button>
               </div>
               <p className="mt-3 text-center">
-                Create a New Account..?<Link to="/">Register here..</Link>
+                Create a New Account..?<Link to="/register">Register here..</Link>
               </p>
             </Form>
           </FormikProvider>

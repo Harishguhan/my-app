@@ -346,23 +346,43 @@ const Pharmacy = () => {
           </div>
         </div>
       </section>
-      <section className="mt-4">
+      <section className="mt-5" id="footer">
         <div className="container">
           <div className="row">
             <div className="col-lg-3">
-              <h1>DORUSTREE</h1>
-              <div className="d-flex justify-content-between">
+              <h1 className="footer-text">DORUSTREE</h1>
+              <div className="d-flex justify-content-around mt-5">
               <p><i className="fa-brands fa-facebook"></i></p>
               <p><i className="fa-brands fa-instagram"></i></p>
               <p><i className="fa-brands fa-twitter"></i></p>
               <p><i className="fa-brands fa-youtube"></i></p>
               </div>
             </div>
-            <div className="col-lg-2">
-              <p></p>
+            <div className="col-lg-3 disk">
+              <p>support</p>
+              <h5>Contact Us</h5>
+              <h5>FAQ</h5>
+              <h5>Downloads</h5>
+              <h5>Locate dealer</h5>
+              <h5>Product Registration</h5>
+            </div>
+            <div className="col-lg-3 disk">
+              <p>support</p>
+              <h5>Contact Us</h5>
+              <h5>FAQ</h5>
+              <h5>Downloads</h5>
+              <h5>Locate dealer</h5>
+              <h5>Product Registration</h5>
+            </div>
+            <div className="col-lg-3">
+            <p><i className="fa-solid fa-envelope"></i> Email Address </p>
+            <input type="email" className="form-control" placeholder="Enter email Address.."/>
+            <button className="butto1">Send</button>
             </div>
           </div>
         </div>
+        <hr />
+        <p className="text-center mt-5">&copy;All Rights Reserved.Designed By<span style={{color: "#898c88"}}>Dorustree pvt.Ltd</span></p>
       </section>
 
     </>
