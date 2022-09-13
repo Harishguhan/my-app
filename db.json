@@ -3,7 +3,7 @@
     {
       "id": 1,
       "catogary": "dolo-650",
-      "quantity": "2001",
+      "quantity": "200134567890",
       "price": "12.34",
       "stock": "sold"
     },
@@ -146,13 +146,6 @@
       "quantity": "276",
       "price": "2675",
       "stock": "Enim ut eum unde ab "
-    },
-    {
-      "catogary": "Eiusmod necessitatib",
-      "quantity": "15",
-      "price": "580",
-      "stock": "Doloremque ex hic vo",
-      "id": 22
     }
   ]
 }

@@ -1,3 +1,4 @@
+import React from "react";
 import { Form, FormikProvider, useFormik } from "formik";
 import TextField from "../../components/TextField";
 import * as Yup from "yup";
@@ -6,7 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 import customAxios from "../../Axios";
 const RegisterForm = () => {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const RegisterValidate = Yup.object().shape({
     userName: Yup.string()
       .min(3, "username is too short")
@@ -34,7 +35,7 @@ const RegisterForm = () => {
       const staff = localStorage.getItem("staff");
       localStorage.setItem("staff", JSON.stringify([values]));
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      let { userName, email, password, confirmpassword } = values;
+      const { userName, email, password, confirmpassword } = values;
       customAxios
         .post("/auth/signup", { email, password })
         .then((responce) => {
@@ -58,6 +59,7 @@ const RegisterForm = () => {
   const { handleSubmit } = Formik;
 
   return (
+    <>
     <div className="container">
       <div className="row signup-form">
         <h1 className="text-center pt-3">SignUp Form</h1>
@@ -104,7 +106,7 @@ const RegisterForm = () => {
                 </button>
               </div>
               <p className="mt-3 text-center">
-                Admin SignIn <Link to="/admin_login">SignIn here..</Link>
+                Admin SignUp <Link to="/admin_register">SignIn here..</Link>
               </p>
               <p className="mt-3 text-center">
                 Already Have a Account..<Link to="/login"> SignIn here..</Link>
@@ -114,6 +116,7 @@ const RegisterForm = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

@@ -1,5 +1,6 @@
 import * as types from './ActionType';
 import axios from 'axios';
+import { AppDispatch } from './Store';
 
 
 interface editvalue {
@@ -10,7 +11,7 @@ interface editvalue {
     stock:string |undefined
 }
 
-const getData = (data:any) =>({
+const getData = (data:editvalue) =>({
     type:types.GET_DATA,
     payload:data,
 });
@@ -26,13 +27,13 @@ const Update_data = () =>({
     type:types.UPDATE_DATA
 })
 
-const getProduct = (dat: any) =>({
+const getProduct = (dat: editvalue) =>({
     type:types.GET_UPDATE_VALUE,
     payload:dat
 })
 
 export const loadData = () => {
-    return function (dispatch: any){
+    return function (dispatch:AppDispatch){
         axios.get('http://localhost:7000/posts')
         .then((responce) => {
             dispatch(getData(responce.data))
@@ -42,9 +43,10 @@ export const loadData = () => {
 } 
 export const deletData = (id:number) => {
 
-    return function (dispatch: any){
+    return function (dispatch: AppDispatch){
         axios.delete(`http://localhost:7000/posts/${id}`)
-        .then((responce) => {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        .then((_responce) => {
             dispatch(deleteData());
             dispatch(loadData());
         })
@@ -52,19 +54,21 @@ export const deletData = (id:number) => {
     }
 } 
 export const AddData = (values:editvalue) => {
-    return function (dispatch: any){
+    return function (dispatch: AppDispatch){
         axios.post('http://localhost:7000/posts',values)
-        .then((responce) => {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        .then((_responce) => {
             dispatch(Add_New());
         })
         .catch((error) => console.log(error))
     }
 } 
 
-export const Update = (details:any,id:any) => {
-    return function (dispatch: any){
+export const Update = (details:editvalue,id:number) => {
+    return function (dispatch: AppDispatch){
         axios.put(`http://localhost:7000/posts/${id}`,details)
-        .then((responce) => {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        .then((_responce) => {
             dispatch(Update_data());
         })
         .catch((error) => console.log(error))
@@ -74,7 +78,7 @@ export const Update = (details:any,id:any) => {
 
 export const getSingleUser = (updatevalue:editvalue) => {
     console.log(updatevalue)
-    return function (dispatch: any){
+    return function (dispatch: AppDispatch){
         axios.put(`http://localhost:7000/posts/${updatevalue.id}`,updatevalue)
         .then((responce) => {
             dispatch(getProduct(responce.data));

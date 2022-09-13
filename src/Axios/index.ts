@@ -27,8 +27,6 @@ const customAxios = axios.create({
           error.response.data.message ===
           'Unauthorized! Access Token was expired!'
         ) {
-          console.log('test');
-  
           customAxios.interceptors.response.eject(reqInterceptor);
   
           return axios

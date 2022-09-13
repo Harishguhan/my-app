@@ -5,7 +5,6 @@ import { ValueContext } from "../../../../Context/Context";
 
 const Profile = () => {
   const data = useContext(ValueContext);
-  console.log();
   return (
     <div className="student-profile py-4">
       <div className="container">

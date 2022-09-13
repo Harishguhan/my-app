@@ -1,3 +1,4 @@
+import React from "react";
 import { Form, FormikProvider, useFormik } from "formik";
 import TextField from "../../../components/TextField";
 import * as Yup from "yup";
@@ -6,7 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./admin-register.css";
 
 const Register = () => {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const validate = Yup.object().shape({
     username: Yup.string()
       .min(3, "Admin username is too short")
@@ -38,7 +39,7 @@ const Register = () => {
         icon: "success",
         // button: "Ok",
       });
-      navigate("/admin_login");
+      navigate("/login");
     },
   });
   const { handleSubmit } = Formik;
@@ -91,7 +92,7 @@ const Register = () => {
             </Form>
             <p className="mt-3 text-center">
               Already Have a Account..?
-              <Link to="/admin_login">SignIn here..</Link>
+              <Link to="/login">SignIn here..</Link>
             </p>
           </FormikProvider>
         </div>

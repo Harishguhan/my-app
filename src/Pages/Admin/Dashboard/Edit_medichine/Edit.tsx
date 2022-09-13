@@ -5,6 +5,7 @@ import swal from "sweetalert";
 import { getSingleUser, loadData } from "../../../../Redux/Action";
 import { AppDispatch, RootState } from "../../../../Redux/Store";
 import './EditData.css';
+import { ProductValue } from '../../../../GlobalTypes/globaltypes';
 type AuthUser = {
   id?: number;
   catogary?: string;
@@ -18,6 +19,7 @@ interface editvalue {
   quantity:string | undefined,
   price:string | undefined,
   stock:string | undefined
+
 }
 const EditData = () => {
   const [edit, setEdit] = useState<AuthUser>({});
@@ -25,6 +27,7 @@ const EditData = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const editData: any = useSelector((state: RootState) => state?.data);
 
   const handlechange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -44,7 +47,7 @@ const EditData = () => {
     dispatch(loadData());
   }, [dispatch]);
   const filteredData =
-    editData && editData.data.find((data: any) => data.id.toString() === id);
+    editData && editData.data.find((data:ProductValue) => data.id.toString() === id);
   useEffect(() => {
     if (filteredData) {
       setEdit(filteredData);

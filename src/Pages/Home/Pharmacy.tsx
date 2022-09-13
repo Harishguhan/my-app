@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import { Link } from "react-router-dom";
 import { imgPath } from "../../Global/images";
@@ -265,7 +264,7 @@ const Pharmacy = () => {
                   </h5>
                   <p className="card-text">
                     Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    up the bulk of the card&apos;s content.
                   </p>
                   <button className="button mx-5">Read More</button>
                 </div>
@@ -284,7 +283,7 @@ const Pharmacy = () => {
                   </h5>
                   <p className="card-text">
                     Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    up the bulk of the card&apos;s content.
                   </p>
                   <button className="button mx-5">Read More</button>
                 </div>
@@ -303,7 +302,7 @@ const Pharmacy = () => {
                   </h5>
                   <p className="card-text">
                     Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    up the bulk of the card&apos;s content.
                   </p>
                   <button className="button mx-5">Read More</button>
                 </div>
@@ -336,7 +335,7 @@ const Pharmacy = () => {
                   </h5>
                   <p className="card-text">
                     Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    up the bulk of the card&apos;s content.
                   </p>
                   <button className="button mx-5">View Profile</button>
                 </div>
@@ -355,7 +354,7 @@ const Pharmacy = () => {
                   </h5>
                   <p className="card-text">
                     Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    up the bulk of the card&apos;s content.
                   </p>
                   <button className="button mx-5">View Profile</button>
                 </div>
@@ -374,7 +373,7 @@ const Pharmacy = () => {
                   </h5>
                   <p className="card-text">
                     Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    up the bulk of the card&apos;s content.
                   </p>
                   <button className="button mx-5">View Profile</button>
                 </div>

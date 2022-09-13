@@ -6,10 +6,22 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import customAxios from "../../Axios";
 
+interface data {
+  id:number,
+  catogary:string,
+  quantity:number,
+  price:number,
+  stock:string
+  email:string,
+  password:string
+}
+
 const Login = () => {
   const [error, seterror] = useState("");
   const navigate = useNavigate();
   const getuser = localStorage.getItem("staff");
+  const getAdmin = localStorage.getItem("admin");
+  console.log(getAdmin);
 
   const loginvalidate = Yup.object().shape({
     email: Yup.string()
@@ -28,8 +40,10 @@ const Login = () => {
     onSubmit: (data) => {
       if (getuser && getuser.length) {
         const staffdata = JSON.parse(getuser);
+        console.log("staffdata",staffdata)
         // eslint-disable-next-line @typescript-eslint/no-unused-vars, array-callback-return
-        const stafflogin = staffdata.filter((datas: any) => {
+        const stafflogin = staffdata.filter((datas:data) => {
+          console.log("datas",datas);
           if (datas.email === data.email && datas.password === data.password) {
             customAxios
               .post("/auth/login", { email: data.email })
@@ -47,15 +61,28 @@ const Login = () => {
                 }
               })
               .catch((err) => console.error(err.message));
-          } else {
-            seterror("Invalid credentials");
+          } else if (getAdmin && getAdmin) {
+            const admindata = JSON.parse(getAdmin);
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars, array-callback-return
+            const adminlogin = admindata.filter((datas:data) => {
+              console.log("admin datas",datas)
+              if (
+                datas.email === data.email &&
+                datas.password === data.password
+              ) {
+                navigate("/admin_dashboard");
+              }else {
+                seterror("invalid login details");
+              }
+            });
           }
+          
         });
       }
     },
   });
 
-  const {  handleSubmit } = Formik;
+  const { handleSubmit } = Formik;
   return (
     <div className="container login-form">
       <div className="row">
@@ -63,7 +90,8 @@ const Login = () => {
           <img
             src="https://img.freepik.com/free-photo/log-secured-access-verify-identity-password-concept_53876-124066.jpg?w=1800&t=st=1661768747~exp=1661769347~hmac=bdc6d2988dac13e1b95497732340fd7506cd1cb12e2c845f344f79b7fabf908f"
             className="img-fluid rounded"
-            alt="img"/>
+            alt="img"
+          />
         </div>
         <div className="col-lg-4 mt-5">
           <p className="small-text">Nice to See you again</p>
@@ -75,7 +103,7 @@ const Login = () => {
                 label="Email"
                 name="email"
                 type="email"
-                placeholder='Enter your email address'
+                placeholder="Enter your email address"
                 data-testid="email"
               />
               <TextField
@@ -91,7 +119,8 @@ const Login = () => {
                 </button>
               </div>
               <p className="mt-3 text-center">
-                Create a New Account..?<Link to="/register">Register here..</Link>
+                Create a New Account..?
+                <Link to="/register">Register here..</Link>
               </p>
             </Form>
           </FormikProvider>

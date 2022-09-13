@@ -1,36 +1,52 @@
-import React, { useCallback, useContext, useEffect, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import customAxios from "../../Axios";
 import { loadData } from "../../Redux/Action";
 import { AppDispatch, RootState } from "../../Redux/Store";
 import { ValueContext } from "../../Context/Context";
-import './Home.css';
+import "./Home.css";
+
+interface data {
+  id:number,
+  catogary:string,
+  quantity:number,
+  price:number,
+  stock:string
+}
+
 const Home = () => {
   const value = useContext(ValueContext);
   const navigate = useNavigate();
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [dat,setdata] = useState([]);
+  const [dat, setdata] = useState([]);
   const [results, setsearchResults] = useState([]);
   const [searchItem, setSearchItem] = useState("");
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const inputEl = useRef<any>("");
   const dispatch = useDispatch<AppDispatch>();
   const { data } = useSelector((state: RootState) => state.data);
   useEffect(() => {
     customAxios
-    .get('/auth/employees')
-    .then((responce) =>{
-      setdata(responce?.data?.data?.employees)
-    })
-    .catch((err) => console.error(err.message)) 
+      .get("/auth/employees")
+      .then((responce) => {
+        setdata(responce?.data?.data?.employees);
+      })
+      .catch((err) => console.error(err.message));
   }, []);
 
   const searchHandler = (searchItem: string) => {
-    console.log("run")
+    console.log("run");
     setSearchItem(searchItem);
-    
+
     if (searchItem !== "") {
-      const newResults = data.filter((data: any) => {
+      const newResults = data.filter((data: data) => {
         return Object.values(data)
           .join(" ")
           .toLowerCase()
@@ -41,9 +57,12 @@ const Home = () => {
       setsearchResults(data);
     }
   };
-  const handleedit = useCallback((id: number | string) => {
-    navigate(`/edit/${id}`);
-  },[navigate]);
+  const handleedit = useCallback(
+    (id: number | string) => {
+      navigate(`/edit/${id}`);
+    },
+    [navigate]
+  );
 
   const getSearchTerm = () => {
     searchHandler(inputEl.current.value);
@@ -51,8 +70,8 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(loadData());
-  },[dispatch])
-  
+  }, [dispatch]);
+
   return (
     <>
       <h1 className="text-center mt-3 mb-3">Pharmacy Management System</h1>
@@ -88,51 +107,53 @@ const Home = () => {
             {searchItem.length < 1 ? (
               <tbody>
                 {data &&
-                  data.map((data: any) => {
-                    return (
-                      <tr className="">
-                        <th scope="row">{data.id}</th>
-                        <td>{data.catogary}</td>
-                        <td>{data.quantity}</td>
-                        <td>{data.price}</td>
-                        <td>{data.stock}</td>
-                        <td>
-                          <button
-                            className="btn btn-success"
-                            onClick={() => handleedit(data.id)}
-                          >
-                            Edit
-                          </button>
-                        </td>
-                      </tr>
-                    );
-                  })}
+                  data.map(
+                    (data:data) => {
+                      return (
+                          <tr key={data.id}>
+                          <th scope="row">{data.id}</th>
+                          <td>{data.catogary}</td>
+                          <td>{data.quantity}</td>
+                          <td>{data.price}</td>
+                          <td>{data.stock}</td>
+                          <td>
+                        <button
+                          className="btn border border-3 mx-3"
+                          onClick={() => handleedit(data.id)}
+                        >
+                          <i className="fa-solid fa-pen-to-square"></i>
+                        </button>
+                          </td>
+                        </tr>
+                      );
+                    }
+                  )}
               </tbody>
             ) : (
               <tbody>
                 {results &&
-                  results.map((data: any) => {
+                  results.map((data:data) => {
                     return (
-                      <tr className="">
+                      <tr className="" key={data.id}>
                         <th scope="row">{data.id}</th>
                         <td>{data.catogary}</td>
                         <td>{data.quantity}</td>
                         <td>{data.price}</td>
                         <td>{data.stock}</td>
                         <td>
-                          <button
-                            className="btn btn-success"
-                            onClick={() => handleedit(data.id)}
-                          >
-                            Edit
-                          </button>
-                        </td>
+                        <button
+                          className="btn border border-3 mx-3"
+                          onClick={() => handleedit(data.id)}
+                        >
+                          <i className="fa-solid fa-pen-to-square"></i>
+                        </button>
+                          </td>
                       </tr>
-                    )
+                    );
                   })}
               </tbody>
             )}
-          </table>     
+          </table>
         </div>
       </div>
     </>

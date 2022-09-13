@@ -28,11 +28,13 @@ export const Data= [
         
         DropDown:[
             {
+                id:1,
                 title:'New',
                 path:'/add_catogary',
                 icon:<AiIcons.AiOutlinePlus />
             },
             {
+                id:2,
                 title:'View',
                 path:'#',
                 icon:<AiIcons.AiFillEye />

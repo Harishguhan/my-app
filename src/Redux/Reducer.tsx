@@ -7,6 +7,7 @@ const initialState = {
     loading:false
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const dataReducers = (state = initialState,action:any) =>{
     switch(action.type){
         case types.GET_DATA:

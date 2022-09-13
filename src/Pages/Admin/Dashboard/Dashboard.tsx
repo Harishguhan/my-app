@@ -10,6 +10,7 @@ import { deletData, loadData } from "../../../Redux/Action";
 import { AppDispatch, RootState } from "../../../Redux/Store";
 import swal from "sweetalert";
 import { ValueContext } from "../../../Context/Context";
+import { data } from "../../../GlobalTypes/globaltypes";
 
 const Nav = styled.div`
   background: #085f73;
@@ -33,7 +34,7 @@ const NavIcon = styled(Link)`
 `;
 
 export interface navProps {
-  left: string;
+  left: string | boolean;
 }
 
 const SideView = styled.nav<navProps>`
@@ -56,11 +57,11 @@ const Dashboard = () => {
   const [searchItem, setSearchItem] = useState("");
   const [searchResults, setsearchResults] = useState([]);
   const value = useContext(ValueContext);
-  console.log(value);
-  const [sidebar, setsidebar] = useState<any>(false);
+  const [sidebar, setsidebar] = useState<string | boolean >(false);
   const showSidebar = () => setsidebar(!sidebar);
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const inputEl = useRef<any>("");
   const { data } = useSelector((state: RootState) => state.data);
 
@@ -71,7 +72,7 @@ const Dashboard = () => {
   const searchHandler = (searchItem: string) => {
     setSearchItem(searchItem);
     if (searchItem !== "") {
-      const newResults = data.filter((data: any) => {
+      const newResults = data.filter((data: data) => {
         return Object.values(data)
           .join(" ")
           .toLowerCase()
@@ -162,9 +163,9 @@ const Dashboard = () => {
           {searchItem.length < 1 ? (
             <tbody>
               {data &&
-                data.map((data: any) => {
+                data.map((data: data) => {
                   return (
-                    <tr className="">
+                    <tr className="" key={data.id}>
                       <th scope="row">{data.id}</th>
                       <td>{data.catogary}</td>
                       <td>{data.quantity}</td>
@@ -191,9 +192,9 @@ const Dashboard = () => {
           ) : (
             <tbody>
               {searchResults
-                ? searchResults.map((data: any) => {
+                ? searchResults.map((data: data) => {
                     return (
-                      <tr className="">
+                      <tr className="" key={data.id}>
                         <th scope="row">{data.id}</th>
                         <td>{data.catogary}</td>
                         <td>{data.quantity}</td>

@@ -8,12 +8,12 @@ import { AppDispatch } from "../../../../Redux/Store";
 import { AddData } from "../../../../Redux/Action";
 import TextField from "../../../../components/TextField";
 import swal from "sweetalert";
-
+import { ProductValue } from "../../../../GlobalTypes/globaltypes";
 
 const AddCatogory = () => {
 
   const dispatch = useDispatch<AppDispatch>();
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const AddValidate = Yup.object().shape({
     catogary:Yup.string()
     .min(3,'name is too short..')
@@ -28,13 +28,14 @@ const AddCatogory = () => {
 
   const Formik = useFormik({
     initialValues: {
+      id:0,
       catogary: "",
       quantity: "",
       price: "",
       stock: "",
     },
     validationSchema: AddValidate,
-    onSubmit: useCallback((values:any) => {
+    onSubmit: useCallback((values:ProductValue) => {
       console.log(values)
     dispatch(AddData(values));
     swal("Product", "New Product Added successfully", "success");
