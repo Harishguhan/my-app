@@ -3,8 +3,8 @@
     {
       "id": 1,
       "catogary": "dolo-650",
-      "quantity": "200134567890",
-      "price": "12.34",
+      "quantity": "2001",
+      "price": "12.3400",
       "stock": "sold"
     },
     {
@@ -142,10 +142,10 @@
     },
     {
       "id": 21,
-      "catogary": "Dolor voluptatem eum",
-      "quantity": "276",
-      "price": "2675",
-      "stock": "Enim ut eum unde ab "
+      "catogary": "Dolores obcaecati au",
+      "quantity": "907",
+      "price": "594",
+      "stock": "Quae maxime enim ali"
     }
   ]
 }

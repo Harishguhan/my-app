@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const customAxios = axios.create({
-    baseURL: 'http://localhost:5000/',
+    baseURL:`${process.env.REACT_APP_INTERCEPTORS}`,
   });
 
   const reqInterceptor = customAxios.interceptors.request.use(
@@ -30,7 +30,7 @@ const customAxios = axios.create({
           customAxios.interceptors.response.eject(reqInterceptor);
   
           return axios
-            .post('http://localhost:5000/auth/refresh', undefined, {
+            .post(`${process.env.REACT_APP_INTERCEPTORS}auth/refresh`, undefined, {
               headers: {
                 'x-access-token': `${localStorage.getItem('refresh_token')}`,
               },

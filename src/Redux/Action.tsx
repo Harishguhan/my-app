@@ -34,8 +34,10 @@ const getProduct = (dat: editvalue) =>({
 
 export const loadData = () => {
     return function (dispatch:AppDispatch){
-        axios.get('http://localhost:7000/posts')
+        console.log(process.env)
+        axios.get(`${process.env.REACT_APP_PHARMACY_PRODUCT_API}`)
         .then((responce) => {
+            console.log(responce)
             dispatch(getData(responce.data))
         })
         .catch((error) => console.log(error))
@@ -44,7 +46,7 @@ export const loadData = () => {
 export const deletData = (id:number) => {
 
     return function (dispatch: AppDispatch){
-        axios.delete(`http://localhost:7000/posts/${id}`)
+        axios.delete(`${process.env.REACT_APP_PHARMACY_PRODUCT_API}/${id}`)
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         .then((_responce) => {
             dispatch(deleteData());
@@ -55,7 +57,7 @@ export const deletData = (id:number) => {
 } 
 export const AddData = (values:editvalue) => {
     return function (dispatch: AppDispatch){
-        axios.post('http://localhost:7000/posts',values)
+        axios.post(`${process.env.REACT_APP_PHARMACY_PRODUCT_API}`,values)
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         .then((_responce) => {
             dispatch(Add_New());
@@ -66,7 +68,7 @@ export const AddData = (values:editvalue) => {
 
 export const Update = (details:editvalue,id:number) => {
     return function (dispatch: AppDispatch){
-        axios.put(`http://localhost:7000/posts/${id}`,details)
+        axios.put(`${process.env.REACT_APP_PHARMACY_PRODUCT_API}/${id}`,details)
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         .then((_responce) => {
             dispatch(Update_data());
@@ -79,7 +81,7 @@ export const Update = (details:editvalue,id:number) => {
 export const getSingleUser = (updatevalue:editvalue) => {
     console.log(updatevalue)
     return function (dispatch: AppDispatch){
-        axios.put(`http://localhost:7000/posts/${updatevalue.id}`,updatevalue)
+        axios.put(`${process.env.REACT_APP_PHARMACY_PRODUCT_API}/${updatevalue.id}`,updatevalue)
         .then((responce) => {
             dispatch(getProduct(responce.data));
         })
