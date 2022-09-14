@@ -86,8 +86,8 @@ const Dashboard = () => {
           .toLowerCase()
           .includes(searchItem.toLowerCase());
       });
-
       newResults.length === 0 && settable(false);
+      newResults.length !== 0 && settable(true);
       setsearchResults(newResults);
     } else {
       setsearchResults(data);
@@ -237,14 +237,13 @@ const Dashboard = () => {
                     );
                   })
                 ) : ( ""
-                  // <button onClick={change}>Search</button>
                 )}
               </tbody>
             )}
           </table>
         </div>
       ) : (
-        "No Product Available"
+        <p style={{textAlign:"center"}}>No Product Available...</p>
       )}
     </>
   );

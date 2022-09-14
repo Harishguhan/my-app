@@ -28,6 +28,7 @@ const Home = () => {
   const [dat, setdata] = useState([]);
   const [results, setsearchResults] = useState([]);
   const [searchItem, setSearchItem] = useState("");
+  const [table,settable] = useState(true);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const inputEl = useRef<any>("");
   const dispatch = useDispatch<AppDispatch>();
@@ -40,7 +41,6 @@ const Home = () => {
       })
       .catch((err) => console.error(err.message));
   }, []);
-
   const searchHandler = (searchItem: string) => {
     setSearchItem(searchItem);
 
@@ -51,6 +51,8 @@ const Home = () => {
           .toLowerCase()
           .includes(searchItem.toLowerCase());
       });
+      newResults.length === 0 && settable(false);
+      newResults.length !== 0 && settable(true);
       setsearchResults(newResults);
     } else {
       setsearchResults(data);
@@ -90,7 +92,7 @@ const Home = () => {
       </form>
       <p>Hospital Name:{value && value.hospitalname}</p>
       <p>Address:{value && value.Address}</p>
-      <div className="container">
+     { table ? ( <div className="container">
         <div className="d-flex align-items-center">
           <table className="table table-hover text-center mt-5">
             <thead>
@@ -155,6 +157,7 @@ const Home = () => {
           </table>
         </div>
       </div>
+      ): <p style={{textAlign:"center"}}>No Product Available...</p>}
     </>
   );
 };
