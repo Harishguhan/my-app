@@ -1,4 +1,10 @@
-import React, { useCallback, useContext, useEffect, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
@@ -56,8 +62,9 @@ const SideViewWrap = styled.div`
 const Dashboard = () => {
   const [searchItem, setSearchItem] = useState("");
   const [searchResults, setsearchResults] = useState([]);
+  const [table, settable] = useState(true);
   const value = useContext(ValueContext);
-  const [sidebar, setsidebar] = useState<string | boolean >(false);
+  const [sidebar, setsidebar] = useState<string | boolean>(false);
   const showSidebar = () => setsidebar(!sidebar);
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
@@ -73,39 +80,50 @@ const Dashboard = () => {
     setSearchItem(searchItem);
     if (searchItem !== "") {
       const newResults = data.filter((data: data) => {
+        Object.keys(data).length 
         return Object.values(data)
           .join(" ")
           .toLowerCase()
           .includes(searchItem.toLowerCase());
       });
+
+      newResults.length === 0 && settable(false);
       setsearchResults(newResults);
     } else {
       setsearchResults(data);
     }
   };
-  const handledelete = useCallback((id: number) => {
-    console.log("delete function clicked")
-    swal({
-      title: "Are you sure?",
-      text: "You Want to Delete this..?",
-      icon: "warning",
-      // buttons: "true",
-      dangerMode: true,
-    }).then((willDelete) => {
-      if (willDelete) {
-        dispatch(deletData(id));
-        swal("Product has been deleted!", {
-          icon: "success",
-        });
-      }
-    });
-  },[dispatch]);
-  const handleedit = useCallback((id: number) => {
-    navigate(`/edit_category/${id}`);
-  },[navigate]);
+
+  const handledelete = useCallback(
+    (id: number) => {
+      console.log("delete function clicked");
+      swal({
+        title: "Are you sure?",
+        text: "You Want to Delete this..?",
+        icon: "warning",
+        // buttons: "true",
+        dangerMode: true,
+      }).then((willDelete) => {
+        if (willDelete) {
+          dispatch(deletData(id));
+          swal("Product has been deleted!", {
+            icon: "success",
+          });
+        }
+      });
+    },
+    [dispatch]
+  );
+  const handleedit = useCallback(
+    (id: number) => {
+      navigate(`/edit_category/${id}`);
+    },
+    [navigate]
+  );
   const getSearchTerm = () => {
     searchHandler(inputEl.current.value);
   };
+  // const change = () => {};
   return (
     <>
       <Nav>
@@ -148,51 +166,52 @@ const Dashboard = () => {
       </form>
       <p>Hospital Name:{value && value.hospitalname}</p>
       <p>Address:{value && value.Address}</p>
-      <div className="d-flex align-items-center">
-        <table className="table table-hover text-center">
-          <thead>
-            <tr className="">
-              <th scope="col">S.No</th>
-              <th scope="col">Name</th>
-              <th scope="col">Quantity</th>
-              <th scope="col">Price</th>
-              <th scope="col">Stock</th>
-              <th scope="col">Action</th>
-            </tr>
-          </thead>
-          {searchItem.length < 1 ? (
-            <tbody>
-              {data &&
-                data.map((data: data) => {
-                  return (
-                    <tr className="" key={data.id}>
-                      <th scope="row">{data.id}</th>
-                      <td>{data.catogary}</td>
-                      <td>{data.quantity}</td>
-                      <td>{data.price}</td>
-                      <td>{data.stock}</td>
-                      <td>
-                        <button
-                          className="btn border border-3 mx-3"
-                          onClick={() => handleedit(data.id)}
-                        >
-                          <i className="fa-solid fa-pen-to-square"></i>
-                        </button>
-                        <button
-                          className="btn border border-3 mx-2"
-                          onClick={() => handledelete(data.id)}
-                        >
-                          <i className="fa-solid fa-trash"></i>
-                        </button>
-                      </td>
-                    </tr>
-                  );
-                })}
-            </tbody>
-          ) : (
-            <tbody>
-              {searchResults
-                ? searchResults.map((data: data) => {
+      {table ? (
+        <div className="d-flex align-items-center">
+          <table className="table table-hover text-center">
+            <thead>
+              <tr className="">
+                <th scope="col">S.No</th>
+                <th scope="col">Name</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            {searchItem.length < 1 ? (
+              <tbody>
+                {data &&
+                  data.map((data: data) => {
+                    return (
+                      <tr className="" key={data.id}>
+                        <th scope="row">{data.id}</th>
+                        <td>{data.catogary}</td>
+                        <td>{data.quantity}</td>
+                        <td>{data.price}</td>
+                        <td>{data.stock}</td>
+                        <td>
+                          <button
+                            className="btn border border-3 mx-3"
+                            onClick={() => handleedit(data.id)}
+                          >
+                            <i className="fa-solid fa-pen-to-square"></i>
+                          </button>
+                          <button
+                            className="btn border border-3 mx-2"
+                            onClick={() => handledelete(data.id)}
+                          >
+                            <i className="fa-solid fa-trash"></i>
+                          </button>
+                        </td>
+                      </tr>
+                    );
+                  })}
+              </tbody>
+            ) : (
+              <tbody>
+                {searchResults.length > 0 ? (
+                  searchResults.map((data: data) => {
                     return (
                       <tr className="" key={data.id}>
                         <th scope="row">{data.id}</th>
@@ -217,11 +236,16 @@ const Dashboard = () => {
                       </tr>
                     );
                   })
-               :"No Products Available"}
-            </tbody>
-          )}
-        </table>
-      </div>
+                ) : ( ""
+                  // <button onClick={change}>Search</button>
+                )}
+              </tbody>
+            )}
+          </table>
+        </div>
+      ) : (
+        "No Product Available"
+      )}
     </>
   );
 };

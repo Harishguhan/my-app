@@ -42,7 +42,6 @@ const Home = () => {
   }, []);
 
   const searchHandler = (searchItem: string) => {
-    console.log("run");
     setSearchItem(searchItem);
 
     if (searchItem !== "") {

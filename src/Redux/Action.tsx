@@ -43,6 +43,7 @@ export const loadData = () => {
         .catch((error) => console.log(error))
     }
 } 
+
 export const deletData = (id:number) => {
 
     return function (dispatch: AppDispatch){
