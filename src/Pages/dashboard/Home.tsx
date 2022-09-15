@@ -76,17 +76,17 @@ const Home = () => {
   return (
     <>
       <h1 className="text-center mt-3 mb-3">Pharmacy Management System</h1>
-      <form className="form-inline col-lg-3 col-sm-12 d-flex justify-content-end mx-auto">
+      <form className="form-inline col-lg-3 col-sm-12 d-flex justify-content-end ms-auto">
         <input
-          className="form-control mr-sm-2 shadow-none"
+          className="form-control mr-sm-2 shadow-none searchbar"
           type="search"
           placeholder="Search here.."
           aria-label="Search"
           value={searchItem}
-          ref={inputEl}
+          ref={inputEl} 
           onChange={getSearchTerm}
         />
-        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
+        <button className="search-btn" type="submit">
           Search
         </button>
       </form>
@@ -157,7 +157,7 @@ const Home = () => {
           </table>
         </div>
       </div>
-      ): <p style={{textAlign:"center"}}>No Product Available...</p>}
+      ): <p style={{textAlign:"center",fontSize:"30px"}}>No Product Available...</p>}
     </>
   );
 };

@@ -5,7 +5,7 @@
       "catogary": "dolo-650",
       "quantity": "2001",
       "price": "12.3400",
-      "stock": "sold"
+      "stock": "sold-out"
     },
     {
       "id": 2,
@@ -146,6 +146,13 @@
       "quantity": "907",
       "price": "594",
       "stock": "Quae maxime enim ali"
+    },
+    {
+      "id": 22,
+      "catogary": "Ut dolorum libero pe",
+      "quantity": "981",
+      "price": "843",
+      "stock": "Voluptate reiciendis"
     }
   ]
 }

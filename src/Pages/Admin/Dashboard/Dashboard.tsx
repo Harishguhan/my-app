@@ -17,7 +17,7 @@ import { AppDispatch, RootState } from "../../../Redux/Store";
 import swal from "sweetalert";
 import { ValueContext } from "../../../Context/Context";
 import { data } from "../../../GlobalTypes/globaltypes";
-
+import '../Dashboard/Add_medichine/Add.css';
 const Nav = styled.div`
   background: #085f73;
   height: 80px;
@@ -144,8 +144,7 @@ const Dashboard = () => {
 
       <Link style={{ textDecoration: "none" }} to="/add_catogary">
         <button
-          style={{ display: "flex", justifyContent: "flex-end" }}
-          className="btn btn-secondary mt-2 mb-3 mr-2 ms-auto"
+          className="d-flex justify-content-end ms-auto add-btn"
         >
           Add catagory
         </button>
@@ -167,7 +166,7 @@ const Dashboard = () => {
       <p>Hospital Name:{value && value.hospitalname}</p>
       <p>Address:{value && value.Address}</p>
       {table ? (
-        <div className="d-flex align-items-center">
+        <div className="d-flex align-items-center mt-5">
           <table className="table table-hover text-center">
             <thead>
               <tr className="">

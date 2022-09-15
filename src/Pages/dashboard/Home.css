@@ -1,3 +1,24 @@
 .but{
     margin-top: 20px;
 }
+.searchbar{
+    border-radius: 8px;
+    padding: 10px;
+    border: none;
+    border: 1px solid gray;
+}
+.searchbar:focus{
+    border: 1px solid gray;
+}
+.search-btn{
+    color: black;
+    background: transparent;
+    border: none;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+.search-btn:hover{
+    background-color: grey;
+    color: white;
+}
