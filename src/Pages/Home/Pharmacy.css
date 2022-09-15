@@ -19,9 +19,7 @@
 
 .button{
     padding: 10px 25px;
-    border: none;
     background:transparent;
-    
     margin-right: 5px;
     font-weight: bold;
     color: #898c88;
@@ -31,7 +29,6 @@
 }
 .button1{
     padding: 10px 25px;
-    border: none;
     background:transparent;
     font-weight: bold;
     color: white;

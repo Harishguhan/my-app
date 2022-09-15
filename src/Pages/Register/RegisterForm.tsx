@@ -31,11 +31,10 @@ const RegisterForm = () => {
 
     validationSchema: RegisterValidate,
     onSubmit: (values) => {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const staff = localStorage.getItem("staff");
       localStorage.setItem("staff", JSON.stringify([values]));
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const { userName, email, password, confirmpassword } = values;
+      const { email, password } = values;
+      console.log(email,password)
       customAxios
         .post("/auth/signup", { email, password })
         .then((responce) => {

@@ -18,7 +18,7 @@ const Home = () => {
   const value = useContext(ValueContext);
   const navigate = useNavigate();
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [dat, setdata] = useState([]);
+  // const [dat, setdata] = useState([]);
   const [results, setsearchResults] = useState([]);
   const [searchItem, setSearchItem] = useState("");
   const [table,settable] = useState(true);
@@ -30,14 +30,14 @@ const Home = () => {
     customAxios
       .get("/auth/employees")
       .then((responce) => {
-        setdata(responce?.data?.data?.employees);
+        console.log(responce?.data?.data?.employees);
       })
       .catch((err) => console.error(err.message));
   }, []);
-  const searchHandler = (searchItem: string) => {
-    setSearchItem(searchItem);
+  const searchHandler = (searchItems: string) => {
+    setSearchItem(searchItems);
 
-    if (searchItem !== "") {
+    if (searchItems !== "") {
       const newResults = data.filter((fillproduct: ProductValue) => {
         return Object.values(fillproduct)
           .join(" ")

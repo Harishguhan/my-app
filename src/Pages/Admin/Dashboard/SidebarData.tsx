@@ -43,7 +43,7 @@ export const Data= [
     },
     {
         title:'Logout',
-        path:'/admin_login',
+        path:'/login',
         icon:<FiIcons.FiLogOut />
     }
 ]

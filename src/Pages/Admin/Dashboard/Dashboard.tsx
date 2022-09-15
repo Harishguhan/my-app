@@ -76,12 +76,11 @@ const Dashboard = () => {
     dispatch(loadData());
   }, [dispatch]);
 
-  const searchHandler = (searchItem: string) => {
-    setSearchItem(searchItem);
-    if (searchItem !== "") {
-      const newResults = data.filter((filterProduct: ProductValue) => {
-        Object.keys(filterProduct).length;
-        return Object.values(filterProduct)
+  const searchHandler = (searchItems: string) => {
+    setSearchItem(searchItems);
+    if (searchItems !== "") {
+      const newResults = data.filter((fillproduct: ProductValue) => {
+        return Object.values(fillproduct)
           .join(" ")
           .toLowerCase()
           .includes(searchItem.toLowerCase());

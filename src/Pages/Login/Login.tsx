@@ -40,10 +40,9 @@ const Login = () => {
     onSubmit: (data) => {
       if (getuser && getuser.length) {
         const staffdata = JSON.parse(getuser);
-        console.log("staffdata",staffdata)
         // eslint-disable-next-line @typescript-eslint/no-unused-vars, array-callback-return
-        const stafflogin = staffdata.filter((datas:Datatype) => {
-          console.log("datas",datas);
+        staffdata.filter((datas:Datatype) => {
+          console.log("stafflogin")
           if (datas.email === data.email && datas.password === data.password) {
             customAxios
               .post("/auth/login", { email: data.email })
@@ -61,10 +60,10 @@ const Login = () => {
                 }
               })
               .catch((err) => console.error(err.message));
-          } else if (getAdmin && getAdmin) {
+          } else if (getAdmin && getAdmin.length) {
             const admindata = JSON.parse(getAdmin);
             // eslint-disable-next-line @typescript-eslint/no-unused-vars, array-callback-return
-            const adminlogin = admindata.filter((value:Datatype) => {
+             admindata.filter((value:Datatype) => {
               if (
                 value.email === data.email &&
                 value.password === data.password
