@@ -1,8 +1,7 @@
 import { screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import React from "react";
 import { renderComponentProvider } from "../../Utilities/TestCase";
-import RegisterForm from "./Register";
+import RegisterForm from "./RegisterForm";
 
 describe("register form", () => {
   it(" Register Form", async () => {

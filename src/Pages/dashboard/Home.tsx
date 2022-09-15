@@ -11,15 +11,8 @@ import customAxios from "../../Axios";
 import { loadData } from "../../Redux/Action";
 import { AppDispatch, RootState } from "../../Redux/Store";
 import { ValueContext } from "../../Context/Context";
+import { ProductValue } from "../../GlobalTypes/globaltypes";
 import "./Home.css";
-
-interface data {
-  id:number,
-  catogary:string,
-  quantity:number,
-  price:number,
-  stock:string
-}
 
 const Home = () => {
   const value = useContext(ValueContext);
@@ -45,8 +38,8 @@ const Home = () => {
     setSearchItem(searchItem);
 
     if (searchItem !== "") {
-      const newResults = data.filter((data: data) => {
-        return Object.values(data)
+      const newResults = data.filter((fillproduct: ProductValue) => {
+        return Object.values(fillproduct)
           .join(" ")
           .toLowerCase()
           .includes(searchItem.toLowerCase());
@@ -109,18 +102,18 @@ const Home = () => {
               <tbody>
                 {data &&
                   data.map(
-                    (data:data) => {
+                    (Products:ProductValue) => {
                       return (
-                          <tr key={data.id}>
-                          <th scope="row">{data.id}</th>
-                          <td>{data.catogary}</td>
-                          <td>{data.quantity}</td>
-                          <td>{data.price}</td>
-                          <td>{data.stock}</td>
+                          <tr key={Products.id}>
+                          <th scope="row">{Products.id}</th>
+                          <td>{Products.catogary}</td>
+                          <td>{Products.quantity}</td>
+                          <td>{Products.price}</td>
+                          <td>{Products.stock}</td>
                           <td>
                         <button
                           className="btn border border-3 mx-3"
-                          onClick={() => handleedit(data.id)}
+                          onClick={() => handleedit(Products.id)}
                         >
                           <i className="fa-solid fa-pen-to-square"></i>
                         </button>
@@ -133,18 +126,18 @@ const Home = () => {
             ) : (
               <tbody>
                 {results &&
-                  results.map((data:data) => {
+                  results.map((filterProduct:ProductValue) => {
                     return (
-                      <tr className="" key={data.id}>
-                        <th scope="row">{data.id}</th>
-                        <td>{data.catogary}</td>
-                        <td>{data.quantity}</td>
-                        <td>{data.price}</td>
-                        <td>{data.stock}</td>
+                      <tr className="" key={filterProduct.id}>
+                        <th scope="row">{filterProduct.id}</th>
+                        <td>{filterProduct.catogary}</td>
+                        <td>{filterProduct.quantity}</td>
+                        <td>{filterProduct.price}</td>
+                        <td>{filterProduct.stock}</td>
                         <td>
                         <button
                           className="btn border border-3 mx-3"
-                          onClick={() => handleedit(data.id)}
+                          onClick={() => handleedit(filterProduct.id)}
                         >
                           <i className="fa-solid fa-pen-to-square"></i>
                         </button>

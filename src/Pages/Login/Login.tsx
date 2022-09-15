@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import customAxios from "../../Axios";
 
-interface data {
+interface Datatype {
   id:number,
   catogary:string,
   quantity:number,
@@ -42,7 +42,7 @@ const Login = () => {
         const staffdata = JSON.parse(getuser);
         console.log("staffdata",staffdata)
         // eslint-disable-next-line @typescript-eslint/no-unused-vars, array-callback-return
-        const stafflogin = staffdata.filter((datas:data) => {
+        const stafflogin = staffdata.filter((datas:Datatype) => {
           console.log("datas",datas);
           if (datas.email === data.email && datas.password === data.password) {
             customAxios
@@ -64,11 +64,10 @@ const Login = () => {
           } else if (getAdmin && getAdmin) {
             const admindata = JSON.parse(getAdmin);
             // eslint-disable-next-line @typescript-eslint/no-unused-vars, array-callback-return
-            const adminlogin = admindata.filter((datas:data) => {
-              console.log("admin datas",datas)
+            const adminlogin = admindata.filter((value:Datatype) => {
               if (
-                datas.email === data.email &&
-                datas.password === data.password
+                value.email === data.email &&
+                value.password === data.password
               ) {
                 navigate("/admin_dashboard");
               }else {

@@ -63,7 +63,7 @@ const Menu = ({ item }: any) => {
       </SidebarLink>
       {DropDown &&
         item.DropDown.map(
-          (item: {
+          (items: {
             path: To;
             id: React.Key | null | undefined;
             icon:
@@ -92,10 +92,10 @@ const Menu = ({ item }: any) => {
               | undefined;
           }) => {
             return (
-              <DropDownLink to={item.path} key={item.id}>
+              <DropDownLink to={items.path} key={items.id}>
                 <div>
-                  {item.icon}
-                  <Label>{item.title}</Label>
+                  {items.icon}
+                  <Label>{items.title}</Label>
                 </div>
               </DropDownLink>
             );

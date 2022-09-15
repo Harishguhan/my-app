@@ -7,7 +7,7 @@ import LazyLoad from "./components/LazyLoad";
 import EditPage from "./Pages/dashboard/Editpage";
 import Pharmacy from "./Pages/Home/Pharmacy";
 const Dashboard = React.lazy(() => import("./Pages/Admin/Dashboard/Dashboard"));
-const RegisterForm = React.lazy(() => import("./Pages/Register/Register"));
+const RegisterForm = React.lazy(() => import("./Pages/Register/RegisterForm"));
 const Login = React.lazy(() => import("./Pages/Login/Login"));
 const Home = React.lazy(() => import("./Pages/dashboard/Home"));
 const Register = React.lazy(() => import("./Pages/Admin/Register/Register"));
@@ -15,7 +15,7 @@ const Profile = React.lazy(
   () => import("./Pages/Admin/Dashboard/Profile/Profile")
 );
 const EditData = React.lazy(
-  () => import("./Pages/Admin/Dashboard/Edit_medichine/Edit")
+  () => import("./Pages/Admin/Dashboard/Edit_medichine/EditData")
 );
 const AddCatogory = React.lazy(
   () => import("./Pages/Admin/Dashboard/Add_medichine/AddCatogory")

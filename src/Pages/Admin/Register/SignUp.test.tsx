@@ -1,7 +1,6 @@
 import { screen } from "@testing-library/react";
 import React from "react";
 import { renderComponentProvider } from "../../../Utilities/TestCase";
-import './Register';
 import Register from "./Register";
 
 describe("signup form testing",() =>{

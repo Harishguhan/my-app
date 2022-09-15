@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import React from "react";
 import { renderComponentProvider } from "../../Utilities/TestCase";
 import Login from "./Login";
@@ -23,7 +23,7 @@ describe("Test the Login Form", () => {
   });
 
 
-  it("test the attribute",()=>{;
+  it("test the attribute",()=>{
     renderComponentProvider(<Login />);
 
     const email = screen.getByPlaceholderText("Enter your email address");

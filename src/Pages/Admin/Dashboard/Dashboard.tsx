@@ -16,8 +16,8 @@ import { deletData, loadData } from "../../../Redux/Action";
 import { AppDispatch, RootState } from "../../../Redux/Store";
 import swal from "sweetalert";
 import { ValueContext } from "../../../Context/Context";
-import { data } from "../../../GlobalTypes/globaltypes";
-import '../Dashboard/Add_medichine/Add.css';
+import { ProductValue } from "../../../GlobalTypes/globaltypes";
+import "../Dashboard/Add_medichine/Add.css";
 const Nav = styled.div`
   background: #085f73;
   height: 80px;
@@ -39,11 +39,11 @@ const NavIcon = styled(Link)`
   }
 `;
 
-export interface navProps {
+export interface NavProps {
   left: string | boolean;
 }
 
-const SideView = styled.nav<navProps>`
+const SideView = styled.nav<NavProps>`
   background: #085f73;
   min-height: 100vh;
   width: 250px;
@@ -79,9 +79,9 @@ const Dashboard = () => {
   const searchHandler = (searchItem: string) => {
     setSearchItem(searchItem);
     if (searchItem !== "") {
-      const newResults = data.filter((data: data) => {
-        Object.keys(data).length 
-        return Object.values(data)
+      const newResults = data.filter((filterProduct: ProductValue) => {
+        Object.keys(filterProduct).length;
+        return Object.values(filterProduct)
           .join(" ")
           .toLowerCase()
           .includes(searchItem.toLowerCase());
@@ -123,7 +123,6 @@ const Dashboard = () => {
   const getSearchTerm = () => {
     searchHandler(inputEl.current.value);
   };
-  // const change = () => {};
   return (
     <>
       <Nav>
@@ -143,9 +142,7 @@ const Dashboard = () => {
       </SideView>
 
       <Link style={{ textDecoration: "none" }} to="/add_catogary">
-        <button
-          className="d-flex justify-content-end ms-auto add-btn"
-        >
+        <button className="d-flex justify-content-end ms-auto add-btn">
           Add catagory
         </button>
       </Link>
@@ -181,24 +178,24 @@ const Dashboard = () => {
             {searchItem.length < 1 ? (
               <tbody>
                 {data &&
-                  data.map((data: data) => {
+                  data.map((Products: ProductValue) => {
                     return (
-                      <tr className="" key={data.id}>
-                        <th scope="row">{data.id}</th>
-                        <td>{data.catogary}</td>
-                        <td>{data.quantity}</td>
-                        <td>{data.price}</td>
-                        <td>{data.stock}</td>
+                      <tr className="" key={Products.id}>
+                        <th scope="row">{Products.id}</th>
+                        <td>{Products.catogary}</td>
+                        <td>{Products.quantity}</td>
+                        <td>{Products.price}</td>
+                        <td>{Products.stock}</td>
                         <td>
                           <button
                             className="btn border border-3 mx-3"
-                            onClick={() => handleedit(data.id)}
+                            onClick={() => handleedit(Products.id)}
                           >
                             <i className="fa-solid fa-pen-to-square"></i>
                           </button>
                           <button
                             className="btn border border-3 mx-2"
-                            onClick={() => handledelete(data.id)}
+                            onClick={() => handledelete(Products.id)}
                           >
                             <i className="fa-solid fa-trash"></i>
                           </button>
@@ -209,40 +206,39 @@ const Dashboard = () => {
               </tbody>
             ) : (
               <tbody>
-                {searchResults.length > 0 ? (
-                  searchResults.map((data: data) => {
-                    return (
-                      <tr className="" key={data.id}>
-                        <th scope="row">{data.id}</th>
-                        <td>{data.catogary}</td>
-                        <td>{data.quantity}</td>
-                        <td>{data.price}</td>
-                        <td>{data.stock}</td>
-                        <td>
-                          <button
-                            className="btn border border-3 mx-3"
-                            onClick={() => handleedit(data.id)}
-                          >
-                            <i className="fa-solid fa-pen-to-square"></i>
-                          </button>
-                          <button
-                            className="btn border border-3 mx-2"
-                            onClick={() => handledelete(data.id)}
-                          >
-                            <i className="fa-solid fa-trash"></i>
-                          </button>
-                        </td>
-                      </tr>
-                    );
-                  })
-                ) : ( ""
-                )}
+                {searchResults.length > 0
+                  ? searchResults.map((filterproduct: ProductValue) => {
+                      return (
+                        <tr className="" key={filterproduct.id}>
+                          <th scope="row">{filterproduct.id}</th>
+                          <td>{filterproduct.catogary}</td>
+                          <td>{filterproduct.quantity}</td>
+                          <td>{filterproduct.price}</td>
+                          <td>{filterproduct.stock}</td>
+                          <td>
+                            <button
+                              className="btn border border-3 mx-3"
+                              onClick={() => handleedit(filterproduct.id)}
+                            >
+                              <i className="fa-solid fa-pen-to-square"></i>
+                            </button>
+                            <button
+                              className="btn border border-3 mx-2"
+                              onClick={() => handledelete(filterproduct.id)}
+                            >
+                              <i className="fa-solid fa-trash"></i>
+                            </button>
+                          </td>
+                        </tr>
+                      );
+                    })
+                  : "Not Found"}
               </tbody>
             )}
           </table>
         </div>
       ) : (
-        <p style={{textAlign:"center"}}>No Product Available...</p>
+        <p style={{ textAlign: "center" }}>No Product Available...</p>
       )}
     </>
   );

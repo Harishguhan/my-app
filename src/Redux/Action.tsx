@@ -3,7 +3,7 @@ import axios from 'axios';
 import { AppDispatch } from './Store';
 
 
-interface editvalue {
+interface Editvalue {
     id:number | undefined,
     catogary:string | undefined,
     quantity:string |undefined,
@@ -11,7 +11,7 @@ interface editvalue {
     stock:string |undefined
 }
 
-const getData = (data:editvalue) =>({
+const getData = (data:Editvalue) =>({
     type:types.GET_DATA,
     payload:data,
 });
@@ -27,7 +27,7 @@ const Update_data = () =>({
     type:types.UPDATE_DATA
 })
 
-const getProduct = (dat: editvalue) =>({
+const getProduct = (dat: Editvalue) =>({
     type:types.GET_UPDATE_VALUE,
     payload:dat
 })
@@ -56,7 +56,7 @@ export const deletData = (id:number) => {
         .catch((error) => console.log(error))
     }
 } 
-export const AddData = (values:editvalue) => {
+export const AddData = (values:Editvalue) => {
     return function (dispatch: AppDispatch){
         axios.post(`${process.env.REACT_APP_PHARMACY_PRODUCT_API}`,values)
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -67,7 +67,7 @@ export const AddData = (values:editvalue) => {
     }
 } 
 
-export const Update = (details:editvalue,id:number) => {
+export const Update = (details:Editvalue,id:number) => {
     return function (dispatch: AppDispatch){
         axios.put(`${process.env.REACT_APP_PHARMACY_PRODUCT_API}/${id}`,details)
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -79,7 +79,7 @@ export const Update = (details:editvalue,id:number) => {
 } 
 
 
-export const getSingleUser = (updatevalue:editvalue) => {
+export const getSingleUser = (updatevalue:Editvalue) => {
     console.log(updatevalue)
     return function (dispatch: AppDispatch){
         axios.put(`${process.env.REACT_APP_PHARMACY_PRODUCT_API}/${updatevalue.id}`,updatevalue)

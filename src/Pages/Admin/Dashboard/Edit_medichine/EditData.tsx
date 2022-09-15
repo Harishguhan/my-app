@@ -13,7 +13,7 @@ type AuthUser = {
   price?: string;
   stock?: string;
 };
-interface editvalue {
+interface Editvalue {
   id:number | undefined,
   catogary:string | undefined,
   quantity:string | undefined,
@@ -75,7 +75,7 @@ const EditData = () => {
     }  
   };
 
-  const updatevalue:editvalue = {
+  const updatevalue:Editvalue = {
     id: edit.id,
     catogary: edit.catogary,
     quantity: edit.quantity,

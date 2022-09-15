@@ -47,9 +47,9 @@ const customAxios = axios.create({
                 localStorage.getItem('access_token');
               return axios(error.response.config);
             })
-            .catch((error) => {
-              console.log('ref error', error);
-              if (error.response.data.status === 'Refresh token expired') {
+            .catch((errors) => {
+              console.log('ref error', errors);
+              if (errors.response.data.status === 'Refresh token expired') {
                 localStorage.clear();
                 window.location.pathname = '/login';
                 return error.response.data;
