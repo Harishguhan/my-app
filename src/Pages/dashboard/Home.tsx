@@ -21,7 +21,7 @@ const Home = () => {
   // const [dat, setdata] = useState([]);
   const [results, setsearchResults] = useState([]);
   const [searchItem, setSearchItem] = useState("");
-  const [table,settable] = useState(true);
+  const [table, settable] = useState(true);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const inputEl = useRef<any>("");
   const dispatch = useDispatch<AppDispatch>();
@@ -68,7 +68,7 @@ const Home = () => {
 
   return (
     <>
-      <h1 className="text-center mt-3 mb-3">Pharmacy Management System</h1>
+      <h1 className="text-center mt-3 mb-3 head">pharmacy inventory system</h1>
       <form className="form-inline col-lg-3 col-sm-12 d-flex justify-content-end ms-auto">
         <input
           className="form-control mr-sm-2 shadow-none searchbar"
@@ -76,7 +76,7 @@ const Home = () => {
           placeholder="Search here.."
           aria-label="Search"
           value={searchItem}
-          ref={inputEl} 
+          ref={inputEl}
           onChange={getSearchTerm}
         />
         <button className="search-btn" type="submit">
@@ -85,72 +85,75 @@ const Home = () => {
       </form>
       <p>Hospital Name:{value && value.hospitalname}</p>
       <p>Address:{value && value.Address}</p>
-     { table ? ( <div className="container">
-        <div className="d-flex align-items-center">
-          <table className="table table-hover text-center mt-5">
-            <thead>
-              <tr className="">
-                <th scope="col">S.No</th>
-                <th scope="col">Name</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Price</th>
-                <th scope="col">Stock</th>
-                <th scope="col">Action</th>
-              </tr>
-            </thead>
-            {searchItem.length < 1 ? (
-              <tbody>
-                {data &&
-                  data.map(
-                    (Products:ProductValue) => {
+      {table ? (
+        <div className="container">
+          <div className="d-flex align-items-center">
+            <table className="table table-hover text-center mt-5">
+              <thead>
+                <tr className="">
+                  <th scope="col">S.No</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Quantity</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Stock</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              {searchItem.length < 1 ? (
+                <tbody>
+                  {data &&
+                    data.map((Products: ProductValue) => {
                       return (
-                          <tr key={Products.id}>
+                        <tr key={Products.id}>
                           <th scope="row">{Products.id}</th>
                           <td>{Products.catogary}</td>
                           <td>{Products.quantity}</td>
                           <td>{Products.price}</td>
                           <td>{Products.stock}</td>
                           <td>
-                        <button
-                          className="btn border border-3 mx-3"
-                          onClick={() => handleedit(Products.id)}
-                        >
-                          <i className="fa-solid fa-pen-to-square"></i>
-                        </button>
+                            <button
+                              className="btn border border-3 mx-3"
+                              onClick={() => handleedit(Products.id)}
+                            >
+                              <i className="fa-solid fa-pen-to-square"></i>
+                            </button>
                           </td>
                         </tr>
                       );
-                    }
-                  )}
-              </tbody>
-            ) : (
-              <tbody>
-                {results &&
-                  results.map((filterProduct:ProductValue) => {
-                    return (
-                      <tr className="" key={filterProduct.id}>
-                        <th scope="row">{filterProduct.id}</th>
-                        <td>{filterProduct.catogary}</td>
-                        <td>{filterProduct.quantity}</td>
-                        <td>{filterProduct.price}</td>
-                        <td>{filterProduct.stock}</td>
-                        <td>
-                        <button
-                          className="btn border border-3 mx-3"
-                          onClick={() => handleedit(filterProduct.id)}
-                        >
-                          <i className="fa-solid fa-pen-to-square"></i>
-                        </button>
+                    })}
+                </tbody>
+              ) : (
+                <tbody>
+                  {results &&
+                    results.map((filterProduct: ProductValue) => {
+                      return (
+                        <tr className="" key={filterProduct.id}>
+                          <th scope="row">{filterProduct.id}</th>
+                          <td>{filterProduct.catogary}</td>
+                          <td>{filterProduct.quantity}</td>
+                          <td>{filterProduct.price}</td>
+                          <td>{filterProduct.stock}</td>
+                          <td>
+                            <button
+                              className="btn border border-3 mx-3"
+                              onClick={() => handleedit(filterProduct.id)}
+                            >
+                              <i className="fa-solid fa-pen-to-square"></i>
+                            </button>
                           </td>
-                      </tr>
-                    );
-                  })}
-              </tbody>
-            )}
-          </table>
+                        </tr>
+                      );
+                    })}
+                </tbody>
+              )}
+            </table>
+          </div>
         </div>
-      </div>
-      ): <p style={{textAlign:"center",fontSize:"30px"}}>No Product Available...</p>}
+      ) : (
+        <p style={{ textAlign: "center", fontSize: "30px",fontWeight:"bold" }}>
+          No Product Available...
+        </p>
+      )}
     </>
   );
 };

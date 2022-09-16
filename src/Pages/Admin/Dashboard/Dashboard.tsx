@@ -206,7 +206,7 @@ const Dashboard = () => {
             ) : (
               <tbody>
                 {searchResults.length > 0
-                  ? searchResults.map((filterproduct: ProductValue) => {
+                  && searchResults.map((filterproduct: ProductValue) => {
                       return (
                         <tr className="" key={filterproduct.id}>
                           <th scope="row">{filterproduct.id}</th>
@@ -231,7 +231,7 @@ const Dashboard = () => {
                         </tr>
                       );
                     })
-                  : "Not Found"}
+                }
               </tbody>
             )}
           </table>

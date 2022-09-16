@@ -12,3 +12,5 @@ interface AppContextInterface {
     contactno:number
   }
 export const ValueContext = createContext<AppContextInterface | null>(null);
+
+
