@@ -3,7 +3,7 @@
     {
       "id": 1,
       "catogary": "dolo-650",
-      "quantity": "2001",
+      "quantity": "20010000",
       "price": "12.3400",
       "stock": "sold-out"
     },
@@ -153,6 +153,13 @@
       "quantity": "498",
       "price": "633",
       "stock": "Accusantium velit ea"
+    },
+    {
+      "id": 23,
+      "catogary": "amoxilili coloride",
+      "quantity": "12",
+      "price": "3450000",
+      "stock": "sold"
     }
   ]
 }

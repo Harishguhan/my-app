@@ -7,13 +7,13 @@ import "./Login.css";
 import customAxios from "../../Axios";
 
 interface Datatype {
-  id:number,
-  catogary:string,
-  quantity:number,
-  price:number,
-  stock:string
-  email:string,
-  password:string
+  id: number;
+  catogary: string;
+  quantity: number;
+  price: number;
+  stock: string;
+  email: string;
+  password: string;
 }
 
 const Login = () => {
@@ -41,8 +41,8 @@ const Login = () => {
       if (getuser && getuser.length) {
         const staffdata = JSON.parse(getuser);
         // eslint-disable-next-line @typescript-eslint/no-unused-vars, array-callback-return
-        staffdata.filter((datas:Datatype) => {
-          console.log("stafflogin")
+        staffdata.filter((datas: Datatype) => {
+          console.log("stafflogin");
           if (datas.email === data.email && datas.password === data.password) {
             customAxios
               .post("/auth/login", { email: data.email })
@@ -60,21 +60,23 @@ const Login = () => {
                 }
               })
               .catch((err) => console.error(err.message));
-          } else if (getAdmin && getAdmin.length) {
-            const admindata = JSON.parse(getAdmin);
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars, array-callback-return
-             admindata.filter((value:Datatype) => {
-              if (
-                value.email === data.email &&
-                value.password === data.password
-              ) {
-                navigate("/admin_dashboard");
-              }else {
-                seterror("invalid login details");
-              }
-            });
           }
-          
+          console.log("before if");
+        });
+      }
+       if (getAdmin && getAdmin.length) {
+        console.log("after if")
+        const admindata = JSON.parse(getAdmin);
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars, array-callback-return
+        admindata.filter((value: Datatype) => {
+          if (
+            value.email === data.email &&
+            value.password === data.password
+          ) {
+            navigate("/admin_dashboard");
+          } else {
+            seterror("invalid login details");
+          }
         });
       }
     },
