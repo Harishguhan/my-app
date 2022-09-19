@@ -2,8 +2,8 @@
   "posts": [
     {
       "id": 1,
-      "catogary": "dolo-650ss",
-      "quantity": "200",
+      "catogary": "dolo-650",
+      "quantity": "2001",
       "price": "12.3",
       "stock": "sold-out"
     },

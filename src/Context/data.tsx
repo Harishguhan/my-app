@@ -22,4 +22,4 @@ export const data:AppContextInterface =
         branches:248,
         specialin:"Dentel care",
         
-    }
+}

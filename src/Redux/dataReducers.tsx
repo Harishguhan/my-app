@@ -4,7 +4,7 @@ import * as types from './ActionType';
 const initialState = {
     data:[],
     dat:{},
-    loading:false
+    loading:false,
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -24,7 +24,6 @@ const dataReducers = (state = initialState,action:any) =>{
                 data:action.payload,
                 loading:false,
             }
-        
         default:
             return state
     }

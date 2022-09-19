@@ -1,10 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useMemo } from "react";
 import { Link } from "react-router-dom";
 import "./Profile.css";
-import { ValueContext } from "../../../../Context/Context";
+import Notify, { ValueContext } from "../../../../Context/Context";
 
 const Profile = () => {
   const data = useContext(ValueContext);
+  const Notifys = useMemo(() => {
+    return <Notify />;
+  },[Notify])
   return (
     <div className="student-profile py-4">
       <div className="container">
@@ -93,6 +96,7 @@ const Profile = () => {
       <Link to="/admin_dashboard">
         <button className="btn btn-info">Back To Dashboard</button>
       </Link>
+      {Notifys}
     </div>
   );
 };

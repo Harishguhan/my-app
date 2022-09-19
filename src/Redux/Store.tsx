@@ -1,7 +1,6 @@
-import { createStore, applyMiddleware } from "redux";
+import { legacy_createStore as createStore,applyMiddleware } from  'redux';
 import reduxThunk from "redux-thunk";
 import rootReducer from "./Root-Reducer";
-
 const middlewares = [reduxThunk];
 
 const store = createStore(rootReducer, applyMiddleware(...middlewares));

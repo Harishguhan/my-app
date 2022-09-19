@@ -56,9 +56,8 @@ const Menu = ({ item }: any) => {
         <div>
           {item.DropDown && DropDown
             ? item.iconOpened
-            : item.DropDown
-            ? item.iconClosed
-            : null}
+            :item.iconClosed
+            }
         </div>
       </SidebarLink>
       {DropDown &&
