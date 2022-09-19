@@ -6,6 +6,7 @@ import { ValueContext } from "./Context/Context";
 import LazyLoad from "./components/LazyLoad";
 import EditPage from "./Pages/dashboard/Editpage";
 import Pharmacy from "./Pages/Home/Pharmacy";
+import ErrorBoundaries from "./Utilities/ErrorBoundaries";
 const Dashboard = React.lazy(() => import("./Pages/Admin/Dashboard/Dashboard"));
 const RegisterForm = React.lazy(() => import("./Pages/Register/RegisterForm"));
 const Login = React.lazy(() => import("./Pages/Login/Login"));
@@ -23,6 +24,7 @@ const AddCatogory = React.lazy(
 function App() {
   return (
     <div className="container-fluid">
+      <ErrorBoundaries>
       <ValueContext.Provider value={data}>
         <Routes>
           <Route
@@ -109,6 +111,7 @@ function App() {
           />
         </Routes>
       </ValueContext.Provider>
+      </ErrorBoundaries>
     </div>
   );
 }
