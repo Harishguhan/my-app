@@ -36,7 +36,6 @@ const AddCatogory = () => {
     },
     validationSchema: AddValidate,
     onSubmit: useCallback((values:ProductValue) => {
-      console.log(values)
     dispatch(AddData(values));
     swal("Product", "New Product Added successfully", "success");
     navigate('/admin_dashboard')

@@ -1,5 +1,4 @@
-import { createContext, useEffect, useReducer } from "react";
-import React from "react";
+import React,{ createContext, useReducer } from "react";
 import CSS from 'csstype'
 const initialState = {
   notification: 5,
@@ -18,6 +17,7 @@ interface AppContextInterface {
 }
 enum CountActionKind {
   CLEAR = "CLEAR",
+  STRING = ''
 }
 
 interface CountAction {
@@ -32,8 +32,11 @@ const reducer = (state: CountState, action: CountAction) => {
   switch (action.type) {
     case CountActionKind.CLEAR:
       return {
-        notification: (state.notification = 0),
+        notification: action.payload,
       };
+      case '':
+      default:
+        return state
   }
 };
 
