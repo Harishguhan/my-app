@@ -21,7 +21,6 @@ const Login = () => {
   const navigate = useNavigate();
   const getuser = localStorage.getItem("staff");
   const getAdmin = localStorage.getItem("admin");
-  console.log(getAdmin);
 
   const loginvalidate = Yup.object().shape({
     email: Yup.string()
@@ -42,7 +41,6 @@ const Login = () => {
         const staffdata = JSON.parse(getuser);
         // eslint-disable-next-line @typescript-eslint/no-unused-vars, array-callback-return
         staffdata.filter((datas: Datatype) => {
-          console.log("stafflogin");
           if (datas.email === data.email && datas.password === data.password) {
             customAxios
               .post("/auth/login", { email: data.email })
@@ -61,11 +59,9 @@ const Login = () => {
               })
               .catch((err) => console.error(err.message));
           }
-          console.log("before if");
         });
       }
        if (getAdmin && getAdmin.length) {
-        console.log("after if")
         const admindata = JSON.parse(getAdmin);
         // eslint-disable-next-line @typescript-eslint/no-unused-vars, array-callback-return
         admindata.filter((value: Datatype) => {

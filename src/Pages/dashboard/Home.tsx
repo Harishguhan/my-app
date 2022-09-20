@@ -124,7 +124,7 @@ const Home = () => {
                 </tbody>
               ) : (
                 <tbody>
-                  {results &&
+                  {results.length > 0 &&
                     results.map((filterProduct: ProductValue) => {
                       return (
                         <tr className="" key={filterProduct.id}>

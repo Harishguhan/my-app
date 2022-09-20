@@ -36,13 +36,6 @@
       "stock": "un-sold"
     },
     {
-      "catogary": "Ibuprofen",
-      "quantity": "458",
-      "price": "20.41",
-      "stock": "un-sold",
-      "id": 6
-    },
-    {
       "catogary": "Levothyroxine",
       "quantity": "90",
       "price": "71.2",
@@ -146,20 +139,6 @@
       "quantity": "907",
       "price": "594",
       "stock": "Quae maxime enim ali"
-    },
-    {
-      "id": 22,
-      "catogary": "Amet nobis laborum ",
-      "quantity": "498",
-      "price": "633",
-      "stock": "Accusantium velit ea"
-    },
-    {
-      "id": 23,
-      "catogary": "amoxilili coloride",
-      "quantity": "12",
-      "price": "3450000",
-      "stock": "sold"
     }
   ]
 }

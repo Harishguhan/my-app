@@ -95,7 +95,6 @@ const Dashboard = () => {
 
   const handledelete = useCallback(
     (id: number) => {
-      console.log("delete function clicked");
       swal({
         title: "Are you sure?",
         text: "You Want to Delete this..?",

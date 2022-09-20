@@ -34,10 +34,8 @@ const getProduct = (dat: Editvalue) =>({
 
 export const loadData = () => {
     return function (dispatch:AppDispatch){
-        console.log(process.env)
         axios.get(`${process.env.REACT_APP_PHARMACY_PRODUCT_API}`)
         .then((responce) => {
-            console.log(responce)
             dispatch(getData(responce.data))
         })
         .catch((error) => console.log(error))
