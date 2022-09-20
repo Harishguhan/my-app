@@ -237,7 +237,9 @@ const Dashboard = () => {
           </table>
         </div>
       ) : (
-        <p style={{ textAlign: "center" }}>No Product Available...</p>
+        <p style={{ textAlign: "center", fontSize: "30px",fontWeight:"bold" }}>
+          No Product Available...
+        </p>
       )}
     </>
   );
