@@ -2,13 +2,14 @@
     margin-top: 20px;
 }
 .searchbar{
-    border-radius: 8px;
-    padding: 10px;
-    border: none;
-    border: 1px solid gray;
-}
-.searchbar:focus{
-    border: 1px solid gray;
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 10px 10px;
+   
+    border-radius: 5px; 
+    border: 1.5px solid grey;
 }
 .search-btn{
     color: black;
@@ -23,7 +24,22 @@
     color: white;
 }
 .head{
+    color: white;
     text-transform: uppercase;
+    font-size: 50px;
     font-weight: bold;
     letter-spacing: 5px;
+    background-color: grey;
+    padding: 20px 0;
+    border-radius: 5px;
+    text-shadow: 10px 10px 10px black;
+   
+}
+
+.edit-btn{
+    padding: 5px 15px;
+    background-color: grey;
+    border: none;
+    border-radius: 5px;
+    color: white;
 }

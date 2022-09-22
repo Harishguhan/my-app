@@ -30,53 +30,53 @@ const Login = () => {
     password: Yup.string().required("Password is Required"),
   });
 
-  const Formik = useFormik({
-    initialValues: {
-      email: "",
-      password: "",
-    },
-    validationSchema: loginvalidate,
-    onSubmit: (data) => {
-      if (getuser && getuser.length) {
-        const staffdata = JSON.parse(getuser);
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars, array-callback-return
-        staffdata.filter((datas: Datatype) => {
-          if (datas.email === data.email && datas.password === data.password) {
-            customAxios
-              .post("/auth/login", { email: data.email })
-              .then((responce) => {
-                console.log("responce.data", responce);
-                if (responce?.data?.status === "Success") {
-                  localStorage.setItem("access_token", responce.data.token);
-                  localStorage.setItem(
-                    "refresh_token",
-                    responce.data.refreshToken
-                  );
-                  navigate("/home");
-                } else {
-                  alert("Login Failed");
-                }
-              })
-              .catch((err) => console.error(err.message));
-          }
-        });
-      }
-       if (getAdmin && getAdmin.length) {
-        const admindata = JSON.parse(getAdmin);
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars, array-callback-return
-        admindata.filter((value: Datatype) => {
-          if (
-            value.email === data.email &&
-            value.password === data.password
-          ) {
-            navigate("/admin_dashboard");
-          } else {
-            seterror("invalid login details");
-          }
-        });
-      }
-    },
-  });
+    const Formik = useFormik({
+      initialValues: {
+        email: "",
+        password: "",
+      },
+      validationSchema: loginvalidate,
+      onSubmit: (data) => {
+        if (getuser && getuser.length) {
+          const staffdata = JSON.parse(getuser);
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars, array-callback-return
+          staffdata.filter((datas: Datatype) => {
+            if (datas.email === data.email && datas.password === data.password) {
+              customAxios
+                .post("/auth/login", { email: data.email })
+                .then((responce) => {
+                  console.log("responce.data", responce);
+                  if (responce?.data?.status === "Success") {
+                    localStorage.setItem("access_token", responce.data.token);
+                    localStorage.setItem(
+                      "refresh_token",
+                      responce.data.refreshToken
+                    );
+                    navigate("/home");
+                  } else {
+                    alert("Login Failed");
+                  }
+                })
+                .catch((err) => console.error(err.message));
+            }
+          });
+        }
+        if (getAdmin && getAdmin.length) {
+          const admindata = JSON.parse(getAdmin);
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars, array-callback-return
+          admindata.filter((value: Datatype) => {
+            if (
+              value.email === data.email &&
+              value.password === data.password
+            ) {
+              navigate("/admin_dashboard");
+            } else {
+              seterror("invalid login details");
+            }
+          });
+        }
+      },
+    });
 
   const { handleSubmit } = Formik;
   return (

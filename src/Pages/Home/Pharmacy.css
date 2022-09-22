@@ -71,7 +71,19 @@
     text-transform: uppercase;
     font-weight: bold;
     color: white;
-    
+    -webkit-text-stroke: 1px white;
+    color: transparent;
+    background-image: linear-gradient(white,white);
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-position: -700px 0;
+    animation: text-color 5s linear infinite;
+}
+@keyframes text-color{
+    100%{
+        background-position: 0;
+    }
 }
 #home p{
     font-weight: 600;
@@ -90,6 +102,14 @@
 .box h3{
     font-weight:bold !important;
     margin-top: 15px;
+    color: white;
+    color: transparent;
+    background-image: linear-gradient(white,white);
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-position: -700px 0;
+    animation: text-color 3s linear infinite;
 }
 #pharm h1{
     text-transform: uppercase;
@@ -104,6 +124,7 @@
 #pharm h3{
     text-align: center;
     font-weight: bold;
+    
 }
 
 #department{
@@ -117,6 +138,7 @@
     color: white;
     padding-top: 100px;
     letter-spacing: 4px;
+    
 }
 .cc{
     cursor: pointer;

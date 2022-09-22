@@ -5,7 +5,7 @@
       "catogary": "dolo-650",
       "quantity": "2001",
       "price": "12.3",
-      "stock": "sold-out"
+      "stock": "sold-out-out"
     },
     {
       "id": 2,
@@ -139,6 +139,13 @@
       "quantity": "907",
       "price": "594",
       "stock": "Quae maxime enim ali"
+    },
+    {
+      "id": 22,
+      "catogary": "Reprehenderit pariat",
+      "quantity": "984",
+      "price": "129",
+      "stock": "Doloribus perspiciat"
     }
   ]
 }

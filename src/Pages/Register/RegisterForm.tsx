@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 import customAxios from "../../Axios";
 const RegisterForm = () => {
+ 
   const navigate = useNavigate();
   const RegisterValidate = Yup.object().shape({
     userName: Yup.string()
@@ -112,8 +113,19 @@ const RegisterForm = () => {
               </p>
             </Form>
           </FormikProvider>
+      
+
         </div>
       </div>
+      <div className="bubbles">
+              <img src="https://pngimg.com/uploads/soap_bubbles/small/soap_bubbles_PNG58.png" alt="water bubble png" />
+              <img src="https://pngimg.com/uploads/soap_bubbles/small/soap_bubbles_PNG58.png" alt="water bubble png" />
+              <img src="https://pngimg.com/uploads/soap_bubbles/small/soap_bubbles_PNG58.png" alt="water bubble png" />
+              <img src="https://pngimg.com/uploads/soap_bubbles/small/soap_bubbles_PNG58.png" alt="water bubble png" />
+              <img src="https://pngimg.com/uploads/soap_bubbles/small/soap_bubbles_PNG58.png" alt="water bubble png" />
+              <img src="https://pngimg.com/uploads/soap_bubbles/small/soap_bubbles_PNG58.png" alt="water bubble png" />
+              <img src="https://pngimg.com/uploads/soap_bubbles/small/soap_bubbles_PNG58.png" alt="water bubble png" />
+          </div>
     </div>
     </>
   );

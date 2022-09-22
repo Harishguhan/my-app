@@ -69,9 +69,9 @@ const Home = () => {
   return (
     <>
       <h1 className="text-center mt-3 mb-3 head">pharmacy inventory system</h1>
-      <form className="form-inline col-lg-3 col-sm-12 d-flex justify-content-end ms-auto">
+      <form className="form-inline col-lg-3 col-sm-12 d-flex justify-content-end ms-auto search-bar">
         <input
-          className="form-control mr-sm-2 shadow-none searchbar"
+          className="searchbar"
           type="search"
           placeholder="Search here.."
           aria-label="Search"
@@ -79,9 +79,7 @@ const Home = () => {
           ref={inputEl}
           onChange={getSearchTerm}
         />
-        <button className="search-btn" type="submit">
-          Search
-        </button>
+        <img src="https://www.freepnglogos.com/uploads/search-png/search-icon-line-icon-icon-24.png" width={"50px"} style={{position:"absolute",right:"30px",top:"135px"}} />
       </form>
       <p>Hospital Name:{value && value.hospitalname}</p>
       <p>Address:{value && value.Address}</p>
@@ -90,7 +88,7 @@ const Home = () => {
           <div className="d-flex align-items-center">
             <table className="table table-hover text-center mt-5">
               <thead>
-                <tr className="">
+                <tr className="t-head">
                   <th scope="col">S.No</th>
                   <th scope="col">Name</th>
                   <th scope="col">Quantity</th>
@@ -112,10 +110,10 @@ const Home = () => {
                           <td>{Products.stock}</td>
                           <td>
                             <button
-                              className="btn border border-3 mx-3"
+                              className="edit-btn"
                               onClick={() => handleedit(Products.id)}
                             >
-                              <i className="fa-solid fa-pen-to-square"></i>
+                             Edit
                             </button>
                           </td>
                         </tr>
@@ -135,10 +133,10 @@ const Home = () => {
                           <td>{filterProduct.stock}</td>
                           <td>
                             <button
-                              className="btn border border-3 mx-3"
+                              className="edit-btn"
                               onClick={() => handleedit(filterProduct.id)}
                             >
-                              <i className="fa-solid fa-pen-to-square"></i>
+                             Edit
                             </button>
                           </td>
                         </tr>

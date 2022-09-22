@@ -11,8 +11,6 @@ const Pharmacy = () => {
   const aid = `${imgPath}first-aid-kit.png`;
   const ear = `${imgPath}ear.png`;
   const tooth = `${imgPath}tooth.png`;
-
-  console.log(window.location);
   return (
     <>
       <nav className="navbar navbar-expand-lg fixed-top bg-white">
