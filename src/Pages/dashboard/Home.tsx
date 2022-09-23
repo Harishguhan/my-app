@@ -71,9 +71,9 @@ const Home = () => {
   return (
     <>
       <h1 className="text-center mt-3 mb-3 head">{heading}</h1>
-      <form className="form-inline col-lg-3 col-sm-12 d-flex justify-content-end ms-auto search-bar">
+      <form className="form-inline searh-div">
         <input
-          className="searchbar"
+          className="search-bar"
           type="search"
           placeholder="Search here.."
           aria-label="Search"
@@ -81,11 +81,7 @@ const Home = () => {
           ref={inputEl}
           onChange={getSearchTerm}
         />
-        <img
-          src="https://www.freepnglogos.com/uploads/search-png/search-icon-line-icon-icon-24.png"
-          width={"40px"}
-          style={{ position: "absolute", right: "30px", top: "135px" }}
-        />
+        <i className="fa-solid fa-magnifying-glass"></i>    
       </form>
       <p>Hospital Name:{value && value.hospitalname}</p>
       <p>Address:{value && value.Address}</p>

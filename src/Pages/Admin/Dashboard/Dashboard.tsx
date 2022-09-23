@@ -18,6 +18,7 @@ import swal from "sweetalert";
 import { ValueContext } from "../../../Context/Context";
 import { ProductValue } from "../../../GlobalTypes/globaltypes";
 import "../Dashboard/Add_medichine/Add.css";
+import useFetch from "../../../CustomHooks/useFetch";
 const Nav = styled.div`
   background: #085f73;
   height: 80px;
@@ -61,6 +62,7 @@ const SideViewWrap = styled.div`
 
 const Dashboard = () => {
   const [searchItem, setSearchItem] = useState("");
+  const heading = useFetch();
   const [searchResults, setsearchResults] = useState([]);
   const [table, settable] = useState(true);
   const value = useContext(ValueContext);
@@ -138,15 +140,10 @@ const Dashboard = () => {
           })}
         </SideViewWrap>
       </SideView>
-
-      <Link style={{ textDecoration: "none" }} to="/add_catogary">
-        <button className="d-flex justify-content-end ms-auto add-btn">
-          Add catagory
-        </button>
-      </Link>
-      <form className="form-inline d-flex mb-4 col-lg-3 col-sm-12 d-flex justify-content-end mx-auto">
+      <h1 className="text-center mt-3 mb-3 head">{heading}</h1>
+      <form className="form-inline searh-div">
         <input
-          className="form-control mr-sm-2 d-flex justify-content-end shadow-none"
+          className="search-bar"
           type="search"
           placeholder="Search"
           aria-label="Search"
@@ -154,9 +151,7 @@ const Dashboard = () => {
           ref={inputEl}
           onChange={getSearchTerm}
         />
-        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-          Search
-        </button>
+        <i className="fa-solid fa-magnifying-glass"></i>
       </form>
       <p>Hospital Name:{value && value.hospitalname}</p>
       <p>Address:{value && value.Address}</p>

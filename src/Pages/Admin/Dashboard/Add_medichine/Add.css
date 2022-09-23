@@ -13,3 +13,45 @@
     border-radius: 6px;
     margin-top: 10px;
 }
+.head{
+    padding: 45px !important;
+    margin-top: -67px !important;
+    color: white;
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    background-color: #085f73;
+    padding: 20px 0;
+    border-radius: 5px;
+    text-shadow: 10px 10px 10px black;
+   
+}
+.search-bar{
+   width: 250px;
+   padding: 10px;
+   border: 2px solid #085f73;
+   border-radius: 8px;
+   margin-right: 30px;
+}
+.search-bar:focus{
+    outline: none;
+}
+.searh-div{
+    margin-top: 30px;
+    display: flex;
+    justify-content: end;
+    
+}
+.fa-magnifying-glass{
+    /* color: white; */
+    font-size: 30px;
+    margin-top: -10px;
+    padding: 20px 20px;
+    background-color: #085f73;
+    border-radius: 50%;
+    border: 2px solid #085f73;
+    position: absolute;
+    cursor: pointer;
+
+}
