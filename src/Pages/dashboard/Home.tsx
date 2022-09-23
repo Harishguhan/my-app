@@ -9,19 +9,20 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import customAxios from "../../Axios";
 import { loadData } from "../../Redux/Action";
+
 import { AppDispatch, RootState } from "../../Redux/Store";
 import { ValueContext } from "../../Context/Context";
 import { ProductValue } from "../../GlobalTypes/globaltypes";
 import "./Home.css";
+import useFetch from "../../CustomHooks/useFetch";
 
 const Home = () => {
+  const heading = useFetch();
   const value = useContext(ValueContext);
   const navigate = useNavigate();
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  // const [dat, setdata] = useState([]);
   const [results, setsearchResults] = useState([]);
   const [searchItem, setSearchItem] = useState("");
-  const [table, settable] = useState(true);
+  const [table, settable] = useState(true); 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const inputEl = useRef<any>("");
   const dispatch = useDispatch<AppDispatch>();
@@ -34,6 +35,7 @@ const Home = () => {
       })
       .catch((err) => console.error(err.message));
   }, []);
+
   const searchHandler = (searchItems: string) => {
     setSearchItem(searchItems);
 
@@ -68,7 +70,7 @@ const Home = () => {
 
   return (
     <>
-      <h1 className="text-center mt-3 mb-3 head">pharmacy inventory system</h1>
+      <h1 className="text-center mt-3 mb-3 head">{heading}</h1>
       <form className="form-inline col-lg-3 col-sm-12 d-flex justify-content-end ms-auto search-bar">
         <input
           className="searchbar"
@@ -79,7 +81,11 @@ const Home = () => {
           ref={inputEl}
           onChange={getSearchTerm}
         />
-        <img src="https://www.freepnglogos.com/uploads/search-png/search-icon-line-icon-icon-24.png" width={"50px"} style={{position:"absolute",right:"30px",top:"135px"}} />
+        <img
+          src="https://www.freepnglogos.com/uploads/search-png/search-icon-line-icon-icon-24.png"
+          width={"40px"}
+          style={{ position: "absolute", right: "30px", top: "135px" }}
+        />
       </form>
       <p>Hospital Name:{value && value.hospitalname}</p>
       <p>Address:{value && value.Address}</p>
@@ -113,7 +119,7 @@ const Home = () => {
                               className="edit-btn"
                               onClick={() => handleedit(Products.id)}
                             >
-                             Edit
+                              Edit
                             </button>
                           </td>
                         </tr>
@@ -136,7 +142,7 @@ const Home = () => {
                               className="edit-btn"
                               onClick={() => handleedit(filterProduct.id)}
                             >
-                             Edit
+                              Edit
                             </button>
                           </td>
                         </tr>
@@ -148,7 +154,9 @@ const Home = () => {
           </div>
         </div>
       ) : (
-        <p style={{ textAlign: "center", fontSize: "30px",fontWeight:"bold" }}>
+        <p
+          style={{ textAlign: "center", fontSize: "30px", fontWeight: "bold" }}
+        >
           No Product Available...
         </p>
       )}

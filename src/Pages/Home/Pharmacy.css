@@ -16,7 +16,6 @@
     transition: ease 0.5s;
     color: white !important;
 }
-
 .button{
     padding: 10px 25px;
     background:transparent;
@@ -24,8 +23,6 @@
     font-weight: bold;
     color: #898c88;
     border: 2px solid #898c88;
-    
-    
 }
 .button1{
     padding: 10px 25px;

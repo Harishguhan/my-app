@@ -5,3 +5,9 @@ export interface ProductValue {
     price:string,
     stock:string,
   }
+
+
+  export interface title{
+    id:number,
+    Heading:string
+  }

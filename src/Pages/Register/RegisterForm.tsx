@@ -126,6 +126,13 @@ const RegisterForm = () => {
               <img src="https://pngimg.com/uploads/soap_bubbles/small/soap_bubbles_PNG58.png" alt="water bubble png" />
               <img src="https://pngimg.com/uploads/soap_bubbles/small/soap_bubbles_PNG58.png" alt="water bubble png" />
           </div>
+          <div className="bubbles-top">
+              <img src="https://pngimg.com/uploads/soap_bubbles/small/soap_bubbles_PNG58.png" alt="water bubble png" />
+              <img src="https://pngimg.com/uploads/soap_bubbles/small/soap_bubbles_PNG58.png" alt="water bubble png" />
+              <img src="https://pngimg.com/uploads/soap_bubbles/small/soap_bubbles_PNG58.png" alt="water bubble png" />
+              <img src="https://pngimg.com/uploads/soap_bubbles/small/soap_bubbles_PNG58.png" alt="water bubble png" />
+              <img src="https://pngimg.com/uploads/soap_bubbles/small/soap_bubbles_PNG58.png" alt="water bubble png" />
+          </div>
     </div>
     </>
   );
