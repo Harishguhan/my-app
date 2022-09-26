@@ -1,222 +1,215 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
-*{
-    font-family: 'Poppins', sans-serif;
+* {
+  font-family: 'Poppins', sans-serif;
 }
-.navbar-brand{
-    font-size: 30px !important;
-}
-
-.nav-link{
-    color: black !important;
-}
-.nav-link:hover{
-    background-color: #898c88;
-    border-radius: 4px;
-    transition: ease 0.5s;
-    color: white !important;
-}
-.button{
-    padding: 10px 25px;
-    background:transparent;
-    margin-right: 5px;
-    font-weight: bold;
-    color: #898c88;
-    border: 2px solid #898c88;
-}
-.button1{
-    padding: 10px 25px;
-    background:transparent;
-    font-weight: bold;
-    color: white;
-    border: 2px solid white;
-    border-radius: 4px;
-}
-.button1:hover{
-    background-color: white;
-    color: #898c88;
-}
-.button:hover{
-    color: white;
-    background-color: #898c88;
+.navbar-brand {
+  font-size: 30px !important;
 }
 
-.macy{
-    color: #898c88;
-    font-weight: bold;
-    letter-spacing: 3px;
-    transition: ease 2s;
+.nav-link {
+  color: black !important;
 }
-.macy:hover{
-    color: blue;
-    transition: ease 1s;
-    margin-left: 10px !important;
-    font-size: 35px;
+.nav-link:hover {
+  background-color: #898c88;
+  border-radius: 4px;
+  transition: ease 0.5s;
+  color: white !important;
 }
-
-#home{
-    background-image: url('https://images.unsplash.com/photo-1576671081837-49000212a370?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fHBoYXJtYWNpc3R8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60');
-    background-repeat: no-repeat;
-    min-height: 90vh;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.button {
+  padding: 10px 25px;
+  background: transparent;
+  margin-right: 5px;
+  font-weight: bold;
+  color: #898c88;
+  border: 2px solid #898c88;
 }
-#home h1{
-    font-size: 70px;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: white;
-    -webkit-text-stroke: 1px white;
-    color: transparent;
-    background-image: linear-gradient(white,white);
-    background-repeat: no-repeat;
-    -webkit-background-clip: text;
-    background-clip: text;
-    background-position: -700px 0;
-    animation: text-color 5s linear infinite;
+.button1 {
+  padding: 10px 25px;
+  background: transparent;
+  font-weight: bold;
+  color: white;
+  border: 2px solid white;
+  border-radius: 4px;
 }
-@keyframes text-color{
-    100%{
-        background-position: 0;
-    }
+.button1:hover {
+  background-color: white;
+  color: #898c88;
 }
-#home p{
-    font-weight: 600;
-    word-spacing: 5px;
-    color: white;
+.button:hover {
+  color: white;
+  background-color: #898c88;
 }
 
-.box{
-    background-color: #898c88;
-    padding: 40px 0px;
-    color: white;
+.macy {
+  color: #898c88;
+  font-weight: bold;
+  letter-spacing: 3px;
+  transition: ease 2s;
 }
-.box:hover{
-    opacity: 0.5;
-}
-.box h3{
-    font-weight:bold !important;
-    margin-top: 15px;
-    color: white;
-    color: transparent;
-    background-image: linear-gradient(white,white);
-    background-repeat: no-repeat;
-    -webkit-background-clip: text;
-    background-clip: text;
-    background-position: -700px 0;
-    animation: text-color 3s linear infinite;
-}
-#pharm h1{
-    text-transform: uppercase;
-    text-align: center;
-    font-weight: bold;
-
-}
-#pharm p{
-    text-align: center;
-    margin-top: 30px;
-}
-#pharm h3{
-    text-align: center;
-    font-weight: bold;
-    
+.macy:hover {
+  color: blue;
+  transition: ease 1s;
+  margin-left: 10px !important;
+  font-size: 35px;
 }
 
-#department{
-    min-height: 60vh;
-    background-color: #898c88;
+#home {
+  background-image: url('https://images.unsplash.com/photo-1576671081837-49000212a370?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fHBoYXJtYWNpc3R8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60');
+  background-repeat: no-repeat;
+  min-height: 90vh;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-#department h1{
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: white;
-    padding-top: 100px;
-    letter-spacing: 4px;
-    
+#home h1 {
+  font-size: 70px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+  -webkit-text-stroke: 1px white;
+  color: transparent;
+  background-image: linear-gradient(white, white);
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-position: -700px 0;
+  animation: text-color 5s linear infinite;
 }
-.cc{
-    cursor: pointer;
-    transition: ease 1s;
-    
-    
+@keyframes text-color {
+  100% {
+    background-position: 0;
+  }
 }
-.cc:hover{
-    transform:scale(1.2,1.2);
-
-}
-#department p{
-    color: white;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-#care h1{
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-top: 30px;
-    letter-spacing: 5px;
-}
-#care p{
-    margin-top: 40px;
-    line-height: 30px;
+#home p {
+  font-weight: 600;
+  word-spacing: 5px;
+  color: white;
 }
 
+.box {
+  background-color: #898c88;
+  padding: 40px 0px;
+  color: white;
+}
+.box:hover {
+  opacity: 0.5;
+}
+.box h3 {
+  font-weight: bold !important;
+  margin-top: 15px;
+  color: white;
+  color: transparent;
+  background-image: linear-gradient(white, white);
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-position: -700px 0;
+  animation: text-color 3s linear infinite;
+}
+#pharm h1 {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+}
+#pharm p {
+  text-align: center;
+  margin-top: 30px;
+}
+#pharm h3 {
+  text-align: center;
+  font-weight: bold;
+}
 
-#wecare h1{ 
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: bold;
+#department {
+  min-height: 60vh;
+  background-color: #898c88;
 }
-#wecare p{
-    text-align: center;
+#department h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+  padding-top: 100px;
+  letter-spacing: 4px;
+}
+.cc {
+  cursor: pointer;
+  transition: ease 1s;
+}
+.cc:hover {
+  transform: scale(1.2, 1.2);
+}
+#department p {
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
-#footer{
-    background-color: black;
-    color: white;
-    padding-top: 40px;
-    min-height: 50vh;
-    font-weight: bold !important;
+#care h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 30px;
+  letter-spacing: 5px;
+}
+#care p {
+  margin-top: 40px;
+  line-height: 30px;
 }
 
-.footer-text{
-    text-align: center;
-    font-weight: bold;
-    text-shadow: 3px 3px 8px white;
+#wecare h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
 }
-#footer .disk{
-    line-height: 40px;
+#wecare p {
+  text-align: center;
 }
-.butto1{
-    border: none;
-    margin-top: 20px;
-    padding: 8px 20px;
-    border-radius: 5px;
-    font-weight: bold;
+
+#footer {
+  background-color: black;
+  color: white;
+  padding-top: 40px;
+  min-height: 50vh;
+  font-weight: bold !important;
 }
-.butto1:hover{
-    background-color: #898c88;
-    color: white;
+
+.footer-text {
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 3px 3px 8px white;
+}
+#footer .disk {
+  line-height: 40px;
+}
+.butto1 {
+  border: none;
+  margin-top: 20px;
+  padding: 8px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.butto1:hover {
+  background-color: #898c88;
+  color: white;
 }
 /* meadia queries */
 
 @media screen and (max-width: 480px) {
-    #home h1{
-        font-size: 40px;
-    }
-
-    #home p{
-        font-size: 12px;
-    }
-    #department h1{
-        letter-spacing: 0;
-    }
-    .cc{
-        text-align: center;
-    }
+  #home h1 {
+    font-size: 40px;
   }
+
+  #home p {
+    font-size: 12px;
+  }
+  #department h1 {
+    letter-spacing: 0;
+  }
+  .cc {
+    text-align: center;
+  }
+}

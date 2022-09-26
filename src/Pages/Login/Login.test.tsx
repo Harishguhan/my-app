@@ -1,35 +1,34 @@
-import { screen } from "@testing-library/react";
-import React from "react";
-import { renderComponentProvider } from "../../Utilities/TestCase";
-import Login from "./Login";
+import { screen } from '@testing-library/react';
+import React from 'react';
+import { renderComponentProvider } from '../../Utilities/TestCase';
+import Login from './Login';
 
-describe("Test the Login Form", () => {
-  it("test the content", () => {
+describe('Test the Login Form', () => {
+  it('test the content', () => {
     renderComponentProvider(<Login />);
 
-    const email = screen.getByTestId("email");
-    const password = screen.getByTestId("password");
+    const email = screen.getByTestId('email');
+    const password = screen.getByTestId('password');
 
     expect(email).toBeInTheDocument();
     expect(password).toBeInTheDocument();
   });
 
-  it("test the buttonlist", async () => {
+  it('test the buttonlist', async () => {
     renderComponentProvider(<Login />);
 
-    const buttonList = await screen.findAllByRole("button");
+    const buttonList = await screen.findAllByRole('button');
 
     expect(buttonList).toHaveLength(1);
   });
 
-
-  it("test the attribute",()=>{
+  it('test the attribute', () => {
     renderComponentProvider(<Login />);
 
-    const email = screen.getByPlaceholderText("Enter your email address");
-    const password = screen.getByPlaceholderText("Enter your password")
+    const email = screen.getByPlaceholderText('Enter your email address');
+    const password = screen.getByPlaceholderText('Enter your password');
 
-    expect(email).toHaveAttribute("type","email");
-    expect(password).toHaveAttribute("type","password");
-  })
+    expect(email).toHaveAttribute('type', 'email');
+    expect(password).toHaveAttribute('type', 'password');
+  });
 });

@@ -1,35 +1,28 @@
-import React, {
-  useCallback,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import customAxios from "../../Axios";
-import { loadData } from "../../Redux/Action";
-
-import { AppDispatch, RootState } from "../../Redux/Store";
-import { ValueContext } from "../../Context/Context";
-import { ProductValue } from "../../GlobalTypes/globaltypes";
-import "./Home.css";
-import useFetch from "../../CustomHooks/useFetch";
+import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import customAxios from '../../Axios';
+import { loadData } from '../../Redux/Action';
+import { AppDispatch, RootState } from '../../Redux/Store';
+import { ValueContext } from '../../Context/Context';
+import { ProductValue } from '../../GlobalTypes/globaltypes';
+import './Home.css';
+import useFetch from '../../CustomHooks/useFetch';
 
 const Home = () => {
   const heading = useFetch();
   const value = useContext(ValueContext);
   const navigate = useNavigate();
   const [results, setsearchResults] = useState([]);
-  const [searchItem, setSearchItem] = useState("");
-  const [table, settable] = useState(true); 
+  const [searchItem, setSearchItem] = useState('');
+  const [table, settable] = useState(true);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const inputEl = useRef<any>("");
+  const inputEl = useRef<any>('');
   const dispatch = useDispatch<AppDispatch>();
   const { data } = useSelector((state: RootState) => state.data);
   useEffect(() => {
     customAxios
-      .get("/auth/employees")
+      .get('/auth/employees')
       .then((responce) => {
         console.log(responce?.data?.data?.employees);
       })
@@ -39,10 +32,10 @@ const Home = () => {
   const searchHandler = (searchItems: string) => {
     setSearchItem(searchItems);
 
-    if (searchItems !== "") {
+    if (searchItems !== '') {
       const newResults = data.filter((fillproduct: ProductValue) => {
         return Object.values(fillproduct)
-          .join(" ")
+          .join(' ')
           .toLowerCase()
           .includes(searchItem.toLowerCase());
       });
@@ -81,7 +74,7 @@ const Home = () => {
           ref={inputEl}
           onChange={getSearchTerm}
         />
-        <i className="fa-solid fa-magnifying-glass"></i>    
+        <i className="fa-solid fa-magnifying-glass"></i>
       </form>
       <p>Hospital Name:{value && value.hospitalname}</p>
       <p>Address:{value && value.Address}</p>
@@ -111,10 +104,7 @@ const Home = () => {
                           <td>{Products.price}</td>
                           <td>{Products.stock}</td>
                           <td>
-                            <button
-                              className="edit-btn"
-                              onClick={() => handleedit(Products.id)}
-                            >
+                            <button className="edit-btn" onClick={() => handleedit(Products.id)}>
                               Edit
                             </button>
                           </td>
@@ -136,8 +126,7 @@ const Home = () => {
                           <td>
                             <button
                               className="edit-btn"
-                              onClick={() => handleedit(filterProduct.id)}
-                            >
+                              onClick={() => handleedit(filterProduct.id)}>
                               Edit
                             </button>
                           </td>
@@ -150,9 +139,7 @@ const Home = () => {
           </div>
         </div>
       ) : (
-        <p
-          style={{ textAlign: "center", fontSize: "30px", fontWeight: "bold" }}
-        >
+        <p style={{ textAlign: 'center', fontSize: '30px', fontWeight: 'bold' }}>
           No Product Available...
         </p>
       )}

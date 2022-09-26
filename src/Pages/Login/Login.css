@@ -1,15 +1,14 @@
-.login-form{
-    display: flex;
-    min-height: 100vh;
-    justify-content: center;
-    align-items: center;
+.login-form {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
-.small-text{
-    margin-top: 20px;
-    text-align: center;
-    
+.small-text {
+  margin-top: 20px;
+  text-align: center;
 }
-.err{
-    color: red;
-    text-align: center;
+.err {
+  color: red;
+  text-align: center;
 }

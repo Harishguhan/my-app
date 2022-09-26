@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { Link, useNavigate, useParams } from "react-router-dom";
-import swal from "sweetalert";
-import { getSingleUser, loadData } from "../../../../Redux/Action";
-import { AppDispatch, RootState } from "../../../../Redux/Store";
+import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import swal from 'sweetalert';
+import { getSingleUser, loadData } from '../../../../Redux/Action';
+import { AppDispatch, RootState } from '../../../../Redux/Store';
 import './EditData.css';
 import { ProductValue } from '../../../../GlobalTypes/globaltypes';
 type AuthUser = {
@@ -14,12 +14,11 @@ type AuthUser = {
   stock?: string;
 };
 interface Editvalue {
-  id:number | undefined,
-  catogary:string | undefined,
-  quantity:string | undefined,
-  price:string | undefined,
-  stock:string | undefined
-
+  id: number | undefined;
+  catogary: string | undefined;
+  quantity: string | undefined;
+  price: string | undefined;
+  stock: string | undefined;
 }
 const EditData = () => {
   const [edit, setEdit] = useState<AuthUser>({});
@@ -35,11 +34,10 @@ const EditData = () => {
     if (!e.target.value) {
       setError({
         ...error,
-        [e.target.name]: `${e.target.name} cannot be blank`,
+        [e.target.name]: `${e.target.name} cannot be blank`
       });
-    }
-    else{
-        // setError("")
+    } else {
+      // setError("")
     }
   };
 
@@ -47,7 +45,7 @@ const EditData = () => {
     dispatch(loadData());
   }, [dispatch]);
   const filteredData =
-    editData && editData.data.find((data:ProductValue) => data.id.toString() === id);
+    editData && editData.data.find((data: ProductValue) => data.id.toString() === id);
   useEffect(() => {
     if (filteredData) {
       setEdit(filteredData);
@@ -55,39 +53,39 @@ const EditData = () => {
   }, [filteredData]);
 
   const handlesubmit = (e: React.FormEvent) => {
-    
     e.preventDefault();
     if (!edit.catogary) {
-      setError({ ...error, catogary: "catagory cannot be Blank" });
+      setError({ ...error, catogary: 'catagory cannot be Blank' });
     } else if (!edit.quantity) {
-      setError({ ...error, quantity: "Quantity cannot be Blank" });
-    } 
-      else if (!edit.price) {
-      setError({ ...error, price: "Price Number Cannot be blank" });
-    }
-     else if (!edit.stock) {
-      setError({ ...error, stock: "stock cannot be Blank" });
+      setError({ ...error, quantity: 'Quantity cannot be Blank' });
+    } else if (!edit.price) {
+      setError({ ...error, price: 'Price Number Cannot be blank' });
+    } else if (!edit.stock) {
+      setError({ ...error, stock: 'stock cannot be Blank' });
     } else {
-
       dispatch(getSingleUser(updatevalue));
-      swal("Product", "Update successfully", "success");
-      navigate("/admin_dashboard");
-    }  
+      swal('Product', 'Update successfully', 'success');
+      navigate('/admin_dashboard');
+    }
   };
 
-  const updatevalue:Editvalue = {
+  const updatevalue: Editvalue = {
     id: edit.id,
     catogary: edit.catogary,
     quantity: edit.quantity,
     price: edit.price,
-    stock: edit.stock,
+    stock: edit.stock
   };
   return (
     <div className="container-fluid frm">
       <div className="row">
         <h1 className="text-center">Edit the Data</h1>
         <div className="col-lg-6">
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8ZWRpdCUyMGRhdGF8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"  className="img-fluid rounded" alt="edit"/>
+          <img
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8ZWRpdCUyMGRhdGF8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
+            className="img-fluid rounded"
+            alt="edit"
+          />
         </div>
         <div className="col-lg-6">
           <form className="" onSubmit={handlesubmit}>
@@ -100,7 +98,7 @@ const EditData = () => {
                 value={edit.catogary}
                 onChange={(e) => handlechange(e)}
               />
-              <span style={{ color: "red" }}>{error.catogary}</span>
+              <span style={{ color: 'red' }}>{error.catogary}</span>
             </div>
             <div className="form-group mt-4">
               <label>Quantity</label>
@@ -111,7 +109,7 @@ const EditData = () => {
                 value={edit.quantity}
                 onChange={(e) => handlechange(e)}
               />
-              <span style={{ color: "red" }}>{error.quantity}</span>
+              <span style={{ color: 'red' }}>{error.quantity}</span>
             </div>
             <div className="form-group mt-4">
               <label>Price</label>
@@ -122,7 +120,7 @@ const EditData = () => {
                 value={edit.price}
                 onChange={(e) => handlechange(e)}
               />
-              <span style={{ color: "red" }}>{error.price}</span>
+              <span style={{ color: 'red' }}>{error.price}</span>
             </div>
             <div className="form-group mt-3">
               <label>Stock</label>
@@ -133,12 +131,12 @@ const EditData = () => {
                 onChange={(e) => handlechange(e)}
                 value={edit.stock}
               />
-              <span style={{ color: "red" }}>{error.stock}</span>
+              <span style={{ color: 'red' }}>{error.stock}</span>
             </div>
             <div className=" d-flex justify-content-between mt-3">
-            <Link to="/admin_dashboard"><button className="btn btn-secondary">
-                Cancel
-              </button></Link>
+              <Link to="/admin_dashboard">
+                <button className="btn btn-secondary">Cancel</button>
+              </Link>
               <button type="submit" className="btn btn-success">
                 Update
               </button>

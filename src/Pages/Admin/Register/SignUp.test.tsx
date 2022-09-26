@@ -1,40 +1,39 @@
-import { screen } from "@testing-library/react";
-import React from "react";
-import { renderComponentProvider } from "../../../Utilities/TestCase";
-import Register from "./Register";
+import { screen } from '@testing-library/react';
+import React from 'react';
+import { renderComponentProvider } from '../../../Utilities/TestCase';
+import Register from './Register';
 
-describe("signup form testing",() =>{
-    it("testing in the document",() => {
-        renderComponentProvider(<Register />);
-        const username = screen.getByTestId("username");
-        const email = screen.getByTestId("email");
-        const password = screen.getByTestId("password");
-        const confirmpassword = screen.getByTestId("confirmpassword");
+describe('signup form testing', () => {
+  it('testing in the document', () => {
+    renderComponentProvider(<Register />);
+    const username = screen.getByTestId('username');
+    const email = screen.getByTestId('email');
+    const password = screen.getByTestId('password');
+    const confirmpassword = screen.getByTestId('confirmpassword');
 
-        expect(username).toBeInTheDocument();
-        expect(email).toBeInTheDocument();
-        expect(password).toBeInTheDocument();
-        expect(confirmpassword).toBeInTheDocument();
-    })
+    expect(username).toBeInTheDocument();
+    expect(email).toBeInTheDocument();
+    expect(password).toBeInTheDocument();
+    expect(confirmpassword).toBeInTheDocument();
+  });
 
-    it("Button List", async () => {
-        renderComponentProvider(<Register />);
-    
-        const buttonList = await screen.findAllByRole("button");
-        expect(buttonList).toHaveLength(1);
-      });
+  it('Button List', async () => {
+    renderComponentProvider(<Register />);
 
-      it("Attibute check",() => {
-        renderComponentProvider(<Register />);
-        const username = screen.getByPlaceholderText("Enter your Username");
-        const email = screen.getByPlaceholderText("Enter your email");
-        const password = screen.getByPlaceholderText("Enter your Password");
-        const ConfirmPassword = screen.getByPlaceholderText("Enter your ConfirmPassword");
-    
-        expect(username).toHaveAttribute("type","text");
-        expect(email).toHaveAttribute("type","email")
-        expect(password).toHaveAttribute("type","password");
-        expect(ConfirmPassword).toHaveAttribute("type","password");
-        
-      });
-})
+    const buttonList = await screen.findAllByRole('button');
+    expect(buttonList).toHaveLength(1);
+  });
+
+  it('Attibute check', () => {
+    renderComponentProvider(<Register />);
+    const username = screen.getByPlaceholderText('Enter your Username');
+    const email = screen.getByPlaceholderText('Enter your email');
+    const password = screen.getByPlaceholderText('Enter your Password');
+    const ConfirmPassword = screen.getByPlaceholderText('Enter your ConfirmPassword');
+
+    expect(username).toHaveAttribute('type', 'text');
+    expect(email).toHaveAttribute('type', 'email');
+    expect(password).toHaveAttribute('type', 'password');
+    expect(ConfirmPassword).toHaveAttribute('type', 'password');
+  });
+});

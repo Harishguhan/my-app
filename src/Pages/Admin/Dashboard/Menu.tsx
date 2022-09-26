@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { Link, To } from "react-router-dom";
-import styled from "styled-components";
+import React, { useState } from 'react';
+import { Link, To } from 'react-router-dom';
+import styled from 'styled-components';
 
 const SidebarLink = styled(Link)`
   display: flex;
@@ -53,12 +53,7 @@ const Menu = ({ item }: any) => {
           {item.icon}
           <Label>{item.title}</Label>
         </div>
-        <div>
-          {item.DropDown && DropDown
-            ? item.iconOpened
-            :item.iconClosed
-            }
-        </div>
+        <div>{item.DropDown && DropDown ? item.iconOpened : item.iconClosed}</div>
       </SidebarLink>
       {DropDown &&
         item.DropDown.map(
@@ -69,10 +64,7 @@ const Menu = ({ item }: any) => {
               | string
               | number
               | boolean
-              | React.ReactElement<
-                  
-                  string
-                >
+              | React.ReactElement<string>
               | React.ReactFragment
               | React.ReactPortal
               | null
@@ -81,10 +73,7 @@ const Menu = ({ item }: any) => {
               | string
               | number
               | boolean
-              | React.ReactElement<
-                  
-                  string 
-                >
+              | React.ReactElement<string>
               | React.ReactFragment
               | React.ReactPortal
               | null

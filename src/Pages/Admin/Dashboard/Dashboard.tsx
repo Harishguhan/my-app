@@ -1,24 +1,19 @@
-import React, {
-  useCallback,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
-import * as FaIcons from "react-icons/fa";
-import * as AiIcons from "react-icons/ai";
-import { Link, useNavigate } from "react-router-dom";
-import styled from "styled-components";
-import { Data } from "./SidebarData";
-import Menu from "./Menu";
-import { useSelector, useDispatch } from "react-redux";
-import { deletData, loadData } from "../../../Redux/Action";
-import { AppDispatch, RootState } from "../../../Redux/Store";
-import swal from "sweetalert";
-import { ValueContext } from "../../../Context/Context";
-import { ProductValue } from "../../../GlobalTypes/globaltypes";
-import "../Dashboard/Add_medichine/Add.css";
-import useFetch from "../../../CustomHooks/useFetch";
+import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
+import * as FaIcons from 'react-icons/fa';
+import * as AiIcons from 'react-icons/ai';
+import { Link, useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+import { Data } from './SidebarData';
+import Menu from './Menu';
+import { useSelector, useDispatch } from 'react-redux';
+import { deletData, loadData } from '../../../Redux/Action';
+import { AppDispatch, RootState } from '../../../Redux/Store';
+import swal from 'sweetalert';
+import { ValueContext } from '../../../Context/Context';
+import { ProductValue } from '../../../GlobalTypes/globaltypes';
+import '../Dashboard/Add_medichine/Add.css';
+import useFetch from '../../../CustomHooks/useFetch';
+
 const Nav = styled.div`
   background: #085f73;
   height: 80px;
@@ -61,7 +56,7 @@ const SideViewWrap = styled.div`
 `;
 
 const Dashboard = () => {
-  const [searchItem, setSearchItem] = useState("");
+  const [searchItem, setSearchItem] = useState('');
   const heading = useFetch();
   const [searchResults, setsearchResults] = useState([]);
   const [table, settable] = useState(true);
@@ -71,7 +66,7 @@ const Dashboard = () => {
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const inputEl = useRef<any>("");
+  const inputEl = useRef<any>('');
   const { data } = useSelector((state: RootState) => state.data);
 
   useEffect(() => {
@@ -80,10 +75,10 @@ const Dashboard = () => {
 
   const searchHandler = (searchItems: string) => {
     setSearchItem(searchItems);
-    if (searchItems !== "") {
+    if (searchItems !== '') {
       const newResults = data.filter((fillproduct: ProductValue) => {
         return Object.values(fillproduct)
-          .join(" ")
+          .join(' ')
           .toLowerCase()
           .includes(searchItem.toLowerCase());
       });
@@ -98,16 +93,16 @@ const Dashboard = () => {
   const handledelete = useCallback(
     (id: number) => {
       swal({
-        title: "Are you sure?",
-        text: "You Want to Delete this..?",
-        icon: "warning",
+        title: 'Are you sure?',
+        text: 'You Want to Delete this..?',
+        icon: 'warning',
         // buttons: "true",
-        dangerMode: true,
+        dangerMode: true
       }).then((willDelete) => {
         if (willDelete) {
           dispatch(deletData(id));
-          swal("Product has been deleted!", {
-            icon: "success",
+          swal('Product has been deleted!', {
+            icon: 'success'
           });
         }
       });
@@ -182,14 +177,12 @@ const Dashboard = () => {
                         <td>
                           <button
                             className="btn border border-3 mx-3"
-                            onClick={() => handleedit(Products.id)}
-                          >
+                            onClick={() => handleedit(Products.id)}>
                             <i className="fa-solid fa-pen-to-square"></i>
                           </button>
                           <button
                             className="btn border border-3 mx-2"
-                            onClick={() => handledelete(Products.id)}
-                          >
+                            onClick={() => handledelete(Products.id)}>
                             <i className="fa-solid fa-trash"></i>
                           </button>
                         </td>
@@ -199,39 +192,36 @@ const Dashboard = () => {
               </tbody>
             ) : (
               <tbody>
-                {searchResults.length > 0
-                  && searchResults.map((filterproduct: ProductValue) => {
-                      return (
-                        <tr className="" key={filterproduct.id}>
-                          <th scope="row">{filterproduct.id}</th>
-                          <td>{filterproduct.catogary}</td>
-                          <td>{filterproduct.quantity}</td>
-                          <td>{filterproduct.price}</td>
-                          <td>{filterproduct.stock}</td>
-                          <td>
-                            <button
-                              className="btn border border-3 mx-3"
-                              onClick={() => handleedit(filterproduct.id)}
-                            >
-                              <i className="fa-solid fa-pen-to-square"></i>
-                            </button>
-                            <button
-                              className="btn border border-3 mx-2"
-                              onClick={() => handledelete(filterproduct.id)}
-                            >
-                              <i className="fa-solid fa-trash"></i>
-                            </button>
-                          </td>
-                        </tr>
-                      );
-                    })
-                }
+                {searchResults.length > 0 &&
+                  searchResults.map((filterproduct: ProductValue) => {
+                    return (
+                      <tr className="" key={filterproduct.id}>
+                        <th scope="row">{filterproduct.id}</th>
+                        <td>{filterproduct.catogary}</td>
+                        <td>{filterproduct.quantity}</td>
+                        <td>{filterproduct.price}</td>
+                        <td>{filterproduct.stock}</td>
+                        <td>
+                          <button
+                            className="btn border border-3 mx-3"
+                            onClick={() => handleedit(filterproduct.id)}>
+                            <i className="fa-solid fa-pen-to-square"></i>
+                          </button>
+                          <button
+                            className="btn border border-3 mx-2"
+                            onClick={() => handledelete(filterproduct.id)}>
+                            <i className="fa-solid fa-trash"></i>
+                          </button>
+                        </td>
+                      </tr>
+                    );
+                  })}
               </tbody>
             )}
           </table>
         </div>
       ) : (
-        <p style={{ textAlign: "center", fontSize: "30px",fontWeight:"bold" }}>
+        <p style={{ textAlign: 'center', fontSize: '30px', fontWeight: 'bold' }}>
           No Product Available...
         </p>
       )}

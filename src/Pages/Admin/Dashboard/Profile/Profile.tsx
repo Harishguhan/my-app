@@ -1,13 +1,13 @@
-import React, { useContext, useMemo } from "react";
-import { Link } from "react-router-dom";
-import "./Profile.css";
-import Notify, { ValueContext } from "../../../../Context/Context";
+import React, { useContext, useMemo } from 'react';
+import { Link } from 'react-router-dom';
+import './Profile.css';
+import Notify, { ValueContext } from '../../../../Context/Context';
 
 const Profile = () => {
   const data = useContext(ValueContext);
   const Notifys = useMemo(() => {
     return <Notify />;
-  },[Notify])
+  }, [Notify]);
   return (
     <div className="student-profile py-4">
       <div className="container">
@@ -23,8 +23,7 @@ const Profile = () => {
               </div>
               <div className="card-body">
                 <p className="mb-0">
-                  <strong className="pr-1">Pharmacy Name:</strong>{" "}
-                  {data && data.hospitalname}
+                  <strong className="pr-1">Pharmacy Name:</strong> {data && data.hospitalname}
                 </p>
                 <p className="mb-0">
                   <strong className="pr-1">Address:</strong>
@@ -47,34 +46,34 @@ const Profile = () => {
               <div className="card-body pt-0">
                 <table className="table table-bordered">
                   <tr>
-                    <th style={{ width: "30%" }}>GST No</th>
+                    <th style={{ width: '30%' }}>GST No</th>
                     <td width="2%">:</td>
                     <td>{data && data.Gstno}</td>
                   </tr>
                   <tr>
-                    <th style={{ width: "30%" }}>Contact No</th>
+                    <th style={{ width: '30%' }}>Contact No</th>
                     <td width="2%">:</td>
                     <td>{data && data.contactno}</td>
                   </tr>
                   <tr>
-                    <th style={{ width: "30%" }}>Starting Year</th>
+                    <th style={{ width: '30%' }}>Starting Year</th>
                     <td width="2%">:</td>
                     <td>{data && data.startingyear}</td>
                   </tr>
                   <tr>
-                    <th style={{ width: "30%" }}>Branches</th>
+                    <th style={{ width: '30%' }}>Branches</th>
                     <td width="2%">:</td>
                     <td>{data && data.branches}</td>
                   </tr>
                   <tr>
-                    <th style={{ width: "30%" }}>Special In</th>
+                    <th style={{ width: '30%' }}>Special In</th>
                     <td width="2%">:</td>
                     <td>{data && data.specialin}</td>
                   </tr>
                 </table>
               </div>
             </div>
-            <div style={{ height: "26px" }}></div>
+            <div style={{ height: '26px' }}></div>
             <div className="card shadow-sm">
               <div className="card-header bg-transparent border-0">
                 <h3 className="mb-0">
@@ -83,10 +82,9 @@ const Profile = () => {
               </div>
               <div className="card-body pt-0">
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
               </div>
             </div>

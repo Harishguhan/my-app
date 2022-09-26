@@ -1,7 +1,7 @@
-import React,{ createContext, useReducer } from "react";
-import CSS from 'csstype'
+import React, { createContext, useReducer } from 'react';
+import CSS from 'csstype';
 const initialState = {
-  notification: 5,
+  notification: 5
 };
 
 interface AppContextInterface {
@@ -16,7 +16,7 @@ interface AppContextInterface {
   contactno: number;
 }
 enum CountActionKind {
-  CLEAR = "CLEAR",
+  CLEAR = 'CLEAR',
   STRING = ''
 }
 
@@ -32,48 +32,45 @@ const reducer = (state: CountState, action: CountAction) => {
   switch (action.type) {
     case CountActionKind.CLEAR:
       return {
-        notification: action.payload,
+        notification: action.payload
       };
-      case '':
-      default:
-        return state
+    case '':
+    default:
+      return state;
   }
 };
 
-
 const Notify = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const notify:CSS.Properties = {
-    padding:"10px",
-    position:'absolute',
-    top:'10px',
-    right:"10px",
-    border:'2px solid grey',
-    background:"grey",
-    borderRadius:'5px'
-  }
-  const notifys:CSS.Properties = {
-    padding:"10px 20px",
-    position:'absolute',
-    bottom:'20%',
-    right:"50%",
-    border:'2px solid black',
-    background:"black",
-    borderRadius:'5px',
-    color:'white'
-  }
+  const notify: CSS.Properties = {
+    padding: '10px',
+    position: 'absolute',
+    top: '10px',
+    right: '10px',
+    border: '2px solid grey',
+    background: 'grey',
+    borderRadius: '5px'
+  };
+  const notifys: CSS.Properties = {
+    padding: '10px 20px',
+    position: 'absolute',
+    bottom: '20%',
+    right: '50%',
+    border: '2px solid black',
+    background: 'black',
+    borderRadius: '5px',
+    color: 'white'
+  };
   const clear = () => {
-    dispatch({ type: CountActionKind.CLEAR, payload: 0})
-    console.log("value updated")
-  }
+    dispatch({ type: CountActionKind.CLEAR, payload: 0 });
+    console.log('value updated');
+  };
   return (
     <div>
       <button style={notify} type="button">
         Notifications <span className="badge bg-dark">{state.notification}</span>
       </button>
-      <button style={notifys}
-        onClick={clear}
-      >
+      <button style={notifys} onClick={clear}>
         Clear Notification
       </button>
     </div>

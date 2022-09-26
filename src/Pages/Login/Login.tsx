@@ -1,10 +1,10 @@
-import { Form, FormikProvider, useFormik } from "formik";
-import React, { useState } from "react";
-import TextField from "../../components/TextField";
-import * as Yup from "yup";
-import { Link, useNavigate } from "react-router-dom";
-import "./Login.css";
-import customAxios from "../../Axios";
+import { Form, FormikProvider, useFormik } from 'formik';
+import React, { useState } from 'react';
+import TextField from '../../components/TextField';
+import * as Yup from 'yup';
+import { Link, useNavigate } from 'react-router-dom';
+import './Login.css';
+import customAxios from '../../Axios';
 
 interface Datatype {
   id: number;
@@ -17,66 +17,60 @@ interface Datatype {
 }
 
 const Login = () => {
-  const [error, seterror] = useState("");
+  const [error, seterror] = useState('');
   const navigate = useNavigate();
-  const getuser = localStorage.getItem("staff");
-  const getAdmin = localStorage.getItem("admin");
+  const getuser = localStorage.getItem('staff');
+  const getAdmin = localStorage.getItem('admin');
 
   const loginvalidate = Yup.object().shape({
     email: Yup.string()
-      .min(2, "too short")
-      .email("Invalid Email Address")
-      .required("Email is Required"),
-    password: Yup.string().required("Password is Required"),
+      .min(2, 'too short')
+      .email('Invalid Email Address')
+      .required('Email is Required'),
+    password: Yup.string().required('Password is Required')
   });
 
-    const Formik = useFormik({
-      initialValues: {
-        email: "",
-        password: "",
-      },
-      validationSchema: loginvalidate,
-      onSubmit: (data) => {
-        if (getuser && getuser.length) {
-          const staffdata = JSON.parse(getuser);
-          // eslint-disable-next-line @typescript-eslint/no-unused-vars, array-callback-return
-          staffdata.filter((datas: Datatype) => {
-            if (datas.email === data.email && datas.password === data.password) {
-              customAxios
-                .post("/auth/login", { email: data.email })
-                .then((responce) => {
-                  console.log("responce.data", responce);
-                  if (responce?.data?.status === "Success") {
-                    localStorage.setItem("access_token", responce.data.token);
-                    localStorage.setItem(
-                      "refresh_token",
-                      responce.data.refreshToken
-                    );
-                    navigate("/home");
-                  } else {
-                    alert("Login Failed");
-                  }
-                })
-                .catch((err) => console.error(err.message));
-            }
-          });
-        }
-        if (getAdmin && getAdmin.length) {
-          const admindata = JSON.parse(getAdmin);
-          // eslint-disable-next-line @typescript-eslint/no-unused-vars, array-callback-return
-          admindata.filter((value: Datatype) => {
-            if (
-              value.email === data.email &&
-              value.password === data.password
-            ) {
-              navigate("/admin_dashboard");
-            } else {
-              seterror("invalid login details");
-            }
-          });
-        }
-      },
-    });
+  const Formik = useFormik({
+    initialValues: {
+      email: '',
+      password: ''
+    },
+    validationSchema: loginvalidate,
+    onSubmit: (data) => {
+      if (getuser && getuser.length) {
+        const staffdata = JSON.parse(getuser);
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars, array-callback-return
+        staffdata.filter((datas: Datatype) => {
+          if (datas.email === data.email && datas.password === data.password) {
+            customAxios
+              .post('/auth/login', { email: data.email })
+              .then((responce) => {
+                console.log('responce.data', responce);
+                if (responce?.data?.status === 'Success') {
+                  localStorage.setItem('access_token', responce.data.token);
+                  localStorage.setItem('refresh_token', responce.data.refreshToken);
+                  navigate('/home');
+                } else {
+                  alert('Login Failed');
+                }
+              })
+              .catch((err) => console.error(err.message));
+          }
+        });
+      }
+      if (getAdmin && getAdmin.length) {
+        const admindata = JSON.parse(getAdmin);
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars, array-callback-return
+        admindata.filter((value: Datatype) => {
+          if (value.email === data.email && value.password === data.password) {
+            navigate('/admin_dashboard');
+          } else {
+            seterror('invalid login details');
+          }
+        });
+      }
+    }
+  });
 
   const { handleSubmit } = Formik;
   return (
@@ -110,9 +104,7 @@ const Login = () => {
                 data-testid="password"
               />
               <div className="d-grid gap-2">
-                <button className="btn btn-block btn-success shadow-none block mt-3">
-                  Login
-                </button>
+                <button className="btn btn-block btn-success shadow-none block mt-3">Login</button>
               </div>
               <p className="mt-3 text-center">
                 Create a New Account..?

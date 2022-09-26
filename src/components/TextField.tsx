@@ -1,14 +1,18 @@
-import React from "react";
+import React from 'react';
 import '../App.css';
-import { ErrorMessage,useField } from "formik";
+import { ErrorMessage, useField } from 'formik';
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const TextField = ({ label, ...props }: any) => {
   const [field, meta] = useField(props);
   return (
     <div>
       <label htmlFor={field.name}>{label}</label>
-      <input className={`form-control shadow-none mt-3 ${meta.touched && meta.error && 'is-invalid'}`} {...field} {...props} />
-      <ErrorMessage component="div" name={field.name}  className="error" />
+      <input
+        className={`form-control shadow-none mt-3 ${meta.touched && meta.error && 'is-invalid'}`}
+        {...field}
+        {...props}
+      />
+      <ErrorMessage component="div" name={field.name} className="error" />
     </div>
   );
 };

@@ -1,27 +1,27 @@
 /* eslint-disable react/prop-types */
-import React, { Component, ReactNode } from 'react'
+import React, { Component, ReactNode } from 'react';
 interface State {
-  hasError: boolean,
+  hasError: boolean;
 }
 interface Props {
   children?: ReactNode;
 }
 export class ErrorBoundaries extends Component<Props> {
   public state: State = {
-    hasError: false,
+    hasError: false
   };
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  static getDerivedStateFromError(_error:string){
+  static getDerivedStateFromError(_error: string) {
     return {
-      hasError:true
-    }
+      hasError: true
+    };
   }
   render() {
-if(this.state.hasError){
-  return <h1>Something Went Wrong</h1>
-}
-return this.props.children
+    if (this.state.hasError) {
+      return <h1>Something Went Wrong</h1>;
+    }
+    return this.props.children;
   }
 }
 
-export default ErrorBoundaries
+export default ErrorBoundaries;
